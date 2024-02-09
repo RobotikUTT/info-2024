@@ -68,8 +68,9 @@ open(servoID1,0);
 /*
  1: close arm (ID servo , angle)
  2: open arm (ID servo , angle)
- 3: move up (ID servo , angle)
- 4: move down (ID servo , angle)
+ 3: move down (ID servo , angle)
+ 4: move up (ID servo , angle)
+ 5: move midle(ID servo, angle)
 
 */
 void readInstruction(uint8_t command){
@@ -83,13 +84,13 @@ void readInstruction(uint8_t command){
       open(servoID, angle);
       break;
     case 3:
-      
+      down(servoID, angle);
       break;
     case 4:
-      
+      up(servoID, angle);
       break;
     case 5:
-      
+      midle(servoID, angle);
       break;
     case 6:
       
