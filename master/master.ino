@@ -1,5 +1,10 @@
 #include <Wire.h>
 
+//-------------------------------------------------------------------
+///////////////////////////  Constantes  ////////////////////////////
+//-------------------------------------------------------------------
+
+
 #define DEV_ENV true
 #if DEV_ENV
   #define PRINT(x) Serial.print(x)
@@ -9,12 +14,12 @@
   #define PRINTLN(x)
 #endif
 
+// I2C Connection
 #define I2C_MOVING_ID 1
 #define I2C_ULTRASOUND_SENSOR_ID 2
 
-#define START_PIN             2
-
-#define CHANGE_STRATEGY_PIN   3
+// Strategy
+#define CHANGE_STRATEGY_PIN   3  // pin to choose strategy
 #define STRATEGY_ID_BIT_1_PIN 0
 #define STRATEGY_ID_BIT_2_PIN 0
 #define STRATEGY_ID_BIT_4_PIN 0
@@ -23,13 +28,35 @@
 
 #define RADIUS_ROBOT 0.15
 
+// Pin
+#define START_PIN       2
 #define BUILTIN_LED_PIN 13
 
 int distances[12];
-const uint8_t sonarIds[12] {7, 8, 2, 6, 5, 4, 1, 1, 0, 11, 10, 9};
+const uint8_t sonarIds[12] {7, 8, 2, 6, 5, 4, 1, 1, 0, 11, 10, 9};;
 
 String inputString = "";
 long startTime_;
+
+int strategyId = 0;
+// A pointer to the array (aka an array)
+float* strategy = 0;
+int strategyStep = -1;
+
+bool gameStarted = false;
+float strategyFinished = false;
+
+// Angle that stores the direction we are moving to
+float currentMovingDirection = 0;
+
+float xRequest, yRequest, angleRequest;
+
+float position[2];
+float angle;
+
+//-------------------------------------------------------------------
+/////////////////////////    Strategies    //////////////////////////
+//-------------------------------------------------------------------
 
 // Homologation
 const float strategy0[] = {
@@ -54,21 +81,9 @@ const float strategy1[] = {
   1.765, 1.14,
 };
 
-int strategyId = 0;
-// A pointer to the array (aka an array)
-float* strategy = 0;
-int strategyStep = -1;
-
-bool gameStarted = false;
-float strategyFinished = false;
-
-// Angle that stores the direction we are moving to
-float currentMovingDirection = 0;
-
-float xRequest, yRequest, angleRequest;
-
-float position[2];
-float angle;
+//-------------------------------------------------------------------
+///////////////////////    Initialisation    ////////////////////////
+//-------------------------------------------------------------------
 
 void setup() {
   #if DEV_ENV
@@ -92,6 +107,10 @@ void setup() {
   PRINTLN("Initialised");
 }
 
+//-------------------------------------------------------------------
+///////////////////////////     Loop      ///////////////////////////
+//-------------------------------------------------------------------
+
 void loop() {
   if (!gameStarted) {
     CheckStrategyButton();
@@ -108,6 +127,10 @@ void loop() {
     CheckRobotsAround();
   }
 }
+
+//-------------------------------------------------------------------
+//////////////////////////   Functions    ///////////////////////////
+//-------------------------------------------------------------------
 
 void CheckStrategyButton() {
   if (!digitalRead(CHANGE_STRATEGY_PIN)) {
@@ -296,7 +319,9 @@ void TestEachDirection() {
   }
 }
 
-/** WHEELS COMMUNICATION **/
+//-------------------------------------------------------------------
+//////////////////////  Wheels Communication  ///////////////////////
+//-------------------------------------------------------------------
 
 void Move(float x, float y) {
   float xMoved, yMoved, angleMoved;
@@ -391,7 +416,9 @@ void FetchDistances() {
   //Serial.println();
 }
 
-/** UTILITY FUNCTION TO READ/WRITE FROM/TO Wire **/
+//-------------------------------------------------------------------
+/////////////////////////  Wire Functions  //////////////////////////
+//-------------------------------------------------------------------
 
 void writeFloatToWire(float value) {
   uint32_t bits = *((uint32_t*) &value);
