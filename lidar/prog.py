@@ -23,35 +23,47 @@ class LidarService(Thread):
 
     def __init__(self):
         super().__init__()
-        self.serial = Serial("/dev/ttyAMA0", 230400)
+        self.serial = Serial("/dev/ttyS0", baudrate = 230400)
         self.values = {}
         self.lock = RLock()
+        
 
     def run(self):
         while True:
-            while self.stream.read() != 0x54: pass
-            packet = bytearray(b"0x54")
-            while len(packet) < PACKET_SIZE:
-                packet.append(self.serial.read())
-            start_angle = packet[4:6]
-            end_angle = packet[42:44]
-            data = packet[6:42]
-            crc = packet[-1]
-            # CRC check
-            expected_crc = 0
-            for b in packet[:-1]:
-                expected_crc = CRC_TABLE[(crc ^ b) & 0xFF]
-            if crc != expected_crc:
-                print("CRC check didn't pass. Skipping packet")
-                continue
-            with self.lock:
-                angle_step = (end_angle - start_angle) / 11
-                for i in range(12):
-                    self.values[start_angle + angle_step * i] = (data[i * 3] << 8) | data[i * 3 + 1]
+            i = 0
+            while True :
+                j = 0
+                while self.serial.read() != b"T" and self.serial.read() != b",":
+                    j+=1
+                packet = bytearray(b"0x540x2C")
+                while len(packet) < PACKET_SIZE :
+                    packet.extend(self.serial.read())
+                start_angle = stick_bytes(packet[4:6])/100
+                end_angle = stick_bytes(packet[42:44])/100
+                expected_crc = packet[-1]
+                # CRC check
+                crc = 0
+                for b in packet[:-1]:
+                   crc = CRC_TABLE[(crc ^ b) & 0xff]
+                if crc != expected_crc:
+                    print(crc, expected_crc)
+                    continue
+                with self.lock:
+                    print("AAAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHHHHH")
+                    angle_step = (end_angle - start_angle) / 12
+                    for i in range(12):
+                        self.values[start_angle + angle_step * i] = (data[i * 3] << 8) | data[i * 3 + 1]
 
     def get_values(self):
         with self.lock:
             return {**self.values}
+            
+def stick_bytes(bytesList):
+        output = 0
+        for i in range(len(bytesList)) :
+            output |= bytesList[i] << (8*i)
+        return output
+        
 
 if __name__ == "__main__":
     thread = LidarService()
