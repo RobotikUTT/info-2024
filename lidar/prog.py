@@ -36,10 +36,11 @@ class LidarService(Thread):
                 while self.serial.read() != b"T" and self.serial.read() != b",":
                     j+=1
                 packet = bytearray(b"\x54\x2C")
-                while len(packet) < PACKET_SIZE :
+                while len(packet) < PACKET_SIZE:
                     packet.extend(self.serial.read())
-                start_angle = stick_bytes(packet[4:6])/100
-                end_angle = stick_bytes(packet[42:44])/100
+                start_angle = stick_bytes(packet[4:6]) / 100
+                end_angle = stick_bytes(packet[42:44]) / 100
+                data = packet [6:42]
                 expected_crc = packet[-1]
                 # CRC check
                 crc = 0
@@ -49,10 +50,10 @@ class LidarService(Thread):
                     print(crc, expected_crc)
                     continue
                 with self.lock:
-                    print("AAAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHHHHH")
-                    angle_step = (end_angle - start_angle) / 12
+                    angle_step = (end_angle - start_angle) / 11
                     for i in range(12):
-                        self.values[start_angle + angle_step * i] = (data[i * 3] << 8) | data[i * 3 + 1]
+                        angle = (start_angle + angle_step * i) % 360
+                        self.values[angle] = (data[i * 3 + 1] << 8) | data[i * 3]
 
     def get_values(self):
         with self.lock:
@@ -60,7 +61,7 @@ class LidarService(Thread):
             
 def stick_bytes(bytesList):
         output = 0
-        for i in range(len(bytesList)) :
+        for i in range(len(bytesList)):
             output |= bytesList[i] << (8*i)
         return output
         
