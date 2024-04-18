@@ -8,6 +8,7 @@ import numpy as np
 from scipy.optimize import minimize
 
 PACKET_SIZE = 47
+
 CRC_TABLE = b"\x00\x4d\x9a\xd7\x79\x34\xe3\xae\xf2\xbf\x68\x25\x8b\xc6\x11\x5c" \
             b"\xa9\xe4\x33\x7e\xd0\x9d\x4a\x07\x5b\x16\xc1\x8c\x22\x6f\xb8\xf5" \
             b"\x1f\x52\x85\xc8\x66\x2b\xfc\xb1\xed\xa0\x77\x3a\x94\xd9\x0e\x43" \
@@ -33,6 +34,7 @@ class PositionService:
         return 0
 
 class PointData:
+    
     def __init__(self, angle, distance, robot_position, robot_angle, measured_at):
         super.__setattr__("angle", angle)
         super.__setattr__("distance", distance)
@@ -48,46 +50,41 @@ class PointData:
 class LidarService(Thread):
     def __init__(self, position_service):
         super().__init__()
-        self.serial = Serial("/dev/ttyS0", baudrate = 230400)
         self.values: List[PointData] = []
+        self.serial = Serial("/dev/serial0", baudrate = 230400, timeout=5, bytesize=8, parity="N", stopbits=1)
         self.lock = RLock()
         self.position_service = position_service
 
     def run(self):
+        dataList = []
         while True:
-            j = 0
-            while self.serial.read() != b"T" and self.serial.read() != b",":
-                j+=1
-            packet = bytearray(b"\x54\x2C")
-            now = time.time()
-            while len(packet) < PACKET_SIZE:
-                packet.extend(self.serial.read())
-            start_angle = stick_bytes(packet[4:6]) / 100
-            end_angle = stick_bytes(packet[42:44]) / 100
-            while end_angle < start_angle:
-                end_angle += 360
-            data = packet [6:42]
-            expected_crc = packet[-1]
-            # CRC check
-            crc = 0
-            for b in packet[:-1]:
-                crc = CRC_TABLE[(crc ^ b) & 0xff]
-            if crc != expected_crc:
-                print(crc, expected_crc)
-                continue
-            with self.lock:
-                angle_step = (end_angle - start_angle) / 11
-                robot_position = self.position_service.get_position()
-                robot_angle = self.position_service.get_angle()
-                for i in range(12):
-                    angle = ((start_angle + angle_step * i) % 360) / 360 * 2 * pi
-                    distance = stick_bytes(data[i * 3:i * 3 + 1])
-                    self.values.append(PointData(angle, distance, robot_position, robot_angle, now))
+            data = self.serial.read()
+            dataTreated = int.from_bytes(data, 'big')
+            if (dataTreated == 0x54):
+                dataList.append(dataTreated)
+                data = self.serial.read()
+                dataTreated = int.from_bytes(data, 'big')
+                if (dataTreated == 0x2c):
+                    dataList.append(dataTreated)
+                    if (len(dataList) == PACKET_SIZE):
+                        robot_position = self.position_service.get_position()
+                        robot_angle = self.position_service.get_angle()
+                        now = time.time()
+                        formatted = sortData(dataList)
+                        for distance, angle, confidence in zip(*dataList):
+                            self.values.append(PointData(angle, distance, robot_position, robot_angle, time))
+                        dataList = []
+                        
+                    else :
+                        dataList = []
+            else :
+                dataList.append(dataTreated)
+                        
 
     def get_values(self):
         delete_before = time.time() - DELETE_POINTS_TIMEOUT
         with self.lock:
-            self.values = dict(filter(lambda entry: entry[1][1] < delete_before, self.values))
+            self.values = filter(lambda entry: entry.measured_at < delete_before, self.values)
             return [*self.values]
 
 class ObjectData:
@@ -195,6 +192,27 @@ def fit_circle_to_points(points):
     radius = result.x[2]
     return center, radius
 
+            
+def sortData(dataList):
+    speed = (dataList[1]<<8 | dataList[0])/100
+    startAngle = float(dataList[3]<<8 | dataList[2])/100
+    lastAngle = float(dataList[-4]<<8 | dataList[-5])/100
+    if (lastAngle > startAngle) :
+        step = float(lastAngle - startAngle)/12
+    else : 
+        step = float(lastAngle + 360 - startAngle)/12
+    
+    angleList = []
+    distanceList = []
+    confidenceList = []
+    
+    for i in range (0,12):
+        distanceList.append(dataList[4+(i*3)+1] << 8 | dataList[4+(i*3)])
+        confidenceList.append(dataList[4+(i*3)+2])
+        angleList.append(step*i + startAngle)
+    return (distanceList,angleList, confidenceList)
+        
+         
 
 if __name__ == "__main__":
     thread = LidarService()
