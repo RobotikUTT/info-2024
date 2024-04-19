@@ -67,14 +67,21 @@ class LidarService(Thread):
                 if (dataTreated == 0x2c):
                     dataList.append(dataTreated)
                     if (len(dataList) == PACKET_SIZE):
-                        robot_position = self.position_service.get_position()
-                        robot_angle = self.position_service.get_angle()
-                        now = time.time()
-                        formatted = sortData(dataList)
-                        for distance, angle, confidence in zip(*dataList):
-                            self.values.append(PointData(angle, distance, robot_position, robot_angle, time))
+                        expectedCrc = dataList[-3]
+                        crc = 0
+                        for b in dataList[-2:]+dataList[0:-3] : 
+                            crc = crcList[(crc^b)*0xff]
+                        print("ok????")
+                        if expected == crc :
+                            print("ok")
+                            robot_position = self.position_service.get_position()
+                            robot_angle = self.position_service.get_angle()
+                            now = time.time()
+                            formatted = sortData(dataList)
+                            for distance, angle, confidence in zip(*dataList):
+                            
+                                self.values.append(PointData(angle, distance, robot_position, robot_angle, time))
                         dataList = []
-                        
                     else :
                         dataList = []
             else :
