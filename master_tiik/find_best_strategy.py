@@ -1,76 +1,8 @@
 import copy
 import a_star
+from useful_class import Area,PlantArea,PlayerArea,StationArea,GardenArea,GameState
 
 MAX_ROBOT_PLANTS = 12
-
-# ---------------------- DEFINE AREA CARACT ----------------------
-
-class Area:
-    def __init__(self, id, centerX, centerY, radius, time_spent):
-        self.id = id
-        self.centerX = centerX
-        self.centerY = centerY
-        self.radius = radius
-        self.time_spent = time_spent
-
-class PlantArea(Area):
-    def __init__(self, id, x, y):
-        super().__init__(id, x, y,4,10)
-        self.plants = 6
-
-class PlayerArea(Area):
-    def __init__(self, id, x, y, radius, time_spent):
-        super().__init__(id, x, y, radius, time_spent)
-        
-class StationArea(PlayerArea):
-    def __init__(self, id, x, y):
-        super().__init__(id, x, y, 10, 5)
-        
-class GardenArea(PlayerArea):
-    def __init__(self, id, x, y):
-        super().__init__(id, x, y, 0, 3)
-        self.angle = 3.14 / 2 # absolument changer ça
-
-        
-# ---------------------- DEFINE ACTION ----------------------
-
-class Turn:
-    def __init__(self,init_angle,final_angle):
-        self.init_angle = init_angle
-        self.final_angle = final_angle
-
-
-class MoveForward:
-    def __init__(self,distance,direction_angle):
-        self.distance = distance
-        self.directionAngle = direction_angle
-        
-
-# ---------------------- DEFINE GAME CARACT  ----------------------
-
-
-class GameState:
-    def __init__(self):
-        self.plant_areas = [
-            PlantArea(0, 700, 1000),
-            PlantArea(1, 1300, 1000),
-            PlantArea(2, 500, 1500),
-            PlantArea(3, 1500, 1500),
-            PlantArea(4, 700, 2000),
-            PlantArea(5, 1300, 2000),
-        ]
-        self.player_areas = [
-            StationArea(0, 2000, 2237.5),
-            StationArea(1, 2000, 762.5),
-            StationArea(2, 612.5, 3000),
-            StationArea(3, 1387.5, 3000),
-            GardenArea(4, 612.5, 0),
-            GardenArea(5, 1387.5, 0),
-        ]
-        self.robot_plants = 0
-
-    def to_tuple(self):
-        return self.robot_plants, *[(area.centerX, area.centerY, area.plants) for area in self.plant_areas], *[(area.centerX, area.centerY) for area in self.player_areas]
 
 # ---------------------- DEFINE NODE ----------------------
 
@@ -140,6 +72,9 @@ class Cost(a_star.Cost):
 
 # ---------------------- FONCTION TO USE ----------------------
 
-def find_best_strategy():
-    path = a_star.a_star(StartNode(GameState(), 0, 0), Cost(0.001, 0), stop_after=10)
-    return path[1:]
+def find_best_strategy(game_state):
+    path = a_star.a_star(StartNode(game_state, 0, 0), Cost(0.001, 0), stop_after=10)
+    areas = []
+    for i in path[1:]:
+        areas.append(i.area)
+    return areas
