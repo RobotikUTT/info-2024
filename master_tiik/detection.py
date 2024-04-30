@@ -46,8 +46,10 @@ class PointData:
         super().__setattr__("y", sin(robot_angle + angle) * distance + robot_position[1])
         super().__setattr__("absolute_angle", (robot_angle + angle) % (2 * pi))
         super().__setattr__("measured_at", measured_at)
+
     def __setattr__(self, name: str, value: time) -> None:
         raise TypeError("PointData is immutable")
+
 
 class LidarService(Thread):
     def __init__(self,position_service,data_stocker):
@@ -78,11 +80,11 @@ class LidarService(Thread):
                             robot_position = self.position_service.get_position()
                             robot_angle = self.position_service.get_angle()
                             now = time.time()
-                            formatted = sortData(dataList)
+                            formatted = self.sortData(dataList)
                             values = []
                             for distance, angle, confidence in zip(*formatted):
                                 values.append(PointData(radians(angle%360), distance, robot_position, robot_angle, now))
-                            data_stocker.add_values(values)
+                            self.data_stocker.add_values(values)
                         dataList = []
                     else :
                         dataList = []
@@ -156,30 +158,10 @@ class DetectionService(Thread):
     def run(self):
         print("detection ... ", "ready to operate")
         while True:
-            self.values = data_stocker.get_values()
+            self.values = self.data_stocker.get_values()
             if len(self.values) == 0:
                 continue
             treat_distances = [point for point in self.values if point.distance < 730 and point.angle > 3 and point.distance > 200 ]
-            
-        
-         
 
-if __name__ == "__main__":
-    position_service = PositionService()
-    data_stocker = DataStocker()
-    lidar_service = LidarService(position_service,data_stocker)
-    
-    dataThread = data_stocker
-    dataThread.start()
-    
-    lidarThread = lidar_service
-    lidarThread.start()
-    
-    detecionThread = DetectionService(data_stocker)
-    detecionThread.start()
-    
-    dataThread.join()
-    lidarThread.join()
-    detectionThread.join()
     
     
