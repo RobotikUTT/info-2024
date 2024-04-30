@@ -1,9 +1,9 @@
 import copy
-
 import a_star
 
 MAX_ROBOT_PLANTS = 12
 
+# ---------------------- DEFINE AREA CARACT ----------------------
 
 class Area:
     def __init__(self, id, centerX, centerY, radius, time_spent):
@@ -13,17 +13,26 @@ class Area:
         self.radius = radius
         self.time_spent = time_spent
 
-
 class PlantArea(Area):
     def __init__(self, id, x, y):
-        super().__init__(id, x, y, 250, 10)
+        super().__init__(id, x, y,4,10)
         self.plants = 6
 
-
-class GardenArea(Area):
+class PlayerArea(Area):
+    def __init__(self, id, x, y, radius, time_spent):
+        super().__init__(id, x, y, radius, time_spent)
+        
+class StationArea(PlayerArea):
     def __init__(self, id, x, y):
-        super().__init__(id, x, y, 0, 4)
+        super().__init__(id, x, y, 10, 5)
+        
+class GardenArea(PlayerArea):
+    def __init__(self, id, x, y):
+        super().__init__(id, x, y, 0, 3)
+        self.angle = 3.14 / 2 # absolument changer ça
 
+        
+# ---------------------- DEFINE ACTION ----------------------
 
 class Turn:
     def __init__(self,init_angle,final_angle):
@@ -35,6 +44,9 @@ class MoveForward:
     def __init__(self,distance,direction_angle):
         self.distance = distance
         self.directionAngle = direction_angle
+        
+
+# ---------------------- DEFINE GAME CARACT  ----------------------
 
 
 class GameState:
@@ -47,19 +59,20 @@ class GameState:
             PlantArea(4, 700, 2000),
             PlantArea(5, 1300, 2000),
         ]
-        self.garden_areas = [
-            GardenArea(0, 2000, 2237.5),
-            GardenArea(1, 2000, 762.5),
-            GardenArea(2, 612.5, 3000),
-            GardenArea(3, 1387.5, 3000),
+        self.player_areas = [
+            StationArea(0, 2000, 2237.5),
+            StationArea(1, 2000, 762.5),
+            StationArea(2, 612.5, 3000),
+            StationArea(3, 1387.5, 3000),
             GardenArea(4, 612.5, 0),
             GardenArea(5, 1387.5, 0),
         ]
         self.robot_plants = 0
 
     def to_tuple(self):
-        return self.robot_plants, *[(area.centerX, area.centerY, area.plants) for area in self.plant_areas], *[(area.centerX, area.centerY) for area in self.garden_areas]
+        return self.robot_plants, *[(area.centerX, area.centerY, area.plants) for area in self.plant_areas], *[(area.centerX, area.centerY) for area in self.player_areas]
 
+# ---------------------- DEFINE NODE ----------------------
 
 class GameNode(a_star.Node):
     def __init__(self, game_state: GameState, is_end: bool):
@@ -76,8 +89,8 @@ class GameNode(a_star.Node):
         for area in self.game_state.plant_areas:
             node = PlantAreaNode(self.game_state, area)
             neighbours.append((node, self.compute_cost(node)))
-        for area in self.game_state.garden_areas:
-            node = GardenAreaNode(self.game_state, area)
+        for area in self.game_state.player_areas:
+            node = PlayerAreaNode(self.game_state, area)
             neighbours.append((node, self.compute_cost(node)))
         return neighbours
 
@@ -95,8 +108,8 @@ class PlantAreaNode(GameNode):
         self.possible_points = self.plants_taken
 
 
-class GardenAreaNode(GameNode):
-    def __init__(self, game_state, area: GardenArea):
+class PlayerAreaNode(GameNode):
+    def __init__(self, game_state, area: PlayerArea):
         super().__init__(game_state, False)
         self.area = copy.deepcopy(area)
         self.game_state.robot_plants = 0
@@ -112,6 +125,7 @@ class StartNode(GameNode):
         super().__init__(game_state, False)
         self.area = StartNode.StartArea(x, y)
 
+# ---------------------- DEFINE WAY TIME ----------------------
 
 class Cost(a_star.Cost):
     def __init__(self, time, points):
@@ -124,6 +138,7 @@ class Cost(a_star.Cost):
     def __add__(self, other):
         return Cost(self.time + other.time, self.points + other.points)
 
+# ---------------------- FONCTION TO USE ----------------------
 
 def find_best_strategy():
     path = a_star.a_star(StartNode(GameState(), 0, 0), Cost(0.001, 0), stop_after=10)

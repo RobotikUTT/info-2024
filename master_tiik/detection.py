@@ -10,6 +10,9 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
 PACKET_SIZE = 47
+DELETE_POINTS_TIMEOUT = 1
+
+# ---------------------- DEFINE CYCLIC REDUNDANCY CHACK TABLE ----------------------
 
 CRC_TABLE = b"\x00\x4d\x9a\xd7\x79\x34\xe3\xae\xf2\xbf\x68\x25\x8b\xc6\x11\x5c" \
             b"\xa9\xe4\x33\x7e\xd0\x9d\x4a\x07\x5b\x16\xc1\x8c\x22\x6f\xb8\xf5" \
@@ -27,13 +30,18 @@ CRC_TABLE = b"\x00\x4d\x9a\xd7\x79\x34\xe3\xae\xf2\xbf\x68\x25\x8b\xc6\x11\x5c" 
             b"\xeb\xa6\x71\x3c\x92\xdf\x08\x45\x19\x54\x83\xce\x60\x2d\xfa\xb7" \
             b"\x5d\x10\xc7\x8a\x24\x69\xbe\xf3\xaf\xe2\x35\x78\xd6\x9b\x4c\x01" \
             b"\xf4\xb9\x6e\x23\x8d\xc0\x17\x5a\x06\x4b\x9c\xd1\x7f\x32\xe5\xa8"
-DELETE_POINTS_TIMEOUT = 1
 
-class PositionService:
-    def get_position(self):
-        return (0, 0)
-    def get_angle(self):
-        return 0
+        
+class ObjectData:
+    def __init__(self):
+        self.points: List[PointData] = []
+        self.boundary_points: Tuple[PointData, PointData] = []
+        self.circle_center = (0, 0)
+        self.circle_radius = 0
+        self.separations_to_make = []
+
+    def commit(self):
+        print("oui")
 
 
 class PointData:
@@ -50,6 +58,7 @@ class PointData:
     def __setattr__(self, name: str, value: time) -> None:
         raise TypeError("PointData is immutable")
 
+# ---------------------- DEFINE LIDAR SERCICE ----------------------
 
 class LidarService(Thread):
     def __init__(self,position_service,data_stocker):
@@ -112,19 +121,8 @@ class LidarService(Thread):
             angleList.append(step*i + startAngle)
         return (distanceList,angleList, confidenceList)
         
-        
+# ---------------------- DEFINE DATA STOCKER ----------------------
 
-class ObjectData:
-    def __init__(self):
-        self.points: List[PointData] = []
-        self.boundary_points: Tuple[PointData, PointData] = []
-        self.circle_center = (0, 0)
-        self.circle_radius = 0
-        self.separations_to_make = []
-
-    def commit(self):
-        print("oui")
-        
 class DataStocker(Thread):
     def __init__(self):
         super().__init__()
@@ -145,7 +143,8 @@ class DataStocker(Thread):
     
     def get_values(self):
         return self.values
-    
+
+# ---------------------- DEFINE DETECTION SERVICE ----------------------
 
 class DetectionService(Thread):
     def __init__(self, data_stocker):
