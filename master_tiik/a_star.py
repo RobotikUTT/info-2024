@@ -28,9 +28,11 @@ class NodeData:
     def __init__(self, node: Node, cost: Cost, parent: "NodeData | None"):
         self.node = node
         self.parent = parent
+        self.cost_from_parent = cost
         self.cost = cost
         self.path_length = 1
         if parent is not None:
+            self.cost = parent.cost + cost
             self.path_length = parent.path_length + 1
 
 
@@ -51,7 +53,7 @@ def a_star(start_node: Node, null_cost: Cost, stop_after=1000):
             path = []
             node = current_node_data
             while node is not None:
-                path.append(node.node)
+                path.append((node.node, node.cost))
                 node = node.parent
             return list(reversed(path))
         closed_nodes.add(current_node)
@@ -59,29 +61,27 @@ def a_star(start_node: Node, null_cost: Cost, stop_after=1000):
         for node, cost in neighbours:
             if node in closed_nodes:
                 continue
-            new_cost = cost + current_node_data.cost
-            if node not in opened_nodes:
-                heapq.heappush(opened_nodes, (new_cost.as_number(), heapq_counter, node))
+            new_node_data = NodeData(node, cost, current_node_data)
+            if node not in opened_nodes or nodes_data[node].cost.as_number() > new_node_data.cost.as_number():
+                nodes_data[node] = new_node_data
+                heapq.heappush(opened_nodes, (new_node_data.cost.as_number(), heapq_counter, node))
                 heapq_counter += 1
-                nodes_data[node] = NodeData(node, new_cost, current_node_data)
                 continue
-            node_data = nodes_data[node]
-            if node_data.cost.as_number() > new_cost.as_number():
-                # We don't need to remove the node, as the old one will be taken after, and will eventually be removed : when picked up, it will be in the closed_nodes
-                node_data.cost = new_cost
-                heapq.heappush(opened_nodes, (new_cost.as_number(), heapq_counter, node))
-                heapq_counter += 1
     if not len(closed_nodes):
         return None
     node_to_send_back = nodes_data[closed_nodes.pop()]
     while len(closed_nodes):
         node = nodes_data[closed_nodes.pop()]
-        if node.path_length >= node_to_send_back.path_length and node.cost.as_number() < node_to_send_back.cost.as_number():
+        if node.path_length < node_to_send_back.path_length:
+            continue
+        if node.path_length > node_to_send_back.path_length:
+            node_to_send_back = node
+        elif node.cost.as_number() < node_to_send_back.cost.as_number():
             node_to_send_back = node
     path = []
     node = node_to_send_back
     while node is not None:
-        path.append(node.node)
+        path.append((node.node, node.cost_from_parent))
         node = node.parent
     return list(reversed(path))
 

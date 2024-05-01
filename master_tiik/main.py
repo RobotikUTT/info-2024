@@ -28,7 +28,7 @@ if __name__ == "__main__":
 
     detectionThread = detection_service
     detectionThread.start()
-    
+
     positionThread.join()
     i2cThread.join()
     gameThread.join()
