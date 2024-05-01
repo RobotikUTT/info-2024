@@ -1,4 +1,5 @@
 import heapq
+import time
 from typing import List, Tuple
 
 
@@ -36,7 +37,7 @@ class NodeData:
             self.path_length = parent.path_length + 1
 
 
-def a_star(start_node: Node, null_cost: Cost, stop_after=1000):
+def a_star(start_node: Node, null_cost: Cost, stop_after=1000, stop_on_path_ends=False):
     opened_nodes: List[(int, int, Node | None)] = [(null_cost, 0, start_node)]
     heapq.heapify(opened_nodes)
     closed_nodes = set()
@@ -49,15 +50,17 @@ def a_star(start_node: Node, null_cost: Cost, stop_after=1000):
         if current_node is None:
             break
         current_node_data = nodes_data[current_node]
+        closed_nodes.add(current_node)
         if current_node.is_end or current_node_data.path_length >= stop_after:
             path = []
             node = current_node_data
             while node is not None:
-                path.append((node.node, node.cost))
+                path.append((node.node, node.cost_from_parent))
                 node = node.parent
             return list(reversed(path))
-        closed_nodes.add(current_node)
         neighbours = current_node.get_neighbours()
+        if stop_on_path_ends and len(neighbours) == 0:
+            break
         for node, cost in neighbours:
             if node in closed_nodes:
                 continue
