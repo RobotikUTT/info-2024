@@ -38,7 +38,7 @@ class GardenPotArea(PlayerArea):
 # POT AREA
 
 class PotArea(Area):
-	def __init__(self, id, x, y,angle):
+    def __init__(self, id, x, y,angle):
         super().__init__(id, x, y, 0, 10)
         self.angle = angle
 
@@ -62,19 +62,18 @@ class MoveForward:
 class GameState:
     def __init__(self):
         self.plant_areas = [
-			PlantArea(0, 1500, 500),
-			PlantArea(1, 1000, 700),
-			PlantArea(2, 1000, 1300),
-			PlantArea(3, 1500, 1500),
-			PlantArea(4, 2000, 1300),
-			PlantArea(5, 2000, 700)
+            PlantArea(0, 1500, 500),
+            PlantArea(1, 1000, 700),
+            PlantArea(2, 1000, 1300),
+            PlantArea(3, 1500, 1500),
+            PlantArea(4, 2000, 1300),
+            PlantArea(5, 2000, 700)
         ]
         self.player_areas = []
         self.robot_plants = 0
         
-	def init_areas(self,player_areas):
-		self.player_areas = player_areas
-		
+    def init_areas(self,player_areas):
+        self.player_areas = player_areas
 
     def to_tuple(self):
         return self.robot_plants, *[(area.centerX, area.centerY, area.plants) for area in self.plant_areas], *[(area.centerX, area.centerY) for area in self.player_areas]
