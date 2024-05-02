@@ -43,7 +43,7 @@ def a_star(start_node: Node, null_cost: Cost, stop_after=1000, stop_on_path_ends
     opened_nodes: List[(int, int, Node | None)] = [(null_cost, 0, start_node)]
     heapq.heapify(opened_nodes)
     heapq_counter = 1
-    opened_nodes_set = {hash(start_node)}
+    opened_nodes_set = {hash(start_node)}  # Faster to verify if a node is in the opened_nodes
     closed_nodes = set()
     nodes_data = {start_node: NodeData(start_node, null_cost, None)}
     while len(opened_nodes):
@@ -55,7 +55,6 @@ def a_star(start_node: Node, null_cost: Cost, stop_after=1000, stop_on_path_ends
             # if current_node in opened_nodes_set:
             #    opened_nodes_set.remove(hash(current_node))
         if current_node is None:
-            print("no nodes left")
             break
         current_node_data = nodes_data[current_node]
         closed_nodes.add(current_node)
@@ -68,7 +67,6 @@ def a_star(start_node: Node, null_cost: Cost, stop_after=1000, stop_on_path_ends
             return list(reversed(path))
         neighbours = current_node.get_neighbours()
         if stop_on_path_ends and len(neighbours) == 0:
-            print("end of path")
             break
         for node, cost in neighbours:
             if node in closed_nodes:

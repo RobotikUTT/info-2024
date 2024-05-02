@@ -1,8 +1,5 @@
 from math import sin, cos, asin, acos, sqrt, pi
 from typing import Tuple, List
-from useful_class import Path
-
-from master_tiik.debug_utils import TimeIt
 
 
 class Line:
@@ -22,9 +19,6 @@ class Line:
         a = y1 - y0
         b = x0 - x1
         c = -a * x0 - b * y0
-        if a == b == 0:
-            print(x0, y0, x1, y1)
-            raise RuntimeError()
         return Line(a, b, c)
 
     def intersection(self, other):
@@ -65,6 +59,7 @@ class Circle:
 
 
 def find_path(a: Tuple[float, float], b: Tuple[float, float], circles_to_avoid: List[Circle]):
+    from useful_class import Path
     if a[0] == b[0] and a[1] == b[1]:
         return Path([])
     line = Line.from_points(a[0], a[1], b[0], b[1])

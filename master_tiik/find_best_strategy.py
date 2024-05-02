@@ -1,9 +1,11 @@
 import copy
+import sys
 import time
 from typing import List, Callable, Tuple
 
 import a_star
-from utils import find_path, Circle, Path
+from master_tiik.debug_utils import TimeIt
+from utils import find_path, Circle
 from useful_class import Area, GameState
 
 MAX_ROBOT_PLANTS = 6
@@ -24,6 +26,7 @@ class GameNode(a_star.Node):
         self.game_state.garden_areas = [copy.copy(area) for area in game_state.garden_areas]
         self.game_state.garden_pot_areas = [copy.copy(area) for area in game_state.garden_pot_areas]
         self.game_state.pot_areas = [copy.copy(area) for area in game_state.pot_areas]
+        self.game_state.station_areas = [copy.copy(area) for area in game_state.station_areas]
         self.possible_points = 0
         self.area: Area | None = None
 
@@ -44,6 +47,8 @@ class GameNode(a_star.Node):
                 node = node_factory(self.game_state, i)
                 if node.possible_points == 0:
                     continue
+                if node.possible_points < 0:
+                    print(f"{node} returned a negative points amount", file=sys.stderr)
                 neighbours.append((node, self.compute_cost(node)))
         return neighbours
 
@@ -60,11 +65,12 @@ class PlantAreaNode(GameNode):
     def __init__(self, game_state, area_index: int):
         super().__init__(game_state, False)
         self.area = self.game_state.plant_areas[area_index]
-        self.plants_taken = min(MAX_ROBOT_PLANTS - self.game_state.robot_unpotted_plants, self.area.plants)
+        self.plants_taken = min(MAX_ROBOT_PLANTS - self.game_state.robot_unpotted_plants - self.game_state.robot_potted_plants, self.area.plants)
         self.game_state.robot_unpotted_plants += self.plants_taken
         self.area.plants -= self.plants_taken
         self.possible_points = self.plants_taken * POINTS_FOR_UNPOTTED_PLANTS
-        
+
+
 class StationAreaNode(GameNode):
     def __init__(self, game_state, area_index: int):
         super().__init__(game_state, False)
@@ -74,6 +80,7 @@ class StationAreaNode(GameNode):
         self.area.plants += potted_plants_added + unpotted_plants_added
         self.possible_points = potted_plants_added * POINTS_FOR_POTTED_PLANTS + unpotted_plants_added * POINTS_FOR_UNPOTTED_PLANTS
         self.game_state.robot_unpotted_plants = 0
+
 
 class GardenAreaNode(GameNode):
     def __init__(self, game_state, area_index: int):
@@ -107,7 +114,7 @@ class PotAreaNode(GameNode):
     def __init__(self, game_state, area_index: int):
         super().__init__(game_state, False)
         self.area = self.game_state.pot_areas[area_index]
-        pots_taken = min(self.game_state.robot_unpotted_plants, 4 - self.area.pots)
+        pots_taken = min(self.game_state.robot_unpotted_plants, self.area.pots)
         self.game_state.robot_unpotted_plants -= pots_taken
         self.game_state.robot_potted_plants += pots_taken
         self.area.pots -= pots_taken
@@ -134,14 +141,16 @@ class Cost(a_star.Cost):
         self.points = points
 
     def as_number(self):
-        return -self.po
+        return -self.points / self.time
+
+    def __add__(self, other):
         return Cost(self.time + other.time, self.points + other.points)
 
 
 # ---------------------- FUNCTION TO USE ----------------------
 
 def find_best_strategy(game_state):
-    path = a_star.a_star(StartNode(game_state, 0, 0), Cost(0.001, 0), stop_after=10, stop_on_path_ends=True)
+    path = a_star.a_star(StartNode(game_state, 0, 0), Cost(0.001, 0), stop_after=20, stop_on_path_ends=True)
     areas = []
     for node, cost in path[1:]:
         areas.append((node.area, cost.path))
@@ -150,5 +159,7 @@ def find_best_strategy(game_state):
 
 if __name__ == '__main__':
     start = time.time()
-    print(find_best_strategy(GameState()))
+    strategy = find_best_strategy(GameState())
+    print(strategy)
     print("time taken :", time.time() - start)
+    # print(TimeIt)

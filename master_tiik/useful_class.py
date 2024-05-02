@@ -1,6 +1,7 @@
 # ---------------------- DEFINE AREA CARACT ----------------------
 import random
 import uuid
+from math import pi, sqrt
 from typing import List
 
 from master_tiik.utils import Circle
@@ -61,6 +62,7 @@ class Action:
         self.card = card
         self.movement = movement
         self.area = area
+
         
 class Path:
     def __init__(self, keypoints):
@@ -87,9 +89,15 @@ class GameState:
             PlantArea(2000, 1300),
             PlantArea(2000, 700)
         ]
-        self.garden_areas: List[GardenArea] = []
+        self.garden_areas: List[GardenArea] = [
+            GardenArea(600, 2000 - 35, pi / 2),  # IMPORTANT PAS LES BONNES VALEURS POUR X
+            GardenArea(3000 - 600, 2000 - 35, pi / 2),  # IMPORTANT PAS LES BONNES VALEURS POUR X
+        ]
         self.station_areas: List[StationArea] = []
-        self.pot_areas: List[PotArea] = []
+        self.pot_areas: List[PotArea] = [
+            PotArea(600, 2000 - 35, pi / 2),  # IMPORTANT PAS LES BONNES VALEURS POUR X
+            PotArea(3000 - 600, 2000 - 35, pi / 2),  # IMPORTANT PAS LES BONNES VALEURS POUR X
+        ]
         self.garden_pot_areas: List[GardenPotArea] = []
         self.areas_to_avoid: List[Area] = []
         self.robot_unpotted_plants = 0

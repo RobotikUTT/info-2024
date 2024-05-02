@@ -1,8 +1,8 @@
 import find_best_strategy as strat
 from threading import Thread
 import time
-from useful_class import StationArea, GardenArea, GardenPotArea, GameState, PotArea, Path, 
-from math import pi, atan, sqrt
+from useful_class import StationArea, GardenArea, GardenPotArea, GameState, PotArea
+from math import pi
 
 distance_tiik_pot = 14
 
@@ -26,9 +26,6 @@ blue_specific_areas = [
     bonus_blue_pot_area_1,
     bonus_blue_pot_area_2,
 ]
-
-pot_area_1 = PotArea(600,2000-35,pi/2) # IMPORTANT PAS LES BONNES VALEURS POUR X
-pot_area_2 = PotArea(3000-600,2000-35,pi/2) # IMPORTANT PAS LES BONNES VALEURS POUR X
 
 yellow_station_area_1 = StationArea(225,225)
 yellow_station_area_2 = StationArea(3000-(450/2),1000)
@@ -70,7 +67,7 @@ class GameManager(Thread):
                 define_next_actions()
                 wait_end_action()
                 
-                
+
     def define_areas(self):
         while self.color == "":
             color = input()
