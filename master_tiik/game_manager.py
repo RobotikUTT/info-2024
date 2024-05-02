@@ -1,8 +1,13 @@
 import find_best_strategy as strat
 from threading import Thread
 import time
+<<<<<<< HEAD
 from useful_class import StationArea, GardenArea, GardenPotArea, GameState, PotArea
 from math import pi
+=======
+from useful_class import StationArea, GardenArea, GardenPotArea, GameState, PotArea, Path
+from math import pi, atan, sqrt
+>>>>>>> 5719a45 (WIP: added serial communication)
 
 distance_tiik_pot = 14
 
@@ -63,7 +68,7 @@ class GameManager(Thread):
         print("game manager ... ", "ready to operate")
         self.define_areas()
         while True :
-            for area in strat.find_best_strategy(self.game_state)):
+            for area in strat.find_best_strategy(self.game_state):
                 define_next_actions()
                 wait_end_action()
                 
@@ -86,7 +91,7 @@ class GameManager(Thread):
     def define_next_actions(self,next_area):
         if isinstance(element, PlantArea):
             self.actions.append(Action(1,2,[element.center_x,element.center_y,element.radius]))
-            self.actions.append(Action(2,0,[]) # trouver les plantes et les prendre
+            self.actions.append(Action(2,0,[])) # trouver les plantes et les prendre
         elif isinstance(element, GardenArea):
             pass
         elif isinstance(element, PotArea):
