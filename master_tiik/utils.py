@@ -1,6 +1,9 @@
 from math import sin, cos, asin, acos, sqrt, pi
 from typing import Tuple, List
 
+import numpy as np
+from scipy.optimize import minimize
+
 
 class Line:
     def __init__(self, a, b, c):
@@ -58,6 +61,21 @@ class Circle:
         return (x - self.x) ** 2 + (y - self.y) ** 2 < self.r ** 2 + 0.0001
 
 
+class Point:
+    def __init__(self, x: int, y: int):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other):
+        return Point(self.x + other.x, self.y + other.y)
+
+    def __sub__(self, other):
+        return Point(self.x - other.x, self.y - other.y)
+
+    def __abs__(self):
+        return sqrt(self.x ** 2 + self.y ** 2)
+
+
 def find_path(a: Tuple[float, float], b: Tuple[float, float], circles_to_avoid: List[Circle]):
     from useful_class import Path
     if a[0] == b[0] and a[1] == b[1]:
@@ -105,6 +123,43 @@ def tangent_lines(circle: Circle, x0, y0):
     x2 = d * cos(theta_0 - theta) + x0
     y2 = d * sin(theta_0 - theta) + y0
     return Line.from_points(x0, y0, x1, y1), Line.from_points(x0, y0, x2, y2)
+
+
+# From ChatGPT
+
+def fit_circle_to_points(points):
+    """
+    Fit a circle to a set of points using least squares circle fitting.
+    """
+    def dist_point_to_circle(point, center, radius):
+        """
+        Calculate the distance between a point and a circle's boundary (distance between point and center minus the radius).
+        """
+        return np.abs(np.linalg.norm(point - center) - radius)
+
+    def objective_function(params, points):
+        """
+        Objective function for least squares circle fitting.
+        """
+        center = params[:2]
+        radius = params[2]
+        distances = np.array([dist_point_to_circle(point, center, radius) for point in points])
+        return np.sum(distances ** 2)
+    # Initial guess for the center and radius
+    initial_guess = np.mean(points, axis=0).tolist() + [np.max(np.linalg.norm(points - np.mean(points, axis=0)))]
+
+    # Minimize the objective function
+    result = minimize(objective_function, initial_guess, args=(points,), method='Nelder-Mead')
+
+    # Extract the optimized parameters
+    return Circle(*result.x)
+
+
+def mean(*values):
+    if len(values) == 1:
+        values = list(values[0])
+        return sum(values) / len(values)
+    return sum(values) / len(values)
 
 
 if __name__ == '__main__':
