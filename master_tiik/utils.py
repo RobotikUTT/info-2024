@@ -1,5 +1,6 @@
 from math import sin, cos, asin, acos, sqrt, pi
 from typing import Tuple, List
+from useful_class import Path
 
 
 class Line:
@@ -19,6 +20,9 @@ class Line:
         a = y1 - y0
         b = x0 - x1
         c = -a * x0 - b * y0
+        if a == b == 0:
+            print(x0, y0, x1, y1)
+            raise RuntimeError()
         return Line(a, b, c)
 
     def intersection(self, other):
@@ -30,7 +34,7 @@ class Line:
         return x, y
 
     def __str__(self):
-        return f"{self.a / -self.b}x + {self.b / -self.b}y + {self.c / -self.b} = 0"
+        return f"{self.a}x + {self.b}y + {self.c} = 0"
 
     def __repr__(self):
         return str(self)
@@ -55,24 +59,12 @@ class Circle:
         return str(self)
 
     def contains_point(self, x, y):
-        return (x - self.x) ** 2 + (y - self.y) ** 2 < self.r ** 2
-
-
-class Path:
-    def __init__(self, keypoints):
-        self.points = keypoints
-        self.length = 0
-        for i in range(1, len(keypoints)):
-            self.length += sqrt((keypoints[i][0] - keypoints[i - 1][0]) ** 2 + (keypoints[i][1] - keypoints[i - 1][1]) ** 2)
-
-    def __str__(self):
-        return f"Path({str(self.points)[1:-1]})"
-
-    def __repr__(self):
-        return str(self)
+        return (x - self.x) ** 2 + (y - self.y) ** 2 < self.r ** 2 + 0.0001
 
 
 def find_path(a: Tuple[float, float], b: Tuple[float, float], circles_to_avoid: List[Circle]):
+    if a[0] == b[0] and a[1] == b[1]:
+        return Path([])
     line = Line.from_points(a[0], a[1], b[0], b[1])
     path1_from_a = path1_from_b = path2_from_a = path2_from_b = line
     done = False

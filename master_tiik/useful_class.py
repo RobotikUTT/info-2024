@@ -53,17 +53,24 @@ class PotArea(Area):
 
 # ---------------------- DEFINE ACTION ----------------------
 
-class Turn:
-    def __init__(self, init_angle, final_angle):
-        self.init_angle = init_angle
-        self.final_angle = final_angle
+class Action:
+    def __init__(self,card,area):
+        self.card = card
+        self.movement = movement
+        self.area = area
+        
+class Path:
+    def __init__(self, keypoints):
+        self.points = keypoints
+        self.length = 0
+        for i in range(1, len(keypoints)):
+            self.length += sqrt((keypoints[i][0] - keypoints[i - 1][0]) ** 2 + (keypoints[i][1] - keypoints[i - 1][1]) ** 2)
 
+    def __str__(self):
+        return f"Path({str(self.points)[1:-1]})"
 
-class MoveForward:
-    def __init__(self, distance, direction_angle):
-        self.distance = distance
-        self.directionAngle = direction_angle
-
+    def __repr__(self):
+        return str(self)
 
 # ---------------------- DEFINE GAME CARACT  ----------------------
 
@@ -77,11 +84,8 @@ class GameState:
             PlantArea(2000, 1300),
             PlantArea(2000, 700)
         ]
-        self.garden_areas: List[GardenArea] = [
-            GardenArea(10, 10, 0),
-            GardenArea(20, 20, 0),
-            GardenArea(30, 30, 0),
-        ]
+        self.garden_areas: List[GardenArea] = []
+        self.station_areas: List[StationArea] = []
         self.pot_areas: List[PotArea] = []
         self.garden_pot_areas: List[GardenPotArea] = []
         self.robot_unpotted_plants = 0
