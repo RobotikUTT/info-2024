@@ -89,10 +89,7 @@ class GameState:
             PlantArea(2000, 1300),
             PlantArea(2000, 700)
         ]
-        self.garden_areas: List[GardenArea] = [
-            GardenArea(600, 2000 - 35, pi / 2),  # IMPORTANT PAS LES BONNES VALEURS POUR X
-            GardenArea(3000 - 600, 2000 - 35, pi / 2),  # IMPORTANT PAS LES BONNES VALEURS POUR X
-        ]
+        self.garden_areas: List[GardenArea] = []
         self.station_areas: List[StationArea] = []
         self.pot_areas: List[PotArea] = [
             PotArea(600, 2000 - 35, pi / 2),  # IMPORTANT PAS LES BONNES VALEURS POUR X
