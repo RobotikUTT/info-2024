@@ -17,7 +17,13 @@ POINTS_FOR_POT = POINTS_FOR_POTTED_PLANTS - POINTS_FOR_UNPOTTED_PLANTS
 class GameNode(a_star.Node):
     def __init__(self, game_state: GameState, is_end: bool):
         super().__init__(is_end)
-        self.game_state = copy.deepcopy(game_state)
+        self.game_state = copy.copy(game_state)
+        self.game_state.robot_unpotted_plants = game_state.robot_unpotted_plants
+        self.game_state.robot_potted_plants = game_state.robot_potted_plants
+        self.game_state.plant_areas = [copy.copy(area) for area in game_state.plant_areas]
+        self.game_state.garden_areas = [copy.copy(area) for area in game_state.garden_areas]
+        self.game_state.garden_pot_areas = [copy.copy(area) for area in game_state.garden_pot_areas]
+        self.game_state.pot_areas = [copy.copy(area) for area in game_state.pot_areas]
         self.possible_points = 0
         self.area: Area | None = None
 

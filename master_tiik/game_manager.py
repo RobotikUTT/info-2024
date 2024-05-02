@@ -16,6 +16,16 @@ blue_garden_pot_area_2 = GardenPotArea(35,450+325+450+(325/2),0)
 blue_garden_area_1 = GardenArea(3000-(600+(325/2)),0,3*pi/2)
 bonus_blue_pot_area_1 = PotArea(35,450+(325/2),pi)
 bonus_blue_pot_area_2 = PotArea(3000-35,450+325+450+(325/2),0)
+blue_specific_areas = [
+    blue_station_area_1,
+    blue_station_area_2,
+    blue_station_area_3,
+    blue_garden_pot_area_1,
+    blue_garden_pot_area_2,
+    blue_garden_area_1,
+    bonus_blue_pot_area_1,
+    bonus_blue_pot_area_2,
+]
 
 pot_area_1 = PotArea(600,2000-35,pi/2) # IMPORTANT PAS LES BONNES VALEURS POUR X
 pot_area_2 = PotArea(3000-600,2000-35,pi/2) # IMPORTANT PAS LES BONNES VALEURS POUR X
@@ -28,7 +38,17 @@ yellow_garden_pot_area_2 = GardenPotArea(3000-35,450+325+450+(325/2),0)
 yellow_garden_area_1 = GardenArea(600+(325/2),0,3*pi/2)
 bonus_yellow_pot_area_1 = PotArea(3000-35,450+(325/2),pi)
 bonus_yellow_pot_area_2 = PotArea(35,450+325+450+(325/2),0)
-        
+yellow_specific_areas = [
+    yellow_station_area_1,
+    yellow_station_area_2,
+    yellow_station_area_3,
+    yellow_garden_pot_area_1,
+    yellow_garden_pot_area_2,
+    yellow_garden_area_1,
+    bonus_yellow_pot_area_1,
+    bonus_yellow_pot_area_2,
+]
+
 # ---------------------- THREAD GAME MANAGER ----------------------
 
 class GameManager(Thread):
@@ -54,34 +74,12 @@ class GameManager(Thread):
     def define_areas(self):
         while self.color == "":
             color = input()
-            if color == "blue" :
-                self.game_state.init_areas([
-                    blue_station_area_1,
-                    blue_station_area_2,
-                    blue_station_area_3,
-                    blue_garden_pot_area_1, 
-                    blue_garden_pot_area_2,
-                    blue_garden_area_1,
-                    pot_area_1,
-                    pot_area_2,
-                    bonus_blue_pot_area_1,
-                    bonus_blue_pot_area_2
-                ])
+            if color == "blue":
+                self.game_state.init_areas(blue_specific_areas, yellow_specific_areas)
                 print("Color Blue Selected")
                 self.color = "blue"
             elif color == "yellow":
-                self.game_state.init_areas([
-                    yellow_station_area_1,
-                    yellow_station_area_2,
-                    yellow_station_area_3,
-                    yellow_garden_pot_area_1, 
-                    yellow_garden_pot_area_2,
-                    yellow_garden_area_1,
-                    pot_area_1,
-                    pot_area_2,
-                    bonus_yellow_pot_area_1,
-                    bonus_yellow_pot_area_2
-                ])
+                self.game_state.init_areas(yellow_specific_areas, blue_specific_areas)
                 print("Color Yellow Selected")
                 self.color = "yellow"
             else :

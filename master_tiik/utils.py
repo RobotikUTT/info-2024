@@ -2,6 +2,8 @@ from math import sin, cos, asin, acos, sqrt, pi
 from typing import Tuple, List
 from useful_class import Path
 
+from master_tiik.debug_utils import TimeIt
+
 
 class Line:
     def __init__(self, a, b, c):

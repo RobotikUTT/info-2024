@@ -3,6 +3,8 @@ import random
 import uuid
 from typing import List
 
+from master_tiik.utils import Circle
+
 
 class Area:
     def __init__(self, center_x, center_y, radius, time_spent):
@@ -10,6 +12,7 @@ class Area:
         self.center_x = center_x
         self.center_y = center_y
         self.radius = radius
+        self.circle = Circle(center_x, center_y, radius)
         self.time_spent = time_spent
 
     def __repr__(self):
@@ -88,10 +91,11 @@ class GameState:
         self.station_areas: List[StationArea] = []
         self.pot_areas: List[PotArea] = []
         self.garden_pot_areas: List[GardenPotArea] = []
+        self.areas_to_avoid: List[Area] = []
         self.robot_unpotted_plants = 0
         self.robot_potted_plants = 0
 
-    def init_areas(self, areas):
+    def init_areas(self, areas, areas_to_avoid):
         for area in areas:
             if isinstance(area, PlantArea):
                 self.plant_areas.append(area)
@@ -101,12 +105,15 @@ class GameState:
                 self.pot_areas.append(area)
             elif isinstance(area, GardenPotArea):
                 self.garden_pot_areas.append(area)
+        self.areas_to_avoid.extend(areas_to_avoid)
 
     def to_tuple(self):
         return (self.robot_unpotted_plants,
                 *[(area.center_x, area.center_y, area.plants) for area in self.plant_areas],
-                *[(area.center_x, area.center_y, area.plants) for area in self.garden_areas])
+                *[(area.center_x, area.center_y, area.plants) for area in self.garden_areas],
+                *[(area.center_x, area.center_y, area.pots) for area in self.pot_areas],
+                *[(area.center_x, area.center_y, area.pots) for area in self.garden_pot_areas])
 
     @property
     def areas(self):
-        return self.plant_areas + self.garden_areas + self.pot_areas + self.garden_pot_areas
+        return self.plant_areas + self.garden_areas + self.pot_areas + self.garden_pot_areas + self.areas_to_avoid
