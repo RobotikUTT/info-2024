@@ -1,13 +1,8 @@
 import find_best_strategy as strat
 from threading import Thread
 import time
-<<<<<<< HEAD
-from useful_class import StationArea, GardenArea, GardenPotArea, GameState, PotArea
-from math import pi
-=======
 from useful_class import StationArea, GardenArea, GardenPotArea, GameState, PotArea, Path
 from math import pi, atan, sqrt
->>>>>>> 5719a45 (WIP: added serial communication)
 
 distance_tiik_pot = 14
 
