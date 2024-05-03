@@ -1,6 +1,6 @@
 import sys
 from collections.abc import Callable
-from math import acos, inf, pi, sin, sqrt, cos, radians
+from math import acos, inf, pi, sin, sqrt, cos, radians, atan2
 from threading import Thread, RLock
 from typing import Iterable, List, Mapping, Tuple
 from serial import Serial
@@ -48,7 +48,7 @@ class ObjectData:
 
 
 class PointData:
-    def __init__(self, angle, distance, robot_position, robot_angle, measured_at=0):
+    def __init__(self, angle, distance, robot_position: Tuple[int, int], robot_angle, measured_at=0):
         # The try except will always crash (if it does not there is a problem ^^)
         # It is used for auto-completion in IDEs
         try:
@@ -78,10 +78,10 @@ class PointData:
 
     @staticmethod
     def invert(position: Point, robot_position: Point, robot_angle: float) -> "PointData":
-        distance = abs(position - robot_position)
-        angle = acos((position.x - robot_position[0]) / distance) - robot_angle
-        if robot_position.y < position.y:
-            angle += pi
+        dx = position.x - robot_position.x
+        dy = position.y - robot_position.y
+        distance = (dx ** 2 + dy ** 2) ** 0.5
+        angle = (atan2(dy, dx) - robot_angle) % (2 * pi)
         return PointData(angle, distance, (robot_position.x, robot_position.y), robot_angle, 0)
 
 # ---------------------- DEFINE LIDAR SERCICE ----------------------
