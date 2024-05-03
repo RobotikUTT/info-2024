@@ -9,6 +9,7 @@ import numpy as np
 from scipy.optimize import minimize
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
+import position
 
 from master_tiik.utils import Point
 
@@ -126,12 +127,12 @@ class LidarService(Thread):
             else :
                 dataList.append(dataTreated)
     
-    def parse_data(self, data_list: List[int]):
-        speed = (data_list[1] << 8 | data_list[0]) / 36000 * 2 * pi
-        start_angle = float(data_list[3] << 8 | data_list[2]) / 100
-        last_angle = float(data_list[-4] << 8 | data_list[-5]) / 100
-        if last_angle > start_angle:
-            step = float(last_angle - start_angle) / 12
+    def sortData(self,dataList):
+        speed = (dataList[1]<<8 | dataList[0])/100
+        startAngle = float(dataList[3]<<8 | dataList[2])/100
+        lastAngle = float(dataList[-4]<<8 | dataList[-5])/100
+        if (lastAngle > startAngle) :
+            step = float(lastAngle - startAngle)/12
         else : 
             step = float(last_angle + 2 * pi - start_angle) / 12
         
@@ -184,10 +185,30 @@ class DetectionService(Thread):
             self.values = self.data_stocker.get_values()
             if len(self.values) == 0:
                 continue
-            treat_distances = [point for point in self.values if point.distance < 730 and point.angle > 3 and point.distance > 200 ]
+            treat_distances = [point for point in self.values if point.distance < 730 and point.distance > 200 ]
+            print(treat_distances)
+    
+if __name__ == "__main__":
+    position_service = position.PositionService()
+    data_stocker = DataStocker()
+    lidar_service = LidarService(position_service, data_stocker)
+    detection_service = DetectionService(data_stocker)
+    
+    positionThread = position_service
+    positionThread.start()
 
-if __name__ == '__main__':
-    p = PointData(0, 0, (0, 0), 0, 0)
-    p.x = 1
-    print(p.x)
+    dataThread = data_stocker
+    dataThread.start()
+
+    lidarThread = lidar_service
+    lidarThread.start()
+
+    detectionThread = detection_service
+    detectionThread.start()
+
+    positionThread.join()
+    dataThread.join()
+    lidarThread.join()
+    detectionThread.join()
+    detectionThread.join()
     
