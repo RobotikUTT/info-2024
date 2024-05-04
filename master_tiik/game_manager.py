@@ -1,8 +1,11 @@
 import find_best_strategy as strat
 from threading import Thread
 import time
-from useful_class import StationArea, GardenArea, GardenPotArea, GameState, PotArea, Path
-from math import pi, atan, sqrt
+
+from communication import CommunicationService
+from master_tiik.utils import Line, Point
+from useful_class import StationArea, GardenArea, GardenPotArea, GameState, PotArea, Path, PlantArea, Area, Action
+from math import pi, atan, sqrt, atan2
 
 distance_tiik_pot = 14
 
@@ -49,7 +52,7 @@ yellow_specific_areas = [
 # ---------------------- THREAD GAME MANAGER ----------------------
 
 class GameManager(Thread):
-    def __init__(self,com_service,position_service):
+    def __init__(self, com_service: CommunicationService, position_service):
         super().__init__()
         self.actions = []
         self.action_running = False
@@ -62,11 +65,10 @@ class GameManager(Thread):
     def run(self):
         print("game manager ... ", "ready to operate")
         self.define_areas()
-        while True :
-            for area in strat.find_best_strategy(self.game_state):
-                define_next_actions()
-                wait_end_action()
-                
+        while True:
+            for area, path in strat.find_best_strategy(self.game_state):
+                self.define_next_actions(area, path)
+                self.wait_end_action()
 
     def define_areas(self):
         while self.color == "":
@@ -81,12 +83,17 @@ class GameManager(Thread):
                 self.color = "yellow"
             else :
                 print("Still no color")
-            
 
-    def define_next_actions(self,next_area):
+    def define_next_actions(self, element: Area, path: Path):
+        for point in path.points[:-1]:
+            self.actions.append((point[0], point[1], None))
+        last_point = Point(path.points[-2][0], path.points[-2][1])
+        destination = Point(path.points[-1][0], path.points[-1][1])
+        distance = destination - last_point
+        destination = destination + (destination - last_point) / distance * element.radius
+        self.actions.append((destination.x, destination.y, atan2(destination.y - last_point.y, destination.x - last_point.x)))
         if isinstance(element, PlantArea):
-            self.actions.append(Action(1,2,[element.center_x,element.center_y,element.radius]))
-            self.actions.append(Action(2,0,[])) # trouver les plantes et les prendre
+            pass
         elif isinstance(element, GardenArea):
             pass
         elif isinstance(element, PotArea):
@@ -99,14 +106,16 @@ class GameManager(Thread):
             pass
         elif isinstance(element, GardenPotArea):
             pass
-        
 
     def wait_end_action(self):
         while self.action_running:
             self.define_action_state()
             time.sleep(0.1)
-        
+
+    def define_action_state(self):
+        self.action_running = self.com_service.receive_data()
+
     def sent_action(self):
-        pass
+        self.com_service.send_data(self.actions.pop(0))
         
         

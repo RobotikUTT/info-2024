@@ -58,7 +58,7 @@ class PotArea(Area):
 # ---------------------- DEFINE ACTION ----------------------
 
 class Action:
-    def __init__(self,card,area):
+    def __init__(self, card, area, movement):
         self.card = card
         self.movement = movement
         self.area = area
