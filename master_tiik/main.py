@@ -1,21 +1,21 @@
 import detection as eyes
 import game_manager as game
-import i2c_com as i2c
+import communication as com
 import position
 
 if __name__ == "__main__":
-    i2c_service = i2c.I2CService()
+    com_service = com.CommunicationService()
     position_service = position.PositionService()
     data_stocker = eyes.DataStocker()
     lidar_service = eyes.LidarService(position_service, data_stocker)
     detection_service = eyes.DetectionService(data_stocker)
-    game_manager = game.GameManager(i2c_service)
+    game_manager = game.GameManager(com_service,position_service)
     
     positionThread = position_service
     positionThread.start()
     
-    i2cThread = i2c_service
-    i2cThread.start()
+    comThread = com_service
+    comThread.start()
     
     gameThread = game_manager
     gameThread.start()

@@ -1,5 +1,6 @@
+import sys
 from collections.abc import Callable
-from math import acos, inf, pi, sin, sqrt, cos, radians
+from math import acos, inf, pi, sin, sqrt, cos, radians, atan2
 from threading import Thread, RLock
 from typing import Iterable, List, Mapping, Tuple
 from serial import Serial
@@ -8,6 +9,9 @@ import numpy as np
 from scipy.optimize import minimize
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
+import position
+
+from master_tiik.utils import Point
 
 PACKET_SIZE = 47
 DELETE_POINTS_TIMEOUT = 1
@@ -45,7 +49,22 @@ class ObjectData:
 
 
 class PointData:
-    def __init__(self, angle, distance, robot_position, robot_angle, measured_at):
+    def __init__(self, angle, distance, robot_position: Tuple[int, int], robot_angle, measured_at=0):
+        # The try except will always crash (if it does not there is a problem ^^)
+        # It is used for auto-completion in IDEs
+        try:
+            self.angle = angle
+            self.distance = distance
+            self.robot_position = robot_position
+            self.robot_angle = robot_angle
+            self.x = cos(robot_angle + angle) * distance + robot_position[0]
+            self.y = sin(robot_angle + angle) * distance + robot_position[1]
+            self.absolute_angle = (robot_angle + angle) % (2 * pi)
+            self.measured_at = measured_at
+        except TypeError:
+            pass
+        else:
+            print("PointData is not immutable, it should be", file=sys.stderr)  # There is never too much error prevention
         super().__setattr__("angle", angle)
         super().__setattr__("distance", distance)
         super().__setattr__("robot_position", robot_position)
@@ -57,6 +76,14 @@ class PointData:
 
     def __setattr__(self, name: str, value: time) -> None:
         raise TypeError("PointData is immutable")
+
+    @staticmethod
+    def invert(position: Point, robot_position: Point, robot_angle: float) -> "PointData":
+        dx = position.x - robot_position.x
+        dy = position.y - robot_position.y
+        distance = (dx ** 2 + dy ** 2) ** 0.5
+        angle = (atan2(dy, dx) - robot_angle) % (2 * pi)
+        return PointData(angle, distance, (robot_position.x, robot_position.y), robot_angle, 0)
 
 # ---------------------- DEFINE LIDAR SERCICE ----------------------
 
@@ -89,7 +116,7 @@ class LidarService(Thread):
                             robot_position = self.position_service.get_position()
                             robot_angle = self.position_service.get_angle()
                             now = time.time()
-                            formatted = self.sortData(dataList)
+                            formatted = self.parse_data(dataList)
                             values = []
                             for distance, angle, confidence in zip(*formatted):
                                 values.append(PointData(radians(angle%360), distance, robot_position, robot_angle, now))
@@ -99,27 +126,25 @@ class LidarService(Thread):
                         dataList = []
             else :
                 dataList.append(dataTreated)
-    def get_values(self):
-        return self.values
     
-    def sortData(dataList):
+    def sortData(self,dataList):
         speed = (dataList[1]<<8 | dataList[0])/100
         startAngle = float(dataList[3]<<8 | dataList[2])/100
         lastAngle = float(dataList[-4]<<8 | dataList[-5])/100
         if (lastAngle > startAngle) :
             step = float(lastAngle - startAngle)/12
         else : 
-            step = float(lastAngle + 360 - startAngle)/12
+            step = float(last_angle + 2 * pi - start_angle) / 12
         
-        angleList = []
-        distanceList = []
-        confidenceList = []
-        
-        for i in range (0,12):
-            distanceList.append(dataList[4+(i*3)+1] << 8 | dataList[4+(i*3)])
-            confidenceList.append(dataList[4+(i*3)+2])
-            angleList.append(step*i + startAngle)
-        return (distanceList,angleList, confidenceList)
+        angle_list = []
+        distance_list = []
+        confidence_list = []
+
+        for i in range(0, 12):
+            distance_list.append(data_list[4 + (i * 3) + 1] << 8 | data_list[4 + (i * 3)])
+            confidence_list.append(data_list[4 + (i * 3) + 2])
+            angle_list.append(step * i + start_angle)
+        return distance_list, angle_list, confidence_list
         
 # ---------------------- DEFINE DATA STOCKER ----------------------
 
@@ -160,7 +185,30 @@ class DetectionService(Thread):
             self.values = self.data_stocker.get_values()
             if len(self.values) == 0:
                 continue
-            treat_distances = [point for point in self.values if point.distance < 730 and point.angle > 3 and point.distance > 200 ]
-
+            treat_distances = [point for point in self.values if point.distance < 730 and point.distance > 200 ]
+            print(treat_distances)
     
+if __name__ == "__main__":
+    position_service = position.PositionService()
+    data_stocker = DataStocker()
+    lidar_service = LidarService(position_service, data_stocker)
+    detection_service = DetectionService(data_stocker)
+    
+    positionThread = position_service
+    positionThread.start()
+
+    dataThread = data_stocker
+    dataThread.start()
+
+    lidarThread = lidar_service
+    lidarThread.start()
+
+    detectionThread = detection_service
+    detectionThread.start()
+
+    positionThread.join()
+    dataThread.join()
+    lidarThread.join()
+    detectionThread.join()
+    detectionThread.join()
     

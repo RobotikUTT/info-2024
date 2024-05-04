@@ -2,6 +2,8 @@ import heapq
 import time
 from typing import List, Tuple
 
+from master_tiik.debug_utils import TimeIt
+
 
 class Node:
     def __init__(self, is_end):
@@ -40,13 +42,18 @@ class NodeData:
 def a_star(start_node: Node, null_cost: Cost, stop_after=1000, stop_on_path_ends=False):
     opened_nodes: List[(int, int, Node | None)] = [(null_cost, 0, start_node)]
     heapq.heapify(opened_nodes)
+    heapq_counter = 1
+    opened_nodes_set = {hash(start_node)}  # Faster to verify if a node is in the opened_nodes
     closed_nodes = set()
     nodes_data = {start_node: NodeData(start_node, null_cost, None)}
-    heapq_counter = 1
     while len(opened_nodes):
         current_node: Node | None = None
         while (current_node is None or current_node in closed_nodes) and len(opened_nodes):
             current_node = heapq.heappop(opened_nodes)[2]
+            # For now, this is slower by removing the node from the set.
+            # You can try to uncomment this and check if it's faster in the future.
+            # if current_node in opened_nodes_set:
+            #    opened_nodes_set.remove(hash(current_node))
         if current_node is None:
             break
         current_node_data = nodes_data[current_node]
@@ -65,10 +72,11 @@ def a_star(start_node: Node, null_cost: Cost, stop_after=1000, stop_on_path_ends
             if node in closed_nodes:
                 continue
             new_node_data = NodeData(node, cost, current_node_data)
-            if node not in opened_nodes or nodes_data[node].cost.as_number() > new_node_data.cost.as_number():
+            if hash(node) not in opened_nodes_set or nodes_data[node].cost.as_number() > new_node_data.cost.as_number():
                 nodes_data[node] = new_node_data
                 heapq.heappush(opened_nodes, (new_node_data.cost.as_number(), heapq_counter, node))
                 heapq_counter += 1
+                opened_nodes_set.add(hash(node))
                 continue
     if not len(closed_nodes):
         return None

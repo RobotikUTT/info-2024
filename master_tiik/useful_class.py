@@ -1,7 +1,10 @@
 # ---------------------- DEFINE AREA CARACT ----------------------
 import random
 import uuid
+from math import pi, sqrt
 from typing import List
+
+from master_tiik.utils import Circle
 
 
 class Area:
@@ -10,6 +13,7 @@ class Area:
         self.center_x = center_x
         self.center_y = center_y
         self.radius = radius
+        self.circle = Circle(center_x, center_y, radius)
         self.time_spent = time_spent
 
     def __repr__(self):
@@ -53,17 +57,25 @@ class PotArea(Area):
 
 # ---------------------- DEFINE ACTION ----------------------
 
-class Turn:
-    def __init__(self, init_angle, final_angle):
-        self.init_angle = init_angle
-        self.final_angle = final_angle
+class Action:
+    def __init__(self, card, area, movement):
+        self.card = card
+        self.movement = movement
+        self.area = area
 
+        
+class Path:
+    def __init__(self, keypoints):
+        self.points = keypoints
+        self.length = 0
+        for i in range(1, len(keypoints)):
+            self.length += sqrt((keypoints[i][0] - keypoints[i - 1][0]) ** 2 + (keypoints[i][1] - keypoints[i - 1][1]) ** 2)
 
-class MoveForward:
-    def __init__(self, distance, direction_angle):
-        self.distance = distance
-        self.directionAngle = direction_angle
+    def __str__(self):
+        return f"Path({str(self.points)[1:-1]})"
 
+    def __repr__(self):
+        return str(self)
 
 # ---------------------- DEFINE GAME CARACT  ----------------------
 
@@ -77,17 +89,18 @@ class GameState:
             PlantArea(2000, 1300),
             PlantArea(2000, 700)
         ]
-        self.garden_areas: List[GardenArea] = [
-            GardenArea(10, 10, 0),
-            GardenArea(20, 20, 0),
-            GardenArea(30, 30, 0),
+        self.garden_areas: List[GardenArea] = []
+        self.station_areas: List[StationArea] = []
+        self.pot_areas: List[PotArea] = [
+            PotArea(600, 2000 - 35, pi / 2),  # IMPORTANT PAS LES BONNES VALEURS POUR X
+            PotArea(3000 - 600, 2000 - 35, pi / 2),  # IMPORTANT PAS LES BONNES VALEURS POUR X
         ]
-        self.pot_areas: List[PotArea] = []
         self.garden_pot_areas: List[GardenPotArea] = []
+        self.areas_to_avoid: List[Area] = []
         self.robot_unpotted_plants = 0
         self.robot_potted_plants = 0
 
-    def init_areas(self, areas):
+    def init_areas(self, areas, areas_to_avoid):
         for area in areas:
             if isinstance(area, PlantArea):
                 self.plant_areas.append(area)
@@ -97,12 +110,15 @@ class GameState:
                 self.pot_areas.append(area)
             elif isinstance(area, GardenPotArea):
                 self.garden_pot_areas.append(area)
+        self.areas_to_avoid.extend(areas_to_avoid)
 
     def to_tuple(self):
         return (self.robot_unpotted_plants,
                 *[(area.center_x, area.center_y, area.plants) for area in self.plant_areas],
-                *[(area.center_x, area.center_y, area.plants) for area in self.garden_areas])
+                *[(area.center_x, area.center_y, area.plants) for area in self.garden_areas],
+                *[(area.center_x, area.center_y, area.pots) for area in self.pot_areas],
+                *[(area.center_x, area.center_y, area.pots) for area in self.garden_pot_areas])
 
     @property
     def areas(self):
-        return self.plant_areas + self.garden_areas + self.pot_areas + self.garden_pot_areas
+        return self.plant_areas + self.garden_areas + self.pot_areas + self.garden_pot_areas + self.areas_to_avoid
