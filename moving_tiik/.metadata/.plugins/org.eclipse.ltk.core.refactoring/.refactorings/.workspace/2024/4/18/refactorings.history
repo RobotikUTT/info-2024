@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;moving_tiik_f401re&apos; to &apos;moving_tiik&apos;" description="Rename resource &apos;moving_tiik_f401re&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/moving_tiik_f401re" name="moving_tiik" stamp="1714402176461" updateReferences="true"/>
+</session>
