@@ -1,0 +1,1068 @@
+2024-05-01 13:55:29,428 [WARN] IP:2120 - SMBusAnalogFilter not found: check if there is a RefParameter without a condition.
+2024-05-01 13:55:30,759 [WARN] IP:2120 - SMBusAnalogFilter not found: check if there is a RefParameter without a condition.
+2024-05-01 13:55:30,947 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 13:55:30,997 [WARN] IP:2120 - SMBusAnalogFilter not found: check if there is a RefParameter without a condition.
+2024-05-01 13:55:31,027 [WARN] IP:2120 - SMBusAnalogFilter not found: check if there is a RefParameter without a condition.
+2024-05-01 13:55:34,501 [WARN] IP:2120 - SMBusAnalogFilter not found: check if there is a RefParameter without a condition.
+2024-05-01 13:55:34,502 [WARN] IP:2120 - SMBusOwnAddress not found: check if there is a RefParameter without a condition.
+2024-05-01 13:55:34,502 [WARN] IP:2120 - SMBusAnalogFilter not found: check if there is a RefParameter without a condition.
+2024-05-01 13:55:34,502 [WARN] IP:2120 - SMBusOwnAddress not found: check if there is a RefParameter without a condition.
+2024-05-01 13:55:34,533 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 13:55:34,560 [WARN] IP:2120 - SMBusAnalogFilter not found: check if there is a RefParameter without a condition.
+2024-05-01 13:55:34,560 [WARN] IP:2120 - SMBusOwnAddress not found: check if there is a RefParameter without a condition.
+2024-05-01 13:55:34,566 [WARN] IP:2120 - SMBusAnalogFilter not found: check if there is a RefParameter without a condition.
+2024-05-01 13:55:34,566 [WARN] IP:2120 - SMBusOwnAddress not found: check if there is a RefParameter without a condition.
+2024-05-01 13:55:42,339 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 696158216 Bytes (1073741824)
+2024-05-01 13:55:49,335 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 674424592 Bytes (1073741824)
+2024-05-01 13:55:58,123 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 731654952 Bytes (1073741824)
+2024-05-01 13:55:58,492 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-05-01 13:55:58,492 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-05-01 13:55:58,492 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 13:55:58,492 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 13:55:58,492 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 13:55:58,492 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 13:55:58,492 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 13:55:58,492 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-05-01 13:55:58,493 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-05-01 13:55:58,493 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: ADC
+2024-05-01 13:55:58,493 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-05-01 13:55:58,493 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2024-05-01 13:55:58,495 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.0.202403141607\\db\
+2024-05-01 13:55:58,502 [WARN] IP:2120 - SMBusAnalogFilter not found: check if there is a RefParameter without a condition.
+2024-05-01 13:55:58,502 [WARN] IP:2120 - SMBusOwnAddress not found: check if there is a RefParameter without a condition.
+2024-05-01 13:55:58,664 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp_save
+2024-05-01 13:55:59,164 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp
+2024-05-01 13:55:59,253 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp_save
+2024-05-01 13:55:59,505 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp
+2024-05-01 13:56:00,254 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c_save
+2024-05-01 13:56:00,535 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c
+2024-05-01 13:56:00,569 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h_save
+2024-05-01 13:56:00,674 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h
+2024-05-01 13:56:00,735 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c_save
+2024-05-01 13:56:00,936 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c
+2024-05-01 13:56:00,943 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp_save
+2024-05-01 13:56:01,027 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp
+2024-05-01 13:56:01,067 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-05-01 13:56:01,199 [INFO] CodeEngine:335 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h
+2024-05-01 13:56:01,257 [WARN] IPConfigManager:3513 - IP not found : TIM
+2024-05-01 13:56:01,258 [WARN] CodeGenerator:3951 - IP not found : null
+2024-05-01 13:56:01,305 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h_save
+2024-05-01 13:56:01,474 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h
+2024-05-01 13:56:01,505 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c_save
+2024-05-01 13:56:01,735 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c
+2024-05-01 13:56:02,531 [INFO] ProjectBuilder:3163 - Time for Copy HAL[1] : 418mS.
+2024-05-01 13:56:02,536 [INFO] ProjectBuilder:4736 - Project Generator version: 4.3.0-B58
+2024-05-01 13:56:02,696 [INFO] ConfigFileManager:1503 - The Die is : DIE433
+2024-05-01 13:56:04,658 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 2122mS.
+2024-05-01 13:56:04,659 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 1mS.
+2024-05-01 13:56:04,662 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-05-01 13:56:40,671 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 13:56:58,296 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 13:57:03,331 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 13:57:27,266 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 13:57:38,204 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 13:57:44,922 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 13:57:49,540 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 13:59:14,574 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 799455168 Bytes (1073741824)
+2024-05-01 13:59:17,109 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 819904448 Bytes (1073741824)
+2024-05-01 13:59:17,452 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 871284672 Bytes (1073741824)
+2024-05-01 13:59:17,688 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-05-01 13:59:17,689 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-05-01 13:59:17,689 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 13:59:17,689 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 13:59:17,689 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 13:59:17,689 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 13:59:17,689 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 13:59:17,689 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-05-01 13:59:17,689 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-05-01 13:59:17,689 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: ADC
+2024-05-01 13:59:17,689 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-05-01 13:59:17,690 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.0.202403141607\\db\
+2024-05-01 13:59:17,808 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp_save
+2024-05-01 13:59:18,043 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp
+2024-05-01 13:59:18,076 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp_save
+2024-05-01 13:59:18,294 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp
+2024-05-01 13:59:19,547 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c_save
+2024-05-01 13:59:20,137 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c
+2024-05-01 13:59:20,184 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h_save
+2024-05-01 13:59:20,394 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h
+2024-05-01 13:59:20,668 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c_save
+2024-05-01 13:59:20,888 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c
+2024-05-01 13:59:20,907 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp_save
+2024-05-01 13:59:20,995 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp
+2024-05-01 13:59:21,029 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-05-01 13:59:21,177 [INFO] CodeEngine:335 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h
+2024-05-01 13:59:21,241 [WARN] IPConfigManager:3513 - IP not found : TIM
+2024-05-01 13:59:21,242 [WARN] CodeGenerator:3951 - IP not found : null
+2024-05-01 13:59:21,260 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h_save
+2024-05-01 13:59:21,370 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h
+2024-05-01 13:59:21,387 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c_save
+2024-05-01 13:59:21,857 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c
+2024-05-01 13:59:22,290 [INFO] ProjectBuilder:3163 - Time for Copy HAL[1] : 227mS.
+2024-05-01 13:59:22,294 [INFO] ProjectBuilder:4736 - Project Generator version: 4.3.0-B58
+2024-05-01 13:59:22,378 [INFO] ConfigFileManager:1503 - The Die is : DIE433
+2024-05-01 13:59:23,526 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 1232mS.
+2024-05-01 13:59:23,527 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-05-01 13:59:23,530 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-05-01 14:16:38,660 [INFO] DmaTabbedPanel:205 - Cannot restore the selected Tab for DMA
+2024-05-01 14:16:43,408 [INFO] Gpio:277 - dependency for GPIO [ADC1, RCC, SYS, TIM1, TIM3, TIM4, USART2]
+2024-05-01 14:17:04,899 [INFO] Gpio:277 - dependency for GPIO [ADC1, RCC, SYS, TIM1, TIM3, TIM4, USART2]
+2024-05-01 14:17:04,975 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 14:17:09,153 [INFO] Gpio:277 - dependency for GPIO [ADC1, RCC, SYS, TIM1, TIM3, TIM4, USART2]
+2024-05-01 14:17:09,219 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 14:17:34,713 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:17:34,713 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:17:34,713 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:17:34,713 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:17:34,786 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:17:34,786 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:18:08,663 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 813106680 Bytes (1073741824)
+2024-05-01 14:18:11,286 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 829361656 Bytes (1073741824)
+2024-05-01 14:18:13,054 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 898041336 Bytes (1073741824)
+2024-05-01 14:18:13,295 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-05-01 14:18:13,295 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-05-01 14:18:13,295 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:18:13,295 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:18:13,295 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:18:13,295 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:18:13,295 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:18:13,295 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-05-01 14:18:13,295 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-05-01 14:18:13,295 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: ADC
+2024-05-01 14:18:13,295 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-05-01 14:18:13,295 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2024-05-01 14:18:13,296 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.0.202403141607\\db\
+2024-05-01 14:18:13,302 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:18:13,302 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:18:13,434 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp_save
+2024-05-01 14:18:13,626 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp
+2024-05-01 14:18:13,684 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp_save
+2024-05-01 14:18:13,892 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp
+2024-05-01 14:18:14,503 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c_save
+2024-05-01 14:18:14,754 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c
+2024-05-01 14:18:14,770 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h_save
+2024-05-01 14:18:14,855 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h
+2024-05-01 14:18:14,884 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c_save
+2024-05-01 14:18:15,164 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c
+2024-05-01 14:18:15,180 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp_save
+2024-05-01 14:18:15,248 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp
+2024-05-01 14:18:15,298 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-05-01 14:18:15,451 [INFO] CodeEngine:335 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h
+2024-05-01 14:18:15,510 [WARN] IPConfigManager:3513 - IP not found : TIM
+2024-05-01 14:18:15,511 [WARN] CodeGenerator:3951 - IP not found : null
+2024-05-01 14:18:15,532 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h_save
+2024-05-01 14:18:15,657 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h
+2024-05-01 14:18:15,675 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c_save
+2024-05-01 14:18:15,868 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c
+2024-05-01 14:18:16,350 [INFO] ProjectBuilder:3163 - Time for Copy HAL[1] : 273mS.
+2024-05-01 14:18:16,354 [INFO] ProjectBuilder:4736 - Project Generator version: 4.3.0-B58
+2024-05-01 14:18:16,439 [INFO] ConfigFileManager:1503 - The Die is : DIE433
+2024-05-01 14:18:18,146 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 1792mS.
+2024-05-01 14:18:18,146 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-05-01 14:18:18,150 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-05-01 14:18:31,123 [INFO] Gpio:277 - dependency for GPIO [ADC1, I2C1, RCC, SYS, TIM1, TIM3, TIM4, USART2]
+2024-05-01 14:19:21,447 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 741350120 Bytes (1073741824)
+2024-05-01 14:19:23,021 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 800154456 Bytes (1073741824)
+2024-05-01 14:19:25,092 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 847047656 Bytes (1073741824)
+2024-05-01 14:19:25,291 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-05-01 14:19:25,291 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-05-01 14:19:25,292 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:19:25,292 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:19:25,292 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:19:25,292 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:19:25,292 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:19:25,292 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-05-01 14:19:25,292 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-05-01 14:19:25,292 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: ADC
+2024-05-01 14:19:25,292 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-05-01 14:19:25,292 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2024-05-01 14:19:25,293 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.0.202403141607\\db\
+2024-05-01 14:19:25,299 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:19:25,299 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:19:25,474 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp_save
+2024-05-01 14:19:25,602 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp
+2024-05-01 14:19:25,652 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp_save
+2024-05-01 14:19:25,775 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp
+2024-05-01 14:19:26,207 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c_save
+2024-05-01 14:19:26,306 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c
+2024-05-01 14:19:26,314 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h_save
+2024-05-01 14:19:26,380 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h
+2024-05-01 14:19:26,408 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c_save
+2024-05-01 14:19:26,611 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c
+2024-05-01 14:19:26,629 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp_save
+2024-05-01 14:19:26,703 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp
+2024-05-01 14:19:26,758 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-05-01 14:19:26,868 [INFO] CodeEngine:335 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h
+2024-05-01 14:19:26,912 [WARN] IPConfigManager:3513 - IP not found : TIM
+2024-05-01 14:19:26,912 [WARN] CodeGenerator:3951 - IP not found : null
+2024-05-01 14:19:26,957 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h_save
+2024-05-01 14:19:27,035 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h
+2024-05-01 14:19:27,052 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c_save
+2024-05-01 14:19:27,237 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c
+2024-05-01 14:19:27,663 [INFO] ProjectBuilder:3163 - Time for Copy HAL[1] : 220mS.
+2024-05-01 14:19:27,667 [INFO] ProjectBuilder:4736 - Project Generator version: 4.3.0-B58
+2024-05-01 14:19:27,764 [INFO] ConfigFileManager:1503 - The Die is : DIE433
+2024-05-01 14:19:29,080 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 1413mS.
+2024-05-01 14:19:29,081 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 1mS.
+2024-05-01 14:19:29,084 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-05-01 14:19:51,854 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:19:51,854 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:19:59,299 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:19:59,300 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:19:59,300 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:19:59,300 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:19:59,326 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 14:19:59,358 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:19:59,358 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:19:59,367 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:19:59,367 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:20:04,740 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:20:04,740 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:20:04,740 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:20:04,740 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:20:04,768 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 14:20:04,795 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:20:04,795 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:20:04,802 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:20:04,802 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:20:10,324 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 909280792 Bytes (1073741824)
+2024-05-01 14:20:12,419 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 839084688 Bytes (1073741824)
+2024-05-01 14:20:14,914 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 899946456 Bytes (1073741824)
+2024-05-01 14:20:15,167 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-05-01 14:20:15,167 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-05-01 14:20:15,167 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:20:15,168 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:20:15,168 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:20:15,168 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:20:15,168 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:20:15,168 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-05-01 14:20:15,168 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-05-01 14:20:15,168 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: ADC
+2024-05-01 14:20:15,168 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-05-01 14:20:15,168 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2024-05-01 14:20:15,169 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.0.202403141607\\db\
+2024-05-01 14:20:15,175 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:20:15,175 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:20:15,295 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp_save
+2024-05-01 14:20:15,403 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp
+2024-05-01 14:20:15,439 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp_save
+2024-05-01 14:20:15,555 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp
+2024-05-01 14:20:16,022 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c_save
+2024-05-01 14:20:16,133 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c
+2024-05-01 14:20:16,140 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h_save
+2024-05-01 14:20:16,207 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h
+2024-05-01 14:20:16,236 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c_save
+2024-05-01 14:20:16,371 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c
+2024-05-01 14:20:16,377 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp_save
+2024-05-01 14:20:16,439 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp
+2024-05-01 14:20:16,462 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-05-01 14:20:16,587 [INFO] CodeEngine:335 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h
+2024-05-01 14:20:16,632 [WARN] IPConfigManager:3513 - IP not found : TIM
+2024-05-01 14:20:16,633 [WARN] CodeGenerator:3951 - IP not found : null
+2024-05-01 14:20:16,675 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h_save
+2024-05-01 14:20:16,759 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h
+2024-05-01 14:20:16,785 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c_save
+2024-05-01 14:20:17,022 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c
+2024-05-01 14:20:17,533 [INFO] ProjectBuilder:3163 - Time for Copy HAL[1] : 234mS.
+2024-05-01 14:20:17,538 [INFO] ProjectBuilder:4736 - Project Generator version: 4.3.0-B58
+2024-05-01 14:20:17,633 [INFO] ConfigFileManager:1503 - The Die is : DIE433
+2024-05-01 14:20:18,880 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 1342mS.
+2024-05-01 14:20:18,881 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-05-01 14:20:18,890 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 1mS.
+2024-05-01 14:21:02,953 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:21:02,953 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:21:02,954 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:21:02,954 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:21:02,993 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 14:21:03,022 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:21:03,022 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:21:03,031 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:21:03,031 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:21:53,298 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:21:53,298 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:21:53,299 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:21:53,299 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:21:53,325 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 14:21:53,356 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:21:53,356 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:21:53,364 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:21:53,364 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:22:00,314 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 703669536 Bytes (1073741824)
+2024-05-01 14:22:01,992 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 938952160 Bytes (1073741824)
+2024-05-01 14:22:04,604 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 891437512 Bytes (1073741824)
+2024-05-01 14:22:04,896 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-05-01 14:22:04,896 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-05-01 14:22:04,896 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:22:04,896 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:22:04,896 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:22:04,896 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:22:04,896 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:22:04,896 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-05-01 14:22:04,896 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-05-01 14:22:04,896 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: ADC
+2024-05-01 14:22:04,896 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-05-01 14:22:04,896 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2024-05-01 14:22:04,897 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.0.202403141607\\db\
+2024-05-01 14:22:04,912 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:22:04,912 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:22:05,027 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp_save
+2024-05-01 14:22:05,171 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp
+2024-05-01 14:22:05,209 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp_save
+2024-05-01 14:22:05,329 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp
+2024-05-01 14:22:05,886 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c_save
+2024-05-01 14:22:05,978 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c
+2024-05-01 14:22:05,987 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h_save
+2024-05-01 14:22:06,078 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h
+2024-05-01 14:22:06,119 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c_save
+2024-05-01 14:22:06,273 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c
+2024-05-01 14:22:06,280 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp_save
+2024-05-01 14:22:06,360 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp
+2024-05-01 14:22:06,386 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-05-01 14:22:06,545 [INFO] CodeEngine:335 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h
+2024-05-01 14:22:06,600 [WARN] IPConfigManager:3513 - IP not found : TIM
+2024-05-01 14:22:06,601 [WARN] CodeGenerator:3951 - IP not found : null
+2024-05-01 14:22:06,627 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h_save
+2024-05-01 14:22:06,741 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h
+2024-05-01 14:22:06,761 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c_save
+2024-05-01 14:22:06,974 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c
+2024-05-01 14:22:07,532 [INFO] ProjectBuilder:3163 - Time for Copy HAL[1] : 263mS.
+2024-05-01 14:22:07,537 [INFO] ProjectBuilder:4736 - Project Generator version: 4.3.0-B58
+2024-05-01 14:22:07,646 [INFO] ConfigFileManager:1503 - The Die is : DIE433
+2024-05-01 14:22:09,152 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 1615mS.
+2024-05-01 14:22:09,153 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 1mS.
+2024-05-01 14:22:09,156 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-05-01 14:22:32,275 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:22:32,275 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:22:32,276 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:22:32,276 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:22:32,316 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 14:22:32,352 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:22:32,352 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:22:32,362 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:22:32,362 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:24:45,360 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 14:24:45,924 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 14:24:56,359 [INFO] Gpio:277 - dependency for GPIO [ADC1, I2C1, RCC, SYS, TIM1, TIM3, TIM4, USART2]
+2024-05-01 14:25:29,129 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 807473488 Bytes (1073741824)
+2024-05-01 14:25:31,027 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 806527840 Bytes (1073741824)
+2024-05-01 14:25:32,892 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 896960752 Bytes (1073741824)
+2024-05-01 14:25:33,127 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-05-01 14:25:33,127 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-05-01 14:25:33,128 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:25:33,128 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:25:33,128 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:25:33,128 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:25:33,128 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:25:33,128 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-05-01 14:25:33,128 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-05-01 14:25:33,128 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: ADC
+2024-05-01 14:25:33,128 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-05-01 14:25:33,128 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2024-05-01 14:25:33,129 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.0.202403141607\\db\
+2024-05-01 14:25:33,134 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:25:33,134 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:25:33,240 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp_save
+2024-05-01 14:25:33,364 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp
+2024-05-01 14:25:33,398 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp_save
+2024-05-01 14:25:33,508 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp
+2024-05-01 14:25:33,968 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c_save
+2024-05-01 14:25:34,118 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c
+2024-05-01 14:25:34,129 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h_save
+2024-05-01 14:25:34,230 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h
+2024-05-01 14:25:34,262 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c_save
+2024-05-01 14:25:34,476 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c
+2024-05-01 14:25:34,490 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp_save
+2024-05-01 14:25:34,601 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp
+2024-05-01 14:25:34,628 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-05-01 14:25:34,761 [INFO] CodeEngine:335 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h
+2024-05-01 14:25:34,808 [WARN] IPConfigManager:3513 - IP not found : TIM
+2024-05-01 14:25:34,809 [WARN] CodeGenerator:3951 - IP not found : null
+2024-05-01 14:25:34,830 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h_save
+2024-05-01 14:25:34,939 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h
+2024-05-01 14:25:34,957 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c_save
+2024-05-01 14:25:35,142 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c
+2024-05-01 14:25:35,661 [INFO] ProjectBuilder:3163 - Time for Copy HAL[1] : 245mS.
+2024-05-01 14:25:35,667 [INFO] ProjectBuilder:4736 - Project Generator version: 4.3.0-B58
+2024-05-01 14:25:35,777 [INFO] ConfigFileManager:1503 - The Die is : DIE433
+2024-05-01 14:25:37,648 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 1982mS.
+2024-05-01 14:25:37,649 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 1mS.
+2024-05-01 14:25:37,652 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-05-01 14:29:36,611 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:29:36,611 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:29:39,131 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:29:39,131 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:29:42,275 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,743x217,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 14:29:46,302 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:29:46,303 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:29:59,229 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:29:59,229 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:29:59,230 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:29:59,230 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:29:59,276 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 14:29:59,309 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:29:59,309 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:29:59,318 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:29:59,318 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:30:15,866 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 911377616 Bytes (1073741824)
+2024-05-01 14:30:17,955 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 771303344 Bytes (1073741824)
+2024-05-01 14:30:18,206 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 960569264 Bytes (1073741824)
+2024-05-01 14:30:18,382 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-05-01 14:30:18,382 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-05-01 14:30:18,382 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:30:18,382 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:30:18,382 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:30:18,382 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:30:18,382 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:30:18,383 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-05-01 14:30:18,383 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-05-01 14:30:18,383 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: ADC
+2024-05-01 14:30:18,383 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-05-01 14:30:18,383 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2024-05-01 14:30:18,384 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.0.202403141607\\db\
+2024-05-01 14:30:18,389 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:30:18,389 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:30:18,487 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp_save
+2024-05-01 14:30:18,594 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp
+2024-05-01 14:30:18,629 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp_save
+2024-05-01 14:30:18,730 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp
+2024-05-01 14:30:19,223 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c_save
+2024-05-01 14:30:19,329 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c
+2024-05-01 14:30:19,337 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h_save
+2024-05-01 14:30:19,411 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h
+2024-05-01 14:30:19,462 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c_save
+2024-05-01 14:30:19,617 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c
+2024-05-01 14:30:19,622 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp_save
+2024-05-01 14:30:19,687 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp
+2024-05-01 14:30:19,708 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-05-01 14:30:19,837 [INFO] CodeEngine:335 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h
+2024-05-01 14:30:19,882 [WARN] IPConfigManager:3513 - IP not found : TIM
+2024-05-01 14:30:19,883 [WARN] CodeGenerator:3951 - IP not found : null
+2024-05-01 14:30:19,924 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h_save
+2024-05-01 14:30:19,997 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h
+2024-05-01 14:30:20,014 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c_save
+2024-05-01 14:30:20,269 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c
+2024-05-01 14:30:20,703 [INFO] ProjectBuilder:3163 - Time for Copy HAL[1] : 215mS.
+2024-05-01 14:30:20,707 [INFO] ProjectBuilder:4736 - Project Generator version: 4.3.0-B58
+2024-05-01 14:30:20,789 [INFO] ConfigFileManager:1503 - The Die is : DIE433
+2024-05-01 14:30:21,850 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 1144mS.
+2024-05-01 14:30:21,851 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 1mS.
+2024-05-01 14:30:21,854 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-05-01 14:32:14,549 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:32:14,549 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:32:14,549 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:32:14,549 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:32:14,577 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 14:32:14,609 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:32:14,609 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:32:14,618 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:32:14,618 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:32:17,560 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:32:17,560 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:32:17,561 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:32:17,561 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:32:17,588 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 14:32:17,616 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:32:17,616 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:32:17,624 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:32:17,625 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:32:19,242 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 938783584 Bytes (1073741824)
+2024-05-01 14:32:20,679 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 923867696 Bytes (1073741824)
+2024-05-01 14:32:22,688 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 906543024 Bytes (1073741824)
+2024-05-01 14:32:22,899 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-05-01 14:32:22,899 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-05-01 14:32:22,899 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:32:22,899 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:32:22,899 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:32:22,899 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:32:22,899 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:32:22,899 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-05-01 14:32:22,900 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-05-01 14:32:22,900 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: ADC
+2024-05-01 14:32:22,900 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-05-01 14:32:22,900 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2024-05-01 14:32:22,902 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.0.202403141607\\db\
+2024-05-01 14:32:22,908 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:32:22,908 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:32:23,011 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp_save
+2024-05-01 14:32:23,121 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp
+2024-05-01 14:32:23,155 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp_save
+2024-05-01 14:32:23,264 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp
+2024-05-01 14:32:23,750 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c_save
+2024-05-01 14:32:23,840 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c
+2024-05-01 14:32:23,848 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h_save
+2024-05-01 14:32:23,958 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h
+2024-05-01 14:32:23,983 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c_save
+2024-05-01 14:32:24,203 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c
+2024-05-01 14:32:24,209 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp_save
+2024-05-01 14:32:24,274 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp
+2024-05-01 14:32:24,296 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-05-01 14:32:24,505 [INFO] CodeEngine:335 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h
+2024-05-01 14:32:24,551 [WARN] IPConfigManager:3513 - IP not found : TIM
+2024-05-01 14:32:24,552 [WARN] CodeGenerator:3951 - IP not found : null
+2024-05-01 14:32:24,592 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h_save
+2024-05-01 14:32:24,683 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h
+2024-05-01 14:32:24,701 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c_save
+2024-05-01 14:32:24,874 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c
+2024-05-01 14:32:25,319 [INFO] ProjectBuilder:3163 - Time for Copy HAL[1] : 220mS.
+2024-05-01 14:32:25,323 [INFO] ProjectBuilder:4736 - Project Generator version: 4.3.0-B58
+2024-05-01 14:32:25,405 [INFO] ConfigFileManager:1503 - The Die is : DIE433
+2024-05-01 14:32:26,414 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 1091mS.
+2024-05-01 14:32:26,415 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-05-01 14:32:26,418 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-05-01 14:34:04,129 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:34:04,129 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:34:04,130 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:34:04,130 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:34:04,159 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 14:34:04,185 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:34:04,185 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:34:04,194 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:34:04,194 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:34:06,011 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 816987320 Bytes (1073741824)
+2024-05-01 14:34:07,684 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 933142728 Bytes (1073741824)
+2024-05-01 14:34:09,515 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 872023352 Bytes (1073741824)
+2024-05-01 14:34:09,756 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-05-01 14:34:09,756 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-05-01 14:34:09,757 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:34:09,757 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:34:09,757 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:34:09,757 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:34:09,757 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:34:09,757 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-05-01 14:34:09,757 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-05-01 14:34:09,757 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: ADC
+2024-05-01 14:34:09,757 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-05-01 14:34:09,757 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2024-05-01 14:34:09,758 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.0.202403141607\\db\
+2024-05-01 14:34:09,763 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:34:09,764 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:34:09,857 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp_save
+2024-05-01 14:34:10,105 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp
+2024-05-01 14:34:10,159 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp_save
+2024-05-01 14:34:10,262 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp
+2024-05-01 14:34:10,672 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c_save
+2024-05-01 14:34:10,767 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c
+2024-05-01 14:34:10,775 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h_save
+2024-05-01 14:34:10,842 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h
+2024-05-01 14:34:10,867 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c_save
+2024-05-01 14:34:11,009 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c
+2024-05-01 14:34:11,015 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp_save
+2024-05-01 14:34:11,076 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp
+2024-05-01 14:34:11,098 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-05-01 14:34:11,216 [INFO] CodeEngine:335 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h
+2024-05-01 14:34:11,260 [WARN] IPConfigManager:3513 - IP not found : TIM
+2024-05-01 14:34:11,261 [WARN] CodeGenerator:3951 - IP not found : null
+2024-05-01 14:34:11,280 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h_save
+2024-05-01 14:34:11,372 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h
+2024-05-01 14:34:11,389 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c_save
+2024-05-01 14:34:11,579 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c
+2024-05-01 14:34:12,051 [INFO] ProjectBuilder:3163 - Time for Copy HAL[1] : 220mS.
+2024-05-01 14:34:12,055 [INFO] ProjectBuilder:4736 - Project Generator version: 4.3.0-B58
+2024-05-01 14:34:12,138 [INFO] ConfigFileManager:1503 - The Die is : DIE433
+2024-05-01 14:34:13,176 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 1121mS.
+2024-05-01 14:34:13,177 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 1mS.
+2024-05-01 14:34:13,180 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-05-01 14:35:26,500 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:35:26,500 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:35:26,501 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:35:26,501 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:35:26,530 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 14:35:26,558 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:35:26,558 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:35:26,568 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:35:26,568 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:35:29,415 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 921691104 Bytes (1073741824)
+2024-05-01 14:35:30,964 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 764196560 Bytes (1073741824)
+2024-05-01 14:35:34,137 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 879601240 Bytes (1073741824)
+2024-05-01 14:35:34,322 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-05-01 14:35:34,322 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-05-01 14:35:34,322 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:35:34,322 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:35:34,322 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:35:34,322 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:35:34,322 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 14:35:34,322 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-05-01 14:35:34,323 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-05-01 14:35:34,323 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: ADC
+2024-05-01 14:35:34,323 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-05-01 14:35:34,323 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2024-05-01 14:35:34,323 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.0.202403141607\\db\
+2024-05-01 14:35:34,330 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 14:35:34,330 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 14:35:34,453 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp_save
+2024-05-01 14:35:34,618 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp
+2024-05-01 14:35:34,651 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp_save
+2024-05-01 14:35:34,762 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp
+2024-05-01 14:35:35,238 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c_save
+2024-05-01 14:35:35,336 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c
+2024-05-01 14:35:35,345 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h_save
+2024-05-01 14:35:35,417 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h
+2024-05-01 14:35:35,452 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c_save
+2024-05-01 14:35:35,601 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c
+2024-05-01 14:35:35,607 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp_save
+2024-05-01 14:35:35,671 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp
+2024-05-01 14:35:35,694 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-05-01 14:35:35,822 [INFO] CodeEngine:335 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h
+2024-05-01 14:35:35,866 [WARN] IPConfigManager:3513 - IP not found : TIM
+2024-05-01 14:35:35,867 [WARN] CodeGenerator:3951 - IP not found : null
+2024-05-01 14:35:35,889 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h_save
+2024-05-01 14:35:35,992 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h
+2024-05-01 14:35:36,010 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c_save
+2024-05-01 14:35:36,201 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c
+2024-05-01 14:35:36,659 [INFO] ProjectBuilder:3163 - Time for Copy HAL[1] : 266mS.
+2024-05-01 14:35:36,663 [INFO] ProjectBuilder:4736 - Project Generator version: 4.3.0-B58
+2024-05-01 14:35:36,745 [INFO] ConfigFileManager:1503 - The Die is : DIE433
+2024-05-01 14:35:37,807 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 1144mS.
+2024-05-01 14:35:37,809 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 2mS.
+2024-05-01 14:35:37,812 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-05-01 15:03:13,860 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:03:13,860 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:03:13,861 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:03:13,861 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:03:14,247 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 15:03:14,276 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:03:14,276 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:03:14,285 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:03:14,285 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:03:27,830 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 746123520 Bytes (1073741824)
+2024-05-01 15:03:41,909 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:03:41,909 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:03:41,945 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:03:41,945 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:03:41,945 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:03:41,945 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:03:41,975 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 15:03:42,004 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:03:42,004 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:03:42,013 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:03:42,013 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:03:47,433 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:03:47,433 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:03:47,433 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:03:47,434 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:03:47,463 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 15:03:47,495 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:03:47,495 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:03:47,504 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:03:47,504 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:04:45,954 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 851690280 Bytes (1073741824)
+2024-05-01 15:04:47,227 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 684241880 Bytes (1073741824)
+2024-05-01 15:04:49,267 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 788047480 Bytes (1073741824)
+2024-05-01 15:04:49,498 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-05-01 15:04:49,499 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-05-01 15:04:49,499 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:04:49,499 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:04:49,499 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:04:49,499 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:04:49,499 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:04:49,499 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-05-01 15:04:49,499 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-05-01 15:04:49,499 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: ADC
+2024-05-01 15:04:49,499 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-05-01 15:04:49,499 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2024-05-01 15:04:49,500 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.0.202403141607\\db\
+2024-05-01 15:04:49,505 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:04:49,505 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:04:49,598 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp_save
+2024-05-01 15:04:49,712 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp
+2024-05-01 15:04:49,741 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp_save
+2024-05-01 15:04:49,842 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp
+2024-05-01 15:04:50,269 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c_save
+2024-05-01 15:04:50,440 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c
+2024-05-01 15:04:50,448 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h_save
+2024-05-01 15:04:50,514 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h
+2024-05-01 15:04:50,539 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c_save
+2024-05-01 15:04:50,688 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c
+2024-05-01 15:04:50,694 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp_save
+2024-05-01 15:04:50,770 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp
+2024-05-01 15:04:50,792 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-05-01 15:04:50,905 [INFO] CodeEngine:335 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h
+2024-05-01 15:04:50,947 [WARN] IPConfigManager:3513 - IP not found : TIM
+2024-05-01 15:04:50,948 [WARN] CodeGenerator:3951 - IP not found : null
+2024-05-01 15:04:50,967 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h_save
+2024-05-01 15:04:51,093 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h
+2024-05-01 15:04:51,109 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c_save
+2024-05-01 15:04:51,290 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c
+2024-05-01 15:04:51,839 [INFO] ProjectBuilder:3163 - Time for Copy HAL[1] : 284mS.
+2024-05-01 15:04:51,843 [INFO] ProjectBuilder:4736 - Project Generator version: 4.3.0-B58
+2024-05-01 15:04:51,931 [INFO] ConfigFileManager:1503 - The Die is : DIE433
+2024-05-01 15:04:53,146 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 1303mS.
+2024-05-01 15:04:53,146 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-05-01 15:04:53,149 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-05-01 15:05:54,793 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:05:54,793 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:05:54,793 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:05:54,793 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:05:54,822 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 15:05:54,852 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:05:54,853 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:05:54,861 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:05:54,861 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:05:58,992 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 931019616 Bytes (1073741824)
+2024-05-01 15:06:00,211 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 695343648 Bytes (1073741824)
+2024-05-01 15:06:01,936 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 879549856 Bytes (1073741824)
+2024-05-01 15:06:02,160 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-05-01 15:06:02,160 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-05-01 15:06:02,160 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:06:02,160 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:06:02,160 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:06:02,160 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:06:02,160 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:06:02,160 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-05-01 15:06:02,160 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-05-01 15:06:02,160 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: ADC
+2024-05-01 15:06:02,160 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-05-01 15:06:02,160 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2024-05-01 15:06:02,161 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.0.202403141607\\db\
+2024-05-01 15:06:02,167 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:06:02,167 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:06:02,257 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp_save
+2024-05-01 15:06:02,351 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp
+2024-05-01 15:06:02,395 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp_save
+2024-05-01 15:06:02,491 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp
+2024-05-01 15:06:02,948 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c_save
+2024-05-01 15:06:03,043 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c
+2024-05-01 15:06:03,051 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h_save
+2024-05-01 15:06:03,118 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h
+2024-05-01 15:06:03,143 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c_save
+2024-05-01 15:06:03,266 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c
+2024-05-01 15:06:03,271 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp_save
+2024-05-01 15:06:03,334 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp
+2024-05-01 15:06:03,370 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-05-01 15:06:03,471 [INFO] CodeEngine:335 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h
+2024-05-01 15:06:03,514 [WARN] IPConfigManager:3513 - IP not found : TIM
+2024-05-01 15:06:03,515 [WARN] CodeGenerator:3951 - IP not found : null
+2024-05-01 15:06:03,535 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h_save
+2024-05-01 15:06:03,626 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h
+2024-05-01 15:06:03,642 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c_save
+2024-05-01 15:06:03,819 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c
+2024-05-01 15:06:04,392 [INFO] ProjectBuilder:3163 - Time for Copy HAL[1] : 363mS.
+2024-05-01 15:06:04,396 [INFO] ProjectBuilder:4736 - Project Generator version: 4.3.0-B58
+2024-05-01 15:06:04,483 [INFO] ConfigFileManager:1503 - The Die is : DIE433
+2024-05-01 15:06:05,795 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 1399mS.
+2024-05-01 15:06:05,796 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-05-01 15:06:05,799 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-05-01 15:11:58,970 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:11:58,970 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:11:58,971 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:11:58,971 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:11:59,021 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 15:11:59,058 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:11:59,058 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:11:59,067 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:11:59,067 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:12:10,574 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 946217712 Bytes (1073741824)
+2024-05-01 15:12:12,083 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 740729200 Bytes (1073741824)
+2024-05-01 15:12:14,034 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 898350080 Bytes (1073741824)
+2024-05-01 15:12:14,212 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-05-01 15:12:14,212 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-05-01 15:12:14,212 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:12:14,212 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:12:14,212 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:12:14,212 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:12:14,212 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:12:14,212 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-05-01 15:12:14,213 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-05-01 15:12:14,213 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: ADC
+2024-05-01 15:12:14,213 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-05-01 15:12:14,213 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2024-05-01 15:12:14,214 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.0.202403141607\\db\
+2024-05-01 15:12:14,219 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:12:14,219 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:12:14,332 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp_save
+2024-05-01 15:12:14,481 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp
+2024-05-01 15:12:14,512 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp_save
+2024-05-01 15:12:14,611 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp
+2024-05-01 15:12:15,029 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c_save
+2024-05-01 15:12:15,136 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c
+2024-05-01 15:12:15,143 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h_save
+2024-05-01 15:12:15,208 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h
+2024-05-01 15:12:15,235 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c_save
+2024-05-01 15:12:15,356 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c
+2024-05-01 15:12:15,362 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp_save
+2024-05-01 15:12:15,422 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp
+2024-05-01 15:12:15,442 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-05-01 15:12:15,559 [INFO] CodeEngine:335 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h
+2024-05-01 15:12:15,602 [WARN] IPConfigManager:3513 - IP not found : TIM
+2024-05-01 15:12:15,603 [WARN] CodeGenerator:3951 - IP not found : null
+2024-05-01 15:12:15,624 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h_save
+2024-05-01 15:12:15,711 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h
+2024-05-01 15:12:15,727 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c_save
+2024-05-01 15:12:15,928 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c
+2024-05-01 15:12:16,373 [INFO] ProjectBuilder:3163 - Time for Copy HAL[1] : 218mS.
+2024-05-01 15:12:16,377 [INFO] ProjectBuilder:4736 - Project Generator version: 4.3.0-B58
+2024-05-01 15:12:16,461 [INFO] ConfigFileManager:1503 - The Die is : DIE433
+2024-05-01 15:12:17,444 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 1067mS.
+2024-05-01 15:12:17,444 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-05-01 15:12:17,447 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-05-01 15:19:10,594 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:19:10,594 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:19:10,594 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:19:10,594 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:19:10,620 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 15:19:10,649 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:19:10,649 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:19:10,657 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:19:10,657 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:19:22,822 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 889652368 Bytes (1073741824)
+2024-05-01 15:19:24,316 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 741489632 Bytes (1073741824)
+2024-05-01 15:19:26,142 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 740761112 Bytes (1073741824)
+2024-05-01 15:19:26,338 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-05-01 15:19:26,338 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-05-01 15:19:26,338 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:19:26,338 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:19:26,338 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:19:26,338 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:19:26,338 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:19:26,338 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-05-01 15:19:26,339 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-05-01 15:19:26,339 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: ADC
+2024-05-01 15:19:26,339 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-05-01 15:19:26,339 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2024-05-01 15:19:26,339 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.0.202403141607\\db\
+2024-05-01 15:19:26,346 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:19:26,346 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:19:26,451 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp_save
+2024-05-01 15:19:26,581 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp
+2024-05-01 15:19:26,614 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp_save
+2024-05-01 15:19:26,746 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp
+2024-05-01 15:19:27,250 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c_save
+2024-05-01 15:19:27,426 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c
+2024-05-01 15:19:27,435 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h_save
+2024-05-01 15:19:27,531 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h
+2024-05-01 15:19:27,576 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c_save
+2024-05-01 15:19:27,720 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c
+2024-05-01 15:19:27,726 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp_save
+2024-05-01 15:19:27,789 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp
+2024-05-01 15:19:27,834 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-05-01 15:19:27,948 [INFO] CodeEngine:335 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h
+2024-05-01 15:19:27,993 [WARN] IPConfigManager:3513 - IP not found : TIM
+2024-05-01 15:19:27,994 [WARN] CodeGenerator:3951 - IP not found : null
+2024-05-01 15:19:28,033 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h_save
+2024-05-01 15:19:28,124 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h
+2024-05-01 15:19:28,142 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c_save
+2024-05-01 15:19:28,336 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c
+2024-05-01 15:19:28,756 [INFO] ProjectBuilder:3163 - Time for Copy HAL[1] : 216mS.
+2024-05-01 15:19:28,761 [INFO] ProjectBuilder:4736 - Project Generator version: 4.3.0-B58
+2024-05-01 15:19:28,843 [INFO] ConfigFileManager:1503 - The Die is : DIE433
+2024-05-01 15:19:30,162 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 1401mS.
+2024-05-01 15:19:30,163 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 1mS.
+2024-05-01 15:19:30,165 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-05-01 15:20:00,743 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:20:00,743 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:20:00,744 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:20:00,744 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:20:00,774 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-01 15:20:00,807 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:20:00,807 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:20:00,817 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:20:00,818 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:20:01,759 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 800565552 Bytes (1073741824)
+2024-05-01 15:20:03,517 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 674116016 Bytes (1073741824)
+2024-05-01 15:20:05,407 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 837424880 Bytes (1073741824)
+2024-05-01 15:20:05,668 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-05-01 15:20:05,668 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-05-01 15:20:05,668 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:20:05,668 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:20:05,668 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:20:05,668 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:20:05,668 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:20:05,668 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-05-01 15:20:05,668 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-05-01 15:20:05,668 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: ADC
+2024-05-01 15:20:05,668 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-05-01 15:20:05,668 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2024-05-01 15:20:05,669 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.0.202403141607\\db\
+2024-05-01 15:20:05,676 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:20:05,676 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:20:05,782 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp_save
+2024-05-01 15:20:05,892 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp
+2024-05-01 15:20:05,928 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp_save
+2024-05-01 15:20:06,039 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp
+2024-05-01 15:20:06,571 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c_save
+2024-05-01 15:20:06,680 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c
+2024-05-01 15:20:06,688 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h_save
+2024-05-01 15:20:06,768 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h
+2024-05-01 15:20:06,796 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c_save
+2024-05-01 15:20:07,250 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c
+2024-05-01 15:20:07,257 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp_save
+2024-05-01 15:20:07,331 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp
+2024-05-01 15:20:07,356 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-05-01 15:20:07,491 [INFO] CodeEngine:335 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h
+2024-05-01 15:20:07,542 [WARN] IPConfigManager:3513 - IP not found : TIM
+2024-05-01 15:20:07,543 [WARN] CodeGenerator:3951 - IP not found : null
+2024-05-01 15:20:07,575 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h_save
+2024-05-01 15:20:07,681 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h
+2024-05-01 15:20:07,700 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c_save
+2024-05-01 15:20:07,909 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c
+2024-05-01 15:20:08,475 [INFO] ProjectBuilder:3163 - Time for Copy HAL[1] : 294mS.
+2024-05-01 15:20:08,480 [INFO] ProjectBuilder:4736 - Project Generator version: 4.3.0-B58
+2024-05-01 15:20:08,608 [INFO] ConfigFileManager:1503 - The Die is : DIE433
+2024-05-01 15:20:10,117 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 1636mS.
+2024-05-01 15:20:10,118 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 1mS.
+2024-05-01 15:20:10,125 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-05-01 15:22:27,266 [INFO] Gpio:277 - dependency for GPIO [ADC1, RCC, SYS, TIM1, TIM3, TIM4, USART2]
+2024-05-01 15:25:09,899 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 788639304 Bytes (1073741824)
+2024-05-01 15:25:12,718 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 812901104 Bytes (1073741824)
+2024-05-01 15:25:14,561 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 870952520 Bytes (1073741824)
+2024-05-01 15:25:14,816 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-05-01 15:25:14,816 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-05-01 15:25:14,816 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:25:14,817 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:25:14,817 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:25:14,817 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:25:14,817 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:25:14,817 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-05-01 15:25:14,817 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-05-01 15:25:14,817 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: ADC
+2024-05-01 15:25:14,817 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-05-01 15:25:14,818 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.0.202403141607\\db\
+2024-05-01 15:25:14,932 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp_save
+2024-05-01 15:25:15,028 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp
+2024-05-01 15:25:15,058 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp_save
+2024-05-01 15:25:15,165 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp
+2024-05-01 15:25:15,526 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c_save
+2024-05-01 15:25:15,632 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c
+2024-05-01 15:25:15,641 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h_save
+2024-05-01 15:25:15,710 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h
+2024-05-01 15:25:15,736 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c_save
+2024-05-01 15:25:15,887 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c
+2024-05-01 15:25:15,900 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp_save
+2024-05-01 15:25:15,960 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp
+2024-05-01 15:25:15,983 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-05-01 15:25:16,104 [INFO] CodeEngine:335 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h
+2024-05-01 15:25:16,156 [WARN] IPConfigManager:3513 - IP not found : TIM
+2024-05-01 15:25:16,157 [WARN] CodeGenerator:3951 - IP not found : null
+2024-05-01 15:25:16,177 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h_save
+2024-05-01 15:25:16,265 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h
+2024-05-01 15:25:16,284 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c_save
+2024-05-01 15:25:16,461 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c
+2024-05-01 15:25:16,883 [INFO] ProjectBuilder:3163 - Time for Copy HAL[1] : 214mS.
+2024-05-01 15:25:16,887 [INFO] ProjectBuilder:4736 - Project Generator version: 4.3.0-B58
+2024-05-01 15:25:16,976 [INFO] ConfigFileManager:1503 - The Die is : DIE433
+2024-05-01 15:25:18,049 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 1162mS.
+2024-05-01 15:25:18,050 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-05-01 15:25:18,064 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-05-01 15:33:43,826 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 857140776 Bytes (1073741824)
+2024-05-01 15:33:45,275 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 873917992 Bytes (1073741824)
+2024-05-01 15:33:55,205 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 954136104 Bytes (1073741824)
+2024-05-01 15:33:55,486 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-05-01 15:33:55,486 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-05-01 15:33:55,486 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-05-01 15:33:55,486 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:33:55,487 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:33:55,487 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:33:55,487 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:33:55,487 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:33:55,487 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-05-01 15:33:55,487 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-05-01 15:33:55,487 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: ADC
+2024-05-01 15:33:55,487 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-05-01 15:33:55,488 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.0.202403141607\\db\
+2024-05-01 15:33:55,597 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp_save
+2024-05-01 15:33:56,025 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp
+2024-05-01 15:33:56,058 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp_save
+2024-05-01 15:33:56,160 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp
+2024-05-01 15:33:56,557 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c_save
+2024-05-01 15:33:56,667 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c
+2024-05-01 15:33:56,674 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h_save
+2024-05-01 15:33:56,749 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h
+2024-05-01 15:33:56,774 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c_save
+2024-05-01 15:33:56,921 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c
+2024-05-01 15:33:56,934 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp_save
+2024-05-01 15:33:56,996 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp
+2024-05-01 15:33:57,017 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-05-01 15:33:57,124 [INFO] CodeEngine:335 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h
+2024-05-01 15:33:57,165 [WARN] IPConfigManager:3513 - IP not found : TIM
+2024-05-01 15:33:57,166 [WARN] CodeGenerator:3951 - IP not found : null
+2024-05-01 15:33:57,183 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h_save
+2024-05-01 15:33:57,267 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h
+2024-05-01 15:33:57,284 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c_save
+2024-05-01 15:33:57,452 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c
+2024-05-01 15:33:57,912 [INFO] ProjectBuilder:3163 - Time for Copy HAL[1] : 207mS.
+2024-05-01 15:33:57,916 [INFO] ProjectBuilder:4736 - Project Generator version: 4.3.0-B58
+2024-05-01 15:33:58,002 [INFO] ConfigFileManager:1503 - The Die is : DIE433
+2024-05-01 15:33:59,316 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 1400mS.
+2024-05-01 15:33:59,317 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 1mS.
+2024-05-01 15:33:59,321 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-05-01 15:44:29,275 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:44:29,275 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:44:29,275 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:44:29,275 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:44:29,333 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:44:29,333 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:44:31,892 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 948047832 Bytes (1073741824)
+2024-05-01 15:44:34,196 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 723698520 Bytes (1073741824)
+2024-05-01 15:44:37,402 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 801758360 Bytes (1073741824)
+2024-05-01 15:44:37,645 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-05-01 15:44:37,645 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-05-01 15:44:37,645 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-05-01 15:44:37,645 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:44:37,645 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:44:37,645 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:44:37,645 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:44:37,645 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-05-01 15:44:37,645 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-05-01 15:44:37,646 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-05-01 15:44:37,646 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: ADC
+2024-05-01 15:44:37,646 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-05-01 15:44:37,646 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2024-05-01 15:44:37,647 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.0.202403141607\\db\
+2024-05-01 15:44:37,652 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:44:37,652 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:44:37,759 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp_save
+2024-05-01 15:44:37,865 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\license.tmp
+2024-05-01 15:44:37,901 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp_save
+2024-05-01 15:44:38,008 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\gpio.tmp
+2024-05-01 15:44:38,532 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c_save
+2024-05-01 15:44:38,713 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_it.c
+2024-05-01 15:44:38,721 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h_save
+2024-05-01 15:44:38,793 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_it.h
+2024-05-01 15:44:38,887 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c_save
+2024-05-01 15:44:39,067 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\stm32f4xx_hal_msp.c
+2024-05-01 15:44:39,080 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp_save
+2024-05-01 15:44:39,142 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\MXTmpFiles\system.tmp
+2024-05-01 15:44:39,164 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h_save
+2024-05-01 15:44:39,290 [INFO] CodeEngine:335 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\stm32f4xx_hal_conf.h
+2024-05-01 15:44:39,340 [WARN] IPConfigManager:3513 - IP not found : TIM
+2024-05-01 15:44:39,341 [WARN] CodeGenerator:3951 - IP not found : null
+2024-05-01 15:44:39,359 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h_save
+2024-05-01 15:44:39,481 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Inc\main.h
+2024-05-01 15:44:39,497 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c_save
+2024-05-01 15:44:39,679 [INFO] CodeEngine:279 - Generated code: C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\Core\Src\main.c
+2024-05-01 15:44:40,089 [INFO] ProjectBuilder:3163 - Time for Copy HAL[1] : 228mS.
+2024-05-01 15:44:40,093 [INFO] ProjectBuilder:4736 - Project Generator version: 4.3.0-B58
+2024-05-01 15:44:40,174 [INFO] ConfigFileManager:1503 - The Die is : DIE433
+2024-05-01 15:44:41,459 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 1366mS.
+2024-05-01 15:44:41,460 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 1mS.
+2024-05-01 15:44:41,463 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 1mS.
+2024-05-01 15:44:52,325 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:44:52,325 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:44:52,325 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:44:52,325 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:45:10,177 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:45:10,177 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:45:10,178 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:45:10,178 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:45:12,463 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:45:12,463 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:45:12,463 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:45:12,463 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:45:20,161 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:45:20,161 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:45:20,161 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:45:20,161 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:45:23,710 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:45:23,710 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:45:23,711 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:45:23,711 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:45:35,776 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:45:35,776 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:45:35,776 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:45:35,776 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:45:50,367 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:45:50,367 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:45:50,367 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-05-01 15:45:50,368 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-05-01 15:46:08,652 [INFO] Gpio:277 - dependency for GPIO [ADC1, I2C1, RCC, SYS, TIM1, TIM3, TIM4, USART2, USART6]
+2024-05-01 15:46:24,377 [INFO] Gpio:277 - dependency for GPIO [ADC1, I2C1, RCC, SYS, TIM1, TIM3, TIM4, USART2, USART6]

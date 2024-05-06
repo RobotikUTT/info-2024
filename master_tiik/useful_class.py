@@ -1,10 +1,18 @@
 # ---------------------- DEFINE AREA CARACT ----------------------
+import math
 import random
 import uuid
+from enum import Enum
 from math import pi, sqrt
 from typing import List
 
 from master_tiik.utils import Circle
+
+
+class Devices(Enum):
+    ARDUINO, \
+    STM32, \
+        = range(2)
 
 
 class Area:
@@ -21,6 +29,9 @@ class Area:
 
     def __str__(self):
         return f"{self.__class__.__name__}({self.center_x}, {self.center_y})"
+
+    def get_action(self) -> "Action | None":
+        return None
 
 
 class PlantArea(Area):
@@ -58,12 +69,36 @@ class PotArea(Area):
 # ---------------------- DEFINE ACTION ----------------------
 
 class Action:
-    def __init__(self, card, area, movement):
-        self.card = card
-        self.movement = movement
-        self.area = area
+    def __init__(self, device: Devices):
+        self.device = device
 
-        
+    def __str__(self):
+        return self.__class__.__name__
+
+    def get_data(self):
+        raise NotImplementedError("get_action method is not implemented")
+
+
+class MoveAction(Action):
+    def __init__(self, x=math.nan, y=math.nan, angle=math.nan):
+        super().__init__(Devices.STM32)
+        self.x = x
+        self.y = y
+        self.angle = angle
+
+
+class TakePotAction(Action):
+    def __init__(self):
+        super().__init__(Devices.ARDUINO)
+        self.pot = random.randint(1, 5)
+
+
+class DepositPlantAction(Action):
+    def __init__(self):
+        super().__init__(Devices.ARDUINO)
+        self.plant = random.randint(1, 6)
+
+
 class Path:
     def __init__(self, keypoints):
         self.points = keypoints
