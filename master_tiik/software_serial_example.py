@@ -66,8 +66,8 @@ class CommunicationService(Thread):
         self.ser.write(0x02)
         for i in self.position_to_send :
             for j in  struct.pack('f',i):
-                print(j)
                 self.ser.write(j)
+    
         self.ser.flush()
         self.ser.close()
         
