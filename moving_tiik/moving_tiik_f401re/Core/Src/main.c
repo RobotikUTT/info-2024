@@ -23,6 +23,7 @@
 /* USER CODE BEGIN Includes */
 #include "math.h"
 #include <stdio.h>
+#include <stdint.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -53,9 +54,9 @@ UART_HandleTypeDef huart2;
 
 DMA_HandleTypeDef hdma_memtomem_dma2_stream0;
 /* USER CODE BEGIN PV */
-uint8_t rxBuffer[1] = {0};
-uint8_t txBuffer[13] = {0};
-uint8_t rxBufferData[13] = {0};
+uint8_t dataTxBuffer[15] = {0};
+uint8_t debugTxBuffer[2] = {0};
+uint8_t dataRxBuffer[13] = {0};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -137,11 +138,29 @@ void initMotors(){
 
 }
 
-void transformData(uint32_t data, int start_index){
-	txBuffer[start_index*4 + 4] = (data & 0xff);
-	txBuffer[start_index*4 + 3] = ((data >> 8) & 0xff);
-	txBuffer[start_index*4 + 2] = ((data >> 16) & 0xff);
-	txBuffer[start_index*4 + 1] = ((data >> 24) & 0xff);
+
+void debugTransmit(char data){
+	debugTxBuffer[0] = 0x02;
+	debugTxBuffer[1] = data;
+	HAL_UART_Transmit(&huart2, debugTxBuffer, 2, HAL_MAX_DELAY);
+	HAL_UART_Receive_IT(&huart2, dataRxBuffer, 13);
+}
+
+void floatToBytes(float value, unsigned char *bytes) {
+    unsigned char *ptr = (unsigned char *)&value;
+    for (int i = 0; i < sizeof(float); ++i) {
+        bytes[i] = ptr[i];
+    }
+}
+
+void dataTransmit(float position_X,float position_Y,float position_angle){
+	floatToBytes(position_X,&dataTxBuffer[3]);
+	floatToBytes(position_Y,&dataTxBuffer[7]);
+	floatToBytes(position_angle,&dataTxBuffer[11]);
+
+	HAL_UART_Transmit(&huart2, dataTxBuffer, 15, HAL_MAX_DELAY);
+	HAL_UART_Transmit(&huart2, dataTxBuffer, 15, HAL_MAX_DELAY);
+	HAL_UART_Receive_IT(&huart2, dataRxBuffer, 13);
 }
 
 
@@ -150,32 +169,20 @@ void setPosition(){
 	float position_Y = TiikPosition.y;
 	float position_angle = TiikPosition.angle;
 
-	uint32_t position_X_to_send = *((uint32_t*) &position_X);
-	uint32_t position_Y_to_send = *((uint32_t*) &position_Y);
-	uint32_t position_angle_to_send = *((uint32_t*) &position_angle);
-
-	transformData(position_X_to_send,0);
-	transformData(position_Y_to_send,1);
-	transformData(position_angle_to_send,2);
+	floatToBytes(position_X,&dataTxBuffer[3]);
+	floatToBytes(position_Y,&dataTxBuffer[7]);
+	floatToBytes(position_angle,&dataTxBuffer[11]);
 
 }
 
 void calculPosition(float distance, float cosTheta,float sinTheta){
 	float position_X = distance*cosTheta - TiikPosition.x;
-	float position_Y = distance*cosTheta - TiikPosition.y;
+	float position_Y = distance*sinTheta - TiikPosition.y;
 	float position_angle = TiikPosition.angle;
-
-	uint32_t position_X_to_send = *((uint32_t*) &position_X);
-	uint32_t position_Y_to_send = *((uint32_t*) &position_Y);
-	uint32_t position_angle_to_send = *((uint32_t*) &position_angle);
 
 	TiikTemporaryPosition.x = position_X;
 	TiikTemporaryPosition.y = position_Y;
 	TiikTemporaryPosition.angle = position_angle;
-
-	transformData(position_X_to_send,0);
-	transformData(position_Y_to_send,1);
-	transformData(position_angle_to_send,2);
 
 }
 
@@ -184,17 +191,9 @@ void calculPosition2(float angle,float way){
 	float position_Y = TiikPosition.y;
 	float position_angle = TiikPosition.angle + angle*way;
 
-	uint32_t position_X_to_send = *((uint32_t*) &position_X);
-	uint32_t position_Y_to_send = *((uint32_t*) &position_Y);
-	uint32_t position_angle_to_send = *((uint32_t*) &position_angle);
-
 	TiikTemporaryPosition.x = position_X;
 	TiikTemporaryPosition.y = position_Y;
 	TiikTemporaryPosition.angle = position_angle;
-
-	transformData(position_X_to_send,0);
-	transformData(position_Y_to_send,1);
-	transformData(position_angle_to_send,2);
 }
 
 void updateTimerPeriod(Motor motor, float speed){
@@ -261,8 +260,6 @@ void turn3Wheel(float speed,float angle){
 	float tn_1 = 0.0;
 	float t0 = __HAL_TIM_GetCounter(&htim5)*pow(10,-6);
 
-	stop = 0;
-
 	float urgencyRamp = 0.25;
 	float urgencyRadian  = 0;
 
@@ -316,6 +313,7 @@ void turn3Wheel(float speed,float angle){
 
 void moveForward3Wheel(float speed, float angle, float distance){
 
+	debugTransmit(0x03);
 
 	float speedTiik = 10;
 
@@ -336,8 +334,6 @@ void moveForward3Wheel(float speed, float angle, float distance){
 	float tn = 0.0;
 	float tn_1 = 0.0;
 	float t0 = __HAL_TIM_GetCounter(&htim5)*pow(10,-6);
-
-	stop = 0;
 
 	float urgencyRamp = 50;
 	float urgencyDistance  = 0;
@@ -383,7 +379,6 @@ void moveForward3Wheel(float speed, float angle, float distance){
 		}
 
 
-
 		HAL_Delay(deltaT);
 	}
 
@@ -406,31 +401,52 @@ void initPosition(){
   TiikPosition.angle = 0.0;
 }
 
+uint32_t regroupBytesToUint32(unsigned char *bytes) {
+    uint32_t uint32Value;
+
+    for (int i = 0; i < sizeof(uint32_t); ++i) {
+    	uint32Value |= (bytes[i] << (8 * (sizeof(uint32_t) - 1 - i)));
+    }
+
+    return uint32Value;
+}
+
+float regroupBytesToFloat(unsigned char *bytes) {
+    float floatValue;
+    unsigned char *value = (unsigned char *)&floatValue;
+    for (int i = 0; i < sizeof(float); ++i) {
+        *(value + i) = bytes[i];
+    }
+
+    return floatValue;
+}
+
 void treatData(){
+    float position_X_float = regroupBytesToFloat(&dataRxBuffer[1]);
+    float position_Y_float = regroupBytesToFloat(&dataRxBuffer[5]);
+    float position_angle_float = regroupBytesToFloat(&dataRxBuffer[9]);
 
-	uint32_t position_X = (rxBuffer[0] << 24) + (rxBuffer[1] << 16) + (rxBuffer[2] << 8) + (rxBuffer[3]);
-	uint32_t position_Y = (rxBuffer[4] << 24) + (rxBuffer[5] << 16) + (rxBuffer[6] << 8) + (rxBuffer[7]);
-	uint32_t position_angle = (rxBuffer[8] << 24) + (rxBuffer[9] << 16) + (rxBuffer[10] << 8) + (rxBuffer[11]);
+    dataTransmit(position_X_float,position_Y_float,position_Y_float);
 
-	float position_X_to_use = *((float*) &position_X);
-	float position_Y_to_use = *((float*) &position_Y);
-	float position_angle_to_use = *((float*) &position_angle);
-
-	if ((position_angle_to_use == 0xffffffff ) && (stop != 0)){
-		turn3Wheel(100,position_angle_to_use - TiikPosition.angle);
+	if ((!isnan(position_angle_float)) && (stop == 0)){
+		turn3Wheel(100,position_angle_float - TiikPosition.angle);
 	}
 
-	if (((position_X_to_use == 0xffffffff) || (position_Y_to_use == 0xfffffff)) && (stop != 0)){
-		float distance = sqrt(pow(position_X_to_use - TiikPosition.x ,2)+pow(position_Y_to_use - TiikPosition.y ,2));
-		float angle = atan(position_Y_to_use - TiikPosition.y / position_X_to_use - TiikPosition.x);
-		angle = angle - TiikPosition.angle;
+	if ((!isnan(position_X_float) || !isnan(position_Y_float)) && (stop == 0)){
+		float distance = sqrt(pow(position_X_float - TiikPosition.x ,2)+pow(position_Y_float - TiikPosition.y ,2));
+		float angle = atan(position_X_float - TiikPosition.x/position_Y_float - TiikPosition.y) - TiikPosition.angle;
+		dataTransmit(distance, angle, angle);
+
 		moveForward3Wheel(300,distance,angle);
 	}
 
-	robotState = 0x00;
-	txBuffer[0] = robotState;
+	stop = 0;
 
-	HAL_UART_Transmit(&huart2, txBuffer, 13, HAL_MAX_DELAY);
+	robotState = 0x00;
+	dataTxBuffer[2] = robotState;
+	dataArrived = 0;
+
+	dataTransmit(TiikPosition.x,TiikPosition.y,TiikPosition.angle);
 }
 
 
@@ -534,13 +550,15 @@ int main(void)
   initMotors();
 
   robotState = 0x00;
-  txBuffer[0] = robotState;
+  dataTxBuffer[2] = robotState;
+  dataTxBuffer[0] = 0x54;
+  dataTxBuffer[1] = 0x2c;
 
   initPosition(0.0,0.0,0.0);
   setPosition();
   dataArrived = 0;
 
-  HAL_UART_Receive_IT(&huart2, rxBufferData, 13);
+  HAL_UART_Receive_IT(&huart2, dataRxBuffer, 13);
 
   /* USER CODE END 2 */
 
@@ -1075,20 +1093,21 @@ static void MX_GPIO_Init(void)
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
+	//debugTransmit(0x01);
 
-	if (rxBufferData[0] == 0x01){
+	if (dataRxBuffer[0] == 0x01){
+		dataRxBuffer[0] = 0x00;
 		stop = 1;
-	} else if (rxBufferData[0] == 0x02){
-		if (txBuffer[0] == 0x00){
+	} else if (dataRxBuffer[0] == 0x02){
+		dataRxBuffer[0] = 0x00;
+		if (dataTxBuffer[3] == 0x00){
 			robotState = 0x01;
-			txBuffer[0] = robotState;
+			dataTxBuffer[2] = robotState;
 			dataArrived = 1;
 		}
 	}
-	HAL_UART_Transmit(&huart2, rxBufferData, 13, HAL_MAX_DELAY);
 
-
-	HAL_UART_Receive_IT(&huart2, rxBufferData, 13);
+	dataTransmit(TiikTemporaryPosition.x,TiikTemporaryPosition.y,TiikTemporaryPosition.angle);
 	/*
 	HAL_UART_Transmit(&huart2, txBuffer, 13, HAL_MAX_DELAY);
 	if (rxBuffer[0] == 0x00){
@@ -1103,13 +1122,9 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		HAL_UART_Receive_IT(&huart2, rxBufferData, 13);
 	}
 
-	HAL_UART_Receive_IT(&huart2, rxBufferData, 13);
+	HAL_UART_Receive_IT(&huart2, dataRxBuffer, 13);
 	*/
-
-
-
 }
-
 
 /* USER CODE END 4 */
 

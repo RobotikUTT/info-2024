@@ -3803,3 +3803,908 @@ Finished building: default.size.stdout
  
 Finished building: moving_tiik.list
  
+16:51:49 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35044	    112	   2896	  38052	   94a4	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+16:57:27 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35044	    112	   2896	  38052	   94a4	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+17:12:55 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35044	    112	   2896	  38052	   94a4	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+17:14:46 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35044	    112	   2896	  38052	   94a4	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+17:18:00 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35044	    112	   2896	  38052	   94a4	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+17:20:21 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35044	    112	   2896	  38052	   94a4	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+17:24:08 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35044	    112	   2896	  38052	   94a4	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+17:38:59 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35060	    112	   2896	  38068	   94b4	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+17:39:40 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35060	    112	   2896	  38068	   94b4	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+17:39:54 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35060	    112	   2896	  38068	   94b4	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+17:40:43 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35060	    112	   2896	  38068	   94b4	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+18:31:40 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'debugTransmit':
+../Core/Src/main.c:140:6: warning: type of 'data' defaults to 'int' [-Wimplicit-int]
+  140 | void debugTransmit(data){
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c: In function 'treatData':
+../Core/Src/main.c:421:32: error: 'rxBuffer' undeclared (first use in this function); did you mean 'txBuffer'?
+  421 |         uint32_t position_X = (rxBuffer[0] << 24) + (rxBuffer[1] << 16) + (rxBuffer[2] << 8) + (rxBuffer[3]);
+      |                                ^~~~~~~~
+      |                                txBuffer
+../Core/Src/main.c:421:32: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:1094:29: warning: statement with no effect [-Wunused-value]
+ 1094 |                 rxBufferData[0];
+      |                 ~~~~~~~~~~~~^~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+18:36:45 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'debugTransmit':
+../Core/Src/main.c:140:6: warning: type of 'data' defaults to 'int' [-Wimplicit-int]
+  140 | void debugTransmit(data){
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:1094:29: warning: statement with no effect [-Wunused-value]
+ 1094 |                 rxBufferData[0];
+      |                 ~~~~~~~~~~~~^~~
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35156	    112	   2896	  38164	   9514	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+18:38:12 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'debugTransmit':
+../Core/Src/main.c:140:6: warning: type of 'data' defaults to 'int' [-Wimplicit-int]
+  140 | void debugTransmit(data){
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:1092:33: warning: statement with no effect [-Wunused-value]
+ 1092 |                 rxBufferData[0] == 0x00;
+      |                 ~~~~~~~~~~~~~~~~^~~~~~~
+../Core/Src/main.c:1095:33: warning: statement with no effect [-Wunused-value]
+ 1095 |                 rxBufferData[0] == 0x00;
+      |                 ~~~~~~~~~~~~~~~~^~~~~~~
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35156	    112	   2896	  38164	   9514	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+18:38:33 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'debugTransmit':
+../Core/Src/main.c:140:6: warning: type of 'data' defaults to 'int' [-Wimplicit-int]
+  140 | void debugTransmit(data){
+      |      ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35164	    112	   2896	  38172	   951c	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+18:39:16 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35164	    112	   2896	  38172	   951c	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+18:42:30 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35164	    112	   2896	  38172	   951c	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+18:44:34 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35164	    112	   2896	  38172	   951c	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+18:50:44 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35180	    112	   2896	  38188	   952c	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+19:12:57 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:1103:9: error: too few arguments to function 'dataTransmit'
+ 1103 |         dataTransmit();
+      |         ^~~~~~~~~~~~
+../Core/Src/main.c:155:6: note: declared here
+  155 | void dataTransmit(uint32_t position_X,uint32_t position_Y,uint32_t position_angle){
+      |      ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+19:13:55 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35220	    112	   2896	  38228	   9554	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+19:15:09 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35220	    112	   2896	  38228	   9554	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+19:17:49 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35220	    112	   2896	  38228	   9554	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+19:18:38 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35220	    112	   2896	  38228	   9554	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+20:30:10 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35220	    112	   2896	  38228	   9554	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+20:35:28 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35220	    112	   2896	  38228	   9554	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+20:36:45 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35220	    112	   2896	  38228	   9554	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+20:37:54 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35220	    112	   2896	  38228	   9554	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+20:40:28 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35220	    112	   2896	  38228	   9554	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+20:44:29 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35220	    112	   2896	  38228	   9554	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+20:47:52 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35220	    112	   2896	  38228	   9554	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+20:50:32 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35220	    112	   2896	  38228	   9554	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+22:41:25 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35388	    112	   2896	  38396	   95fc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+22:43:57 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35388	    112	   2896	  38396	   95fc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+22:44:30 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35388	    112	   2896	  38396	   95fc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+22:48:31 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35388	    112	   2896	  38396	   95fc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+22:53:06 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'treatData':
+../Core/Src/main.c:447:36: error: 'position__uint32' undeclared (first use in this function); did you mean 'position_Y_uint32'?
+  447 |     dataTransmit(position_X_uint32,position__uint32,position_X_uint32);
+      |                                    ^~~~~~~~~~~~~~~~
+      |                                    position_Y_uint32
+../Core/Src/main.c:447:36: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+22:55:23 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35372	    112	   2896	  38380	   95ec	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+22:56:59 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35372	    112	   2896	  38380	   95ec	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+23:01:01 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35372	    112	   2896	  38380	   95ec	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+23:03:41 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35372	    112	   2896	  38380	   95ec	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+23:09:01 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35372	    112	   2896	  38380	   95ec	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+23:09:07 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35372	    112	   2896	  38380	   95ec	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+23:19:22 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35372	    112	   2896	  38380	   95ec	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+23:19:27 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35372	    112	   2896	  38380	   95ec	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+23:19:41 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35372	    112	   2896	  38380	   95ec	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+23:33:30 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35340	    112	   2896	  38348	   95cc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+23:35:39 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35340	    112	   2896	  38348	   95cc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+23:36:31 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35340	    112	   2896	  38348	   95cc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+23:44:40 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35340	    112	   2896	  38348	   95cc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+23:50:20 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35308	    112	   2896	  38316	   95ac	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+23:52:38 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35308	    112	   2896	  38316	   95ac	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+23:56:41 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35308	    112	   2896	  38316	   95ac	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+19:46:01 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35316	    112	   2896	  38324	   95b4	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+19:47:14 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35316	    112	   2896	  38324	   95b4	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+19:48:49 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35316	    112	   2896	  38324	   95b4	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+19:55:16 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35316	    112	   2896	  38324	   95b4	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+20:16:49 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35324	    112	   2896	  38332	   95bc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+20:17:13 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35324	    112	   2896	  38332	   95bc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+20:27:07 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35324	    112	   2896	  38332	   95bc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+20:32:27 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35324	    112	   2896	  38332	   95bc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+20:34:07 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35324	    112	   2896	  38332	   95bc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+21:09:56 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35324	    112	   2896	  38332	   95bc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+21:13:34 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35324	    112	   2896	  38332	   95bc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+21:16:42 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35324	    112	   2896	  38332	   95bc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+01:01:16 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35324	    112	   2896	  38332	   95bc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+01:04:38 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35324	    112	   2896	  38332	   95bc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+03:13:30 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35324	    112	   2896	  38332	   95bc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+10:27:08 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35324	    112	   2896	  38332	   95bc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+11:29:16 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35340	    112	   2896	  38348	   95cc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+11:38:07 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35340	    112	   2896	  38348	   95cc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+11:40:32 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35340	    112	   2896	  38348	   95cc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+11:42:01 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35340	    112	   2896	  38348	   95cc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+11:43:49 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35340	    112	   2896	  38348	   95cc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+11:51:18 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35340	    112	   2896	  38348	   95cc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+11:51:22 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35340	    112	   2896	  38348	   95cc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+11:51:26 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35340	    112	   2896	  38348	   95cc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+11:52:23 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35340	    112	   2896	  38348	   95cc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+11:54:24 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35340	    112	   2896	  38348	   95cc	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+11:57:47 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35284	    112	   2896	  38292	   9594	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+11:58:31 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35284	    112	   2896	  38292	   9594	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+11:59:47 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-size  moving_tiik.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35284	    112	   2896	  38292	   9594	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+12:01:58 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35276	    112	   2896	  38284	   958c	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+12:03:40 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35276	    112	   2896	  38284	   958c	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+12:06:53 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35276	    112	   2896	  38284	   958c	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+12:08:43 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35204	    112	   2896	  38212	   9544	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
+12:16:23 **** Incremental Build of configuration Debug for project moving_tiik ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "moving_tiik.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\nono\Documents\GitHub\info-2024\moving_tiik\moving_tiik_f401re\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="moving_tiik.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: moving_tiik.elf
+ 
+arm-none-eabi-size  moving_tiik.elf 
+arm-none-eabi-objdump -h -S moving_tiik.elf  > "moving_tiik.list"
+   text	   data	    bss	    dec	    hex	filename
+  35204	    112	   2896	  38212	   9544	moving_tiik.elf
+Finished building: default.size.stdout
+ 
+Finished building: moving_tiik.list
+ 
