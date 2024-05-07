@@ -159,7 +159,6 @@ void dataTransmit(float position_X,float position_Y,float position_angle){
 	floatToBytes(position_angle,&dataTxBuffer[11]);
 
 	HAL_UART_Transmit(&huart2, dataTxBuffer, 15, HAL_MAX_DELAY);
-	HAL_UART_Transmit(&huart2, dataTxBuffer, 15, HAL_MAX_DELAY);
 	HAL_UART_Receive_IT(&huart2, dataRxBuffer, 13);
 }
 
@@ -176,8 +175,8 @@ void setPosition(){
 }
 
 void calculPosition(float distance, float cosTheta,float sinTheta){
-	float position_X = distance*cosTheta - TiikPosition.x;
-	float position_Y = distance*sinTheta - TiikPosition.y;
+	float position_X = distance*cosTheta + TiikPosition.x;
+	float position_Y = distance*sinTheta + TiikPosition.y;
 	float position_angle = TiikPosition.angle;
 
 	TiikTemporaryPosition.x = position_X;
@@ -187,9 +186,15 @@ void calculPosition(float distance, float cosTheta,float sinTheta){
 }
 
 void calculPosition2(float angle,float way){
+	float robotRadius = 140;
+	float wheelRadius = 58/2;
 	float position_X = TiikPosition.x;
 	float position_Y = TiikPosition.y;
-	float position_angle = TiikPosition.angle + angle*way;
+	float tiikAngle = TiikPosition.angle + angle*way*wheelRadius/robotRadius;
+	if (tiikAngle < 0){
+		tiikAngle += 2*M_PI;
+	}
+	float position_angle = tiikAngle;
 
 	TiikTemporaryPosition.x = position_X;
 	TiikTemporaryPosition.y = position_Y;
@@ -214,6 +219,9 @@ void updateTimerPeriod(Motor motor, float speed){
 void turn3Wheel(float speed,float angle){
 
 	float stepByTurn = 3200;
+	float robotRadius = 140;
+	float wheelRadius = 58/2;
+
 	float stepToRadians = stepByTurn/(2*M_PI);
 	float way;
 
@@ -221,26 +229,26 @@ void turn3Wheel(float speed,float angle){
 	TiikTemporaryPosition.y = TiikPosition.y;
 	TiikTemporaryPosition.angle = TiikPosition.angle;
 
-	float angleTiik;
+	float angleTiik = angle;
 
 	if (angle < 0){
-		way = -1;
-		angleTiik = -angle;
+		angleTiik = angle + 2*M_PI;
 	} else {
-		way = 1;
 		angleTiik = angle;
 	}
 
 	if (angleTiik > M_PI){
-		angleTiik = 2*M_PI - angle;
-		way = -way;
+		angleTiik = 2*M_PI - angleTiik;
+		way = -1;
 	} else {
-		angleTiik = angle;
+		angleTiik = angleTiik;
 		way = 1;
 	}
 
-	float speedTiik = 10;
-	float minSpeed = 10;
+	angleTiik = angleTiik*robotRadius/wheelRadius;
+
+	float speedTiik = 0.5;
+	float minSpeed = 0.5;
 
 	float radianAchieve = 0.0;
 	float radianToAchieve = angleTiik;
@@ -296,24 +304,28 @@ void turn3Wheel(float speed,float angle){
 			urgencyRadian += speedTiik * deltaTn;
 		}
 
-		HAL_Delay(deltaT);
-	}
 
-	TiikPosition.x = TiikTemporaryPosition.x;
-	TiikPosition.y = TiikTemporaryPosition.y;
-	TiikPosition.angle = TiikTemporaryPosition.angle;
+		if (task) HAL_Delay(deltaT);
+	}
 
 	updateTimerPeriod(motorN,0);
 	updateTimerPeriod(motorSE,0);
 	updateTimerPeriod(motorSO,0);
 
+	TiikPosition.x = TiikTemporaryPosition.x;
+	TiikPosition.y = TiikTemporaryPosition.y;
+	TiikPosition.angle = TiikTemporaryPosition.angle;
+
+
 	HAL_Delay(deltaT);
 
 }
 
-void moveForward3Wheel(float speed, float angle, float distance){
+void moveForward3Wheel(float speed, float distance, float angle){
 
-	debugTransmit(0x03);
+	float stepByTurn = 3200;
+	float wheelDiameter = 58;
+	float stepToDistance = stepByTurn/(M_PI*wheelDiameter);
 
 	float speedTiik = 10;
 
@@ -322,7 +334,7 @@ void moveForward3Wheel(float speed, float angle, float distance){
 
 	int task = 1;
 
-	float rampDistance = 100;
+	float rampDistance = 300;
 
 	if (distanceToAchieve < 2*rampDistance){
 		rampDistance = distanceToAchieve/2;
@@ -335,14 +347,15 @@ void moveForward3Wheel(float speed, float angle, float distance){
 	float tn_1 = 0.0;
 	float t0 = __HAL_TIM_GetCounter(&htim5)*pow(10,-6);
 
-	float urgencyRamp = 50;
+	float urgencyRamp = 150;
 	float urgencyDistance  = 0;
 
 	float maxSpeed = speed;
 
-	float cosTheta = cos(angle);
-	float sinTheta = sin(angle);
+	float cosTheta = cos(angle + M_PI/2);
+	float sinTheta = sin(angle + M_PI/2);
 
+	float sqrt3 = sqrt(3);
 	while(task){
 
 		if (stop){
@@ -354,14 +367,13 @@ void moveForward3Wheel(float speed, float angle, float distance){
 		} else {
 			speedTiik = maxSpeed;
 		}
-		float sqrt3 = sqrt(3);
 		float speedN = speedTiik*cosTheta;
 		float speedSE = ( speedTiik*((-cosTheta/2)-(sqrt3*sinTheta/2)));
 		float speedSO = ( speedTiik*((-cosTheta/2)+(sqrt3*sinTheta/2)));
 
-		updateTimerPeriod(motorN,speedN);
-		updateTimerPeriod(motorSE,speedSE);
-		updateTimerPeriod(motorSO,speedSO);
+		updateTimerPeriod(motorN,speedN*stepToDistance);
+		updateTimerPeriod(motorSE,speedSE*stepToDistance);
+		updateTimerPeriod(motorSO,speedSO*stepToDistance);
 
 		tn = (__HAL_TIM_GetCounter(&htim5)*pow(10,-6) - t0);
 		deltaTn = tn - tn_1;
@@ -372,33 +384,37 @@ void moveForward3Wheel(float speed, float angle, float distance){
 			task = 0;
 		}
 
-		calculPosition(distanceAchieve,cos(angle + TiikPosition.angle),cos(angle + TiikPosition.angle));
+		calculPosition(distanceAchieve,cos(angle + TiikPosition.angle),sin(angle + TiikPosition.angle));
 
 		if (stop){
 			urgencyDistance += speedTiik * deltaTn;
 		}
 
 
-		HAL_Delay(deltaT);
+		if (task) HAL_Delay(deltaT);
 	}
-
-	TiikPosition.x = TiikTemporaryPosition.x;
-	TiikPosition.y = TiikTemporaryPosition.y;
-	TiikPosition.angle = TiikTemporaryPosition.angle;
 
 	updateTimerPeriod(motorN,0);
 	updateTimerPeriod(motorSE,0);
 	updateTimerPeriod(motorSO,0);
+
+	TiikPosition.x = TiikTemporaryPosition.x;
+	TiikPosition.y = TiikTemporaryPosition.y;
+	TiikPosition.angle = TiikTemporaryPosition.angle;
 
 	HAL_Delay(deltaT);
 
 }
 
 
-void initPosition(){
-  TiikPosition.x = 0.0;
-  TiikPosition.y = 0.0;
-  TiikPosition.angle = 0.0;
+void initPosition(float x,float y,float angle){
+  TiikPosition.x = x;
+  TiikPosition.y = y;
+  TiikPosition.angle = angle;
+
+  TiikTemporaryPosition.x = x;
+  TiikTemporaryPosition.y = y;
+  TiikTemporaryPosition.angle = angle;
 }
 
 uint32_t regroupBytesToUint32(unsigned char *bytes) {
@@ -426,18 +442,16 @@ void treatData(){
     float position_Y_float = regroupBytesToFloat(&dataRxBuffer[5]);
     float position_angle_float = regroupBytesToFloat(&dataRxBuffer[9]);
 
-    dataTransmit(position_X_float,position_Y_float,position_Y_float);
 
 	if ((!isnan(position_angle_float)) && (stop == 0)){
-		turn3Wheel(100,position_angle_float - TiikPosition.angle);
+		turn3Wheel(M_PI,position_angle_float - TiikPosition.angle);
 	}
 
 	if ((!isnan(position_X_float) || !isnan(position_Y_float)) && (stop == 0)){
 		float distance = sqrt(pow(position_X_float - TiikPosition.x ,2)+pow(position_Y_float - TiikPosition.y ,2));
-		float angle = atan(position_X_float - TiikPosition.x/position_Y_float - TiikPosition.y) - TiikPosition.angle;
-		dataTransmit(distance, angle, angle);
+		float angle = atan2((position_Y_float - TiikPosition.y),(position_X_float - TiikPosition.x))- TiikPosition.angle;
 
-		moveForward3Wheel(300,distance,angle);
+ 		moveForward3Wheel(300,distance,angle);
 	}
 
 	stop = 0;
@@ -449,6 +463,11 @@ void treatData(){
 	dataTransmit(TiikPosition.x,TiikPosition.y,TiikPosition.angle);
 }
 
+void initSpeed(){
+	updateTimerPeriod(motorN,0);
+	updateTimerPeriod(motorSE,0);
+	updateTimerPeriod(motorSO,0);
+}
 
 // TODO ça : float speedOdd = speed*cos(angle + angleSpeed*__HAL_TIM_GetCounter(&htim2)*(10^(-6)));
 /*
@@ -554,6 +573,7 @@ int main(void)
   dataTxBuffer[0] = 0x54;
   dataTxBuffer[1] = 0x2c;
 
+  initSpeed();
   initPosition(0.0,0.0,0.0);
   setPosition();
   dataArrived = 0;
@@ -566,7 +586,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+
 	  if (dataArrived){
+		  dataArrived = 0;
 		  treatData();
 	  }
 
@@ -609,7 +631,7 @@ void SystemClock_Config(void)
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
@@ -835,7 +857,7 @@ static void MX_TIM3_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 0;
+  sConfigOC.Pulse = 1;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
@@ -894,7 +916,7 @@ static void MX_TIM4_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 0;
+  sConfigOC.Pulse = 1;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
@@ -1100,7 +1122,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		stop = 1;
 	} else if (dataRxBuffer[0] == 0x02){
 		dataRxBuffer[0] = 0x00;
-		if (dataTxBuffer[3] == 0x00){
+		if (dataTxBuffer[2] == 0x00){
 			robotState = 0x01;
 			dataTxBuffer[2] = robotState;
 			dataArrived = 1;
