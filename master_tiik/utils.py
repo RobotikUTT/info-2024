@@ -74,6 +74,12 @@ class Point:
 
     def __abs__(self):
         return sqrt(self.x ** 2 + self.y ** 2)
+        
+    def __truediv__(self, other):
+        return Point(self.x / other, self.y / other)
+        
+    def __mul__(self, other):
+        return Point(self.x * other, self.y * other)
 
 
 def find_path(a: Tuple[float, float], b: Tuple[float, float], circles_to_avoid: List[Circle]):

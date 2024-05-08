@@ -90,22 +90,30 @@ class PointData:
 # ---------------------- DEFINE LIDAR SERCICE ----------------------
 
 class LidarService(Thread):
-    def __init__(self,position_service): # position_service,data_stocker
+    def __init__(self,position_service,data_stocker, communication_service: CommunicationService = None):
         super().__init__()
-        self.serial = Serial("/dev/serial0", baudrate = 230400, timeout=5, bytesize=8, parity="N", stopbits=1)
+        self.serial = Serial("/dev/serial0", baudrate = 230400, timeout=None, bytesize=8, parity="N", stopbits=1)
         #GPIO.setmode(GPIO.BCM)
         #GPIO.setup(18, GPIO.OUT)
         #pwm = GPIO.PWM(18, 40000)
         #pwm.start(40)
         self.lock = RLock()
         self.position_service = position_service
-        #self.data_stocker = data_stocker
+        self.data_stocker = data_stocker
+        self.communication_service = communication_service
 
     def run(self):
         dataList = []
         print("lidar ... ", "ready to operate")
         while True:
-            data = self.serial.read(30)
+            """if self.serial.inWaiting() == 4095:
+                dataList.clear()
+                self.serial.reset_input_buffer()
+                continue"""
+            #print(self.serial.inWaiting())
+            data = self.serial.read(4095)
+            print(len(data))
+            continue
             for i in range(len(data)-1):
                 dataList.append(data[i])
                 if data[i] == 0x54 and data[i+1] == 0x2c:
@@ -116,6 +124,7 @@ class LidarService(Thread):
                         for b in dataList[-2:]+dataList[0:-3] : 
                             crc = CRC_TABLE[(crc^b) & 0xff]
                         if expectedCrc == crc :
+                            #print("all good")
                             robot_position = self.position_service.get_position()
                             robot_angle = self.position_service.get_angle()
                             now = time.time()
@@ -123,7 +132,10 @@ class LidarService(Thread):
                             values = []
                             for distance, angle, confidence in zip(*formatted):
                                 values.append(PointData(radians(angle%360), distance, robot_position, robot_angle, now))
+                                if distance < 700 and distance > 200:
+                                    self.communication_service.emergencyStop()
                             self.data_stocker.add_values(values)
+                            #print("ok c'est good")
                     dataList = []
                     break
             
@@ -181,14 +193,15 @@ class DetectionService(Thread):
         self.treated_values : List[PointData] = []
         self.communication_service = communication_service
         #pygame.init()
-        self.screen = pygame.display.set_mode((1000, 1000))
+        #self.screen = pygame.display.set_mode((1000, 1000))
 
     def run(self):
         print("detection ... ", "ready to operate")
-        clock = pygame.time.Clock()
+        #clock = pygame.time.Clock()
         while True:
             self.values = self.data_stocker.get_values()
-            self.screen.fill(0);
+            #print(self.values)
+            """self.screen.fill(0);
             for value in self.values:
                 pygame.draw.line(self.screen, 0xffffff, (500, 500), (500 + cos(value.absolute_angle) * value.distance/5, 500 + sin(value.absolute_angle) * value.distance/5))
             pygame.display.flip()
@@ -196,27 +209,28 @@ class DetectionService(Thread):
             print(clock.get_fps())
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    pygame.quit()
+                    pygame.quit()"""
             #print([(point.distance, point.absolute_angle) for point in self.values])
             if len(self.values) == 0:
                 continue
             #print(self.values)
-            treat_distances = [point for point in self.values if point.distance < 530 and point.distance > 200]
+            #treat_distances = [point for point in self.values if point.distance < 530 and point.distance > 200]
             #print(len(treat_distances))
             #print([(point.absolute_angle, point.distance, ) for point in treat_distances])
-            self.communication_service.emergencyStop()
+            #print(len(treat_distances))
+            #self.communication_service.emergencyStop()
             
     
 if __name__ == "__main__":
     position_service = position.PositionService()
     data_stocker = DataStocker()
-    lidar_service = LidarService(position_service)
+    lidar_service = LidarService(position_service, data_stocker)
     detection_service = DetectionService(data_stocker, None)
     
-    positionThread = position_service
-    positionThread.start()
+    #positionThread = position_service
+    #positionThread.start()
 
-    #dataThread = data_stocker
+    dataThread = data_stocker
     #dataThread.start()
 
     lidarThread = lidar_service
@@ -225,8 +239,8 @@ if __name__ == "__main__":
     #detectionThread = detection_service
     #detectionThread.start()
 
-    positionThread.join()
-    #dataThread.join()
+    #positionThread.join()
     lidarThread.join()
+    #dataThread.join()
     #detectionThread.join()
     

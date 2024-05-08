@@ -21,9 +21,18 @@ class I2CCommunication:
 
     def run(self):
         while True:
-            data = self.bus.read_i2c_block_data(10, 0, 1)
+            data = self.bus.read_i2c_block_data(10, 0, 4)
             self.action_done = data[0] == 0
             self.emergency_stop = data[1] == 1
+            
+    def wait_start():
+        while True:
+            time.sleep(1)
+            if self.bus.read_i2c_block_data(10, 0, 4)[0] == 1:
+                return
+                
+    def action_done(self):
+        return self.bus.read_i2c_block_data(10, 0, 4)[1] == 1
             
 
 

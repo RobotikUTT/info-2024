@@ -5,7 +5,7 @@ from enum import Enum
 from math import pi, sqrt, atan2, nan, isnan
 from typing import List
 
-from master_tiik.position import PositionService
+from position import PositionService
 from utils import Circle
 
 
@@ -80,7 +80,7 @@ class Action:
 
 
 class MoveAction(Action):
-    def __init__(self, position_service: PositionService, x=nan, y=nan, force_angle=False | int):
+    def __init__(self, position_service: PositionService, x=nan, y=nan, force_angle: "bool | int"=False):
         super().__init__(Devices.STM32)
         self.x = x
         self.y = y
@@ -102,7 +102,7 @@ class TakePotAction(Action):
         self.pot = random.randint(1, 5)
 
     def get_data(self):
-        return [1]
+        return [0]
 
 
 class DepositPlantAction(Action):

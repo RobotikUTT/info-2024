@@ -66,9 +66,12 @@ class GameManager(Thread):
     def run(self):
         print("game manager ... ", "ready to operate")
         self.define_areas()
+        self.com_service.wait_start()
         while True:
-            for area, path in strat.find_best_strategy(self.game_state):
-                self.create_actions_for_area(area, path)
+            print("finding best strategy")
+            #for area, path in strat.find_best_strategy(self.game_state):
+            #    self.create_actions_for_area(area, path)
+            print("found best strategy")
             for action in self.actions:
                 self.send_next_action()
                 self.wait_end_action()
@@ -80,20 +83,25 @@ class GameManager(Thread):
                 self.game_state.init_areas(blue_specific_areas, yellow_specific_areas)
                 print("Color Blue Selected")
                 self.color = "blue"
+                self.actions = [MoveAction(self.position_service, 1000, 700, force_angle=True), TakePotAction(), MoveAction(self.position_service, 3000-(450/2), 2000-(450/2)), DepositPlantAction()]
             elif color == "yellow":
                 self.game_state.init_areas(yellow_specific_areas, blue_specific_areas)
                 print("Color Yellow Selected")
                 self.color = "yellow"
+                self.actions = [MoveAction(self.position_service, 2000, 700, force_angle=True), TakePotAction(), MoveAction(self.position_service, 225, 2000-(450/2)), DepositPlantAction()]
             else :
                 print("Still no color")
 
     def create_actions_for_area(self, element: Area, path: Path):
+        if len(path.points) == 0:
+            return
         for point in path.points[1:-1]:
             self.actions.append(MoveAction(self.position_service, x=point[0], y=point[1]))
+        print(path.points)
         last_point = Point(path.points[-2][0], path.points[-2][1])
         destination = Point(path.points[-1][0], path.points[-1][1])
         distance = destination - last_point
-        destination = destination + (destination - last_point) / distance * element.radius
+        destination = destination + (destination - last_point) / abs(distance) * element.radius
         self.actions.append(MoveAction(self.position_service, x=destination.x, y=destination.y, force_angle=True))
         action = element.get_action()
         if action is not None:
@@ -104,4 +112,6 @@ class GameManager(Thread):
             time.sleep(0.1)
 
     def send_next_action(self):
-        self.com_service.send_action(self.actions.pop(0))
+        action = self.actions.pop(0)
+        print("sending action", action)
+        self.com_service.send_action(action)

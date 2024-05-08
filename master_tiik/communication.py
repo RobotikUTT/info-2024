@@ -20,7 +20,10 @@ class CommunicationService:
         self.serial.send_stop()
 
     def is_action_done(self):
-        return self.serial.is_moving() or self.i2c.action_done
+        return self.serial.is_moving() or self.i2c.action_done()
 
     def should_emergency_stop(self):
         return self.i2c.emergency_stop
+        
+    def wait_start(self):
+        self.i2c.wait_start()

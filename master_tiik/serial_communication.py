@@ -1,4 +1,4 @@
-from typing import List
+from typing import Tuple
 
 import serial
 from threading import Thread
@@ -30,6 +30,7 @@ class SerialService(Thread):
             byte_read = b''
             while len(byte_read) < 15:
                 byte_read += self.ser.readline()
+            print("okay ?")
             if byte_read[:1] == b'T,':
                 self.read_coord(byte_read[3:])
                 print(byte_read[2])
@@ -42,13 +43,11 @@ class SerialService(Thread):
         self.detected_position.append(struct.unpack('fff', bytes_received))
         print("received value : ", self.detected_position[-1])
         
-    def send_action(self, data: List[int, int, int]):
+    def send_action(self, data: Tuple[int, int, int]):
         x = data[0]
         y = data[1]
         angle = data[2]
-        self.detected_position[0] = x
-        self.detected_position[1] = y
-        self.detected_position[2] = angle
+        self.detected_position = [x, y, angle]
         print("communication service ... ", "ready to operate")
         self.ser.write(b'\x02')
         var = b''
