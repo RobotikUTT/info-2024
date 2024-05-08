@@ -111,6 +111,8 @@ class GameManager(Thread):
         while not self.com_service.is_action_done():
             time.sleep(0.1)
 
+    def
+
     def send_next_action(self):
         action = self.actions.pop(0)
         print("sending action", action)

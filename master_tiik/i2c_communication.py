@@ -36,6 +36,7 @@ class I2CCommunication:
             
 
 
+
 if __name__ == "__main__":
     i2c = I2CCommunication()
     i2c.send(Devices.ARDUINO, [0])
