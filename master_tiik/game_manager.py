@@ -88,13 +88,13 @@ class GameManager(Thread):
                 print("Still no color")
 
     def create_actions_for_area(self, element: Area, path: Path):
-        for point in path.points[:-1]:
-            self.actions.append(MoveAction(x=point[0], y=point[1]))
+        for point in path.points[1:-1]:
+            self.actions.append(MoveAction(self.position_service, x=point[0], y=point[1]))
         last_point = Point(path.points[-2][0], path.points[-2][1])
         destination = Point(path.points[-1][0], path.points[-1][1])
         distance = destination - last_point
         destination = destination + (destination - last_point) / distance * element.radius
-        self.actions.append(MoveAction(x=destination.x, y=destination.y, angle=atan2(destination.y - last_point.y, destination.x - last_point.x)))
+        self.actions.append(MoveAction(self.position_service, x=destination.x, y=destination.y, force_angle=True))
         action = element.get_action()
         if action is not None:
             self.actions.append(action)
@@ -102,6 +102,8 @@ class GameManager(Thread):
     def wait_end_action(self):
         while not self.com_service.is_action_done():
             time.sleep(0.1)
+            if self.com_service.should_emergency_stop():
+                self.com_service.do_emergency_stop()
 
     def send_next_action(self):
         self.com_service.send_action(self.actions.pop(0))

@@ -9,6 +9,8 @@ class I2CCommunication(Thread):
     def __init__(self):
         super().__init__()
         self.bus = SMBus(1)
+        self.action_done = True
+        self.emergency_stop = False
 
     def send(self, device: Devices, data):
         if device == Devices.ARDUINO:
@@ -17,8 +19,12 @@ class I2CCommunication(Thread):
             raise ValueError(f"Device {device} is not registered")
         self.bus.write_i2c_block_data(address, 0, data)
 
-    def is_action_done(self):
-        return self.bus.read_i2c_block_data(10, 0, 1) == 0
+    def run(self):
+        while True:
+            data = self.bus.read_i2c_block_data(10, 0, 1)
+            self.action_done = data[0] == 0
+            self.emergency_stop = data[1] == 1
+            
 
 
 if __name__ == "__main__":

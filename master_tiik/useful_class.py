@@ -1,11 +1,11 @@
 # ---------------------- DEFINE AREA CARACT ----------------------
-import math
 import random
 import uuid
 from enum import Enum
-from math import pi, sqrt
+from math import pi, sqrt, atan2, nan, isnan
 from typing import List
 
+from master_tiik.position import PositionService
 from utils import Circle
 
 
@@ -80,11 +80,20 @@ class Action:
 
 
 class MoveAction(Action):
-    def __init__(self, x=math.nan, y=math.nan, angle=math.nan):
+    def __init__(self, position_service: PositionService, x=nan, y=nan, force_angle=False | int):
         super().__init__(Devices.STM32)
         self.x = x
         self.y = y
-        self.angle = angle
+        self.force_angle = force_angle
+        self.position_service = position_service
+
+    def get_data(self):
+        if not self.force_angle:
+            return [self.x, self.y, nan]
+        if isnan(self.x) or isnan(self.y):
+            return [nan, nan, self.force_angle]
+        angle = atan2(self.y - self.position_service.y, self.x - self.position_service.x)
+        return [self.x, self.y, angle]
 
 
 class TakePotAction(Action):
@@ -92,11 +101,17 @@ class TakePotAction(Action):
         super().__init__(Devices.ARDUINO)
         self.pot = random.randint(1, 5)
 
+    def get_data(self):
+        return [1]
+
 
 class DepositPlantAction(Action):
     def __init__(self):
         super().__init__(Devices.ARDUINO)
         self.plant = random.randint(1, 6)
+
+    def get_data(self):
+        return [3]
 
 
 class Path:

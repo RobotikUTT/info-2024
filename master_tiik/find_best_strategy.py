@@ -4,9 +4,8 @@ import time
 from typing import List, Callable, Tuple
 
 import a_star
-from master_tiik.debug_utils import TimeIt
 from utils import find_path, Circle
-from useful_class import Area, GameState, Action
+from useful_class import Area, GameState
 
 MAX_ROBOT_PLANTS = 6
 POINTS_FOR_UNPOTTED_PLANTS = 1
