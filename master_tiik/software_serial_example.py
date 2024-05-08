@@ -9,7 +9,7 @@ PACKET_SIZE = 15
 class SerialService(Thread):
     def __init__(self):
         super().__init__()
-        self.ser = serial.Serial('COM11',9600,timeout=0)
+        self.ser = serial.Serial('/dev/ttyACM0',9600,timeout=0)
         self.is_moving = False
         self.position_to_send = [1000,200,pi/2]
         self.detected_position = []

@@ -6,7 +6,7 @@ from enum import Enum
 from math import pi, sqrt
 from typing import List
 
-from master_tiik.utils import Circle
+from utils import Circle
 
 
 class Devices(Enum):
