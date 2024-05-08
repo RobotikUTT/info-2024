@@ -5,7 +5,7 @@ from smbus import SMBus
 from useful_class import Devices
 
 
-class I2CCommunication(Thread):
+class I2CCommunication:
     def __init__(self):
         super().__init__()
         self.bus = SMBus(1)

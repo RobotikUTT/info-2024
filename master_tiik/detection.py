@@ -10,11 +10,13 @@ from scipy.optimize import minimize
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import position
-
-from master_tiik.utils import Point
+from utils import Point
+from communication import CommunicationService
+import pygame
+import RPi.GPIO as GPIO
 
 PACKET_SIZE = 47
-DELETE_POINTS_TIMEOUT = 1
+DELETE_POINTS_TIMEOUT = 0.1
 
 # ---------------------- DEFINE CYCLIC REDUNDANCY CHACK TABLE ----------------------
 
@@ -88,25 +90,26 @@ class PointData:
 # ---------------------- DEFINE LIDAR SERCICE ----------------------
 
 class LidarService(Thread):
-    def __init__(self,position_service,data_stocker):
+    def __init__(self,position_service): # position_service,data_stocker
         super().__init__()
         self.serial = Serial("/dev/serial0", baudrate = 230400, timeout=5, bytesize=8, parity="N", stopbits=1)
+        #GPIO.setmode(GPIO.BCM)
+        #GPIO.setup(18, GPIO.OUT)
+        #pwm = GPIO.PWM(18, 40000)
+        #pwm.start(40)
         self.lock = RLock()
         self.position_service = position_service
-        self.data_stocker = data_stocker
+        #self.data_stocker = data_stocker
 
     def run(self):
         dataList = []
         print("lidar ... ", "ready to operate")
         while True:
-            data = self.serial.read()
-            dataTreated = int.from_bytes(data, 'big')
-            if (dataTreated == 0x54):
-                dataList.append(dataTreated)
-                data = self.serial.read()
-                dataTreated = int.from_bytes(data, 'big')
-                if (dataTreated == 0x2c):
-                    dataList.append(dataTreated)
+            data = self.serial.read(30)
+            for i in range(len(data)-1):
+                dataList.append(data[i])
+                if data[i] == 0x54 and data[i+1] == 0x2c:
+                    dataList.append(data[i+1])
                     if (len(dataList) == PACKET_SIZE):
                         expectedCrc = dataList[-3]
                         crc = 0
@@ -116,34 +119,32 @@ class LidarService(Thread):
                             robot_position = self.position_service.get_position()
                             robot_angle = self.position_service.get_angle()
                             now = time.time()
-                            formatted = self.parse_data(dataList)
+                            formatted = self.sortData(dataList)
                             values = []
                             for distance, angle, confidence in zip(*formatted):
                                 values.append(PointData(radians(angle%360), distance, robot_position, robot_angle, now))
                             self.data_stocker.add_values(values)
-                        dataList = []
-                    else :
-                        dataList = []
-            else :
-                dataList.append(dataTreated)
+                    dataList = []
+                    break
+            
     
     def sortData(self,dataList):
         speed = (dataList[1]<<8 | dataList[0])/100
         startAngle = float(dataList[3]<<8 | dataList[2])/100
-        lastAngle = float(dataList[-4]<<8 | dataList[-5])/100
+        lastAngle = float(dataList[-6]<<8 | dataList[-7])/100
         if (lastAngle > startAngle) :
-            step = float(lastAngle - startAngle)/12
+            step = float(lastAngle - startAngle)/11
         else : 
-            step = float(last_angle + 2 * pi - start_angle) / 12
+            step = float(lastAngle + 360 - startAngle) / 11
         
         angle_list = []
         distance_list = []
         confidence_list = []
 
         for i in range(0, 12):
-            distance_list.append(data_list[4 + (i * 3) + 1] << 8 | data_list[4 + (i * 3)])
-            confidence_list.append(data_list[4 + (i * 3) + 2])
-            angle_list.append(step * i + start_angle)
+            distance_list.append(dataList[4 + (i * 3) + 1] << 8 | dataList[4 + (i * 3)])
+            confidence_list.append(dataList[4 + (i * 3) + 2])
+            angle_list.append(step * i + startAngle)
         return distance_list, angle_list, confidence_list
         
 # ---------------------- DEFINE DATA STOCKER ----------------------
@@ -172,43 +173,60 @@ class DataStocker(Thread):
 # ---------------------- DEFINE DETECTION SERVICE ----------------------
 
 class DetectionService(Thread):
-    def __init__(self, data_stocker):
+    def __init__(self, data_stocker, communication_service: CommunicationService):
         super().__init__()
         self.objects = [ObjectData()]
         self.data_stocker = data_stocker
         self.values : List[PointData] = []
         self.treated_values : List[PointData] = []
+        self.communication_service = communication_service
+        #pygame.init()
+        self.screen = pygame.display.set_mode((1000, 1000))
 
     def run(self):
         print("detection ... ", "ready to operate")
+        clock = pygame.time.Clock()
         while True:
             self.values = self.data_stocker.get_values()
+            self.screen.fill(0);
+            for value in self.values:
+                pygame.draw.line(self.screen, 0xffffff, (500, 500), (500 + cos(value.absolute_angle) * value.distance/5, 500 + sin(value.absolute_angle) * value.distance/5))
+            pygame.display.flip()
+            clock.tick()
+            print(clock.get_fps())
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+            #print([(point.distance, point.absolute_angle) for point in self.values])
             if len(self.values) == 0:
                 continue
-            treat_distances = [point for point in self.values if point.distance < 730 and point.distance > 200 ]
-            print(treat_distances)
+            #print(self.values)
+            treat_distances = [point for point in self.values if point.distance < 530 and point.distance > 200]
+            #print(len(treat_distances))
+            #print([(point.absolute_angle, point.distance, ) for point in treat_distances])
+            self.communication_service.emergencyStop()
+            
     
 if __name__ == "__main__":
     position_service = position.PositionService()
     data_stocker = DataStocker()
-    lidar_service = LidarService(position_service, data_stocker)
-    detection_service = DetectionService(data_stocker)
+    lidar_service = LidarService(position_service)
+    detection_service = DetectionService(data_stocker, None)
     
     positionThread = position_service
     positionThread.start()
 
-    dataThread = data_stocker
-    dataThread.start()
+    #dataThread = data_stocker
+    #dataThread.start()
 
     lidarThread = lidar_service
     lidarThread.start()
 
-    detectionThread = detection_service
-    detectionThread.start()
+    #detectionThread = detection_service
+    #detectionThread.start()
 
     positionThread.join()
-    dataThread.join()
+    #dataThread.join()
     lidarThread.join()
-    detectionThread.join()
-    detectionThread.join()
+    #detectionThread.join()
     

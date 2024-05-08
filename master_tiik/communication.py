@@ -15,12 +15,12 @@ class CommunicationService:
             self.i2c.send(Devices.ARDUINO, action.get_data())
         elif device == Devices.STM32:
             self.serial.send_action(action.get_data())
+            
+    def emergencyStop(self):
+        self.serial.send_stop()
 
     def is_action_done(self):
         return self.serial.is_moving() or self.i2c.action_done
 
     def should_emergency_stop(self):
         return self.i2c.emergency_stop
-
-    def do_emergency_stop(self):
-        self.serial.send_stop()

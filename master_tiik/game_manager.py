@@ -3,7 +3,7 @@ from threading import Thread
 import time
 
 from communication import CommunicationService
-from master_tiik.utils import Line, Point
+from utils import Line, Point
 from useful_class import StationArea, GardenArea, GardenPotArea, GameState, PotArea, Path, PlantArea, Area, Action, \
     MoveAction
 from math import pi, atan, sqrt, atan2
@@ -102,8 +102,6 @@ class GameManager(Thread):
     def wait_end_action(self):
         while not self.com_service.is_action_done():
             time.sleep(0.1)
-            if self.com_service.should_emergency_stop():
-                self.com_service.do_emergency_stop()
 
     def send_next_action(self):
         self.com_service.send_action(self.actions.pop(0))

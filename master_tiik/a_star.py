@@ -2,7 +2,7 @@ import heapq
 import time
 from typing import List, Tuple
 
-from master_tiik.debug_utils import TimeIt
+from debug_utils import TimeIt
 
 
 class Node:
