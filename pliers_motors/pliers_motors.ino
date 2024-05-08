@@ -27,12 +27,19 @@ int switch_pin_right = 6;
 
 int servo_9g_pin = 9;
 
+int operationToPerform = -1;
+
 void receive_event(int byteCount) {
   while (Wire.available()) {
     int receivedData = Wire.read();
     Serial.println(receivedData);
-    performAction(receivedData);
+    operationToPerform = receivedData;
+    //erformAction(receivedData);
   }
+}
+
+void requestEvent() {
+  Wire.write(operationToPerform != -1);
 }
 
 void setup() {
@@ -46,6 +53,7 @@ void setup() {
   //Wire I2C
   Wire.begin(10);
   Wire.onReceive(receive_event);
+  Wire.onRequest(requestEvent);
 
   //Servo 9g
   servo.attach(servo_9g_pin);
@@ -61,14 +69,20 @@ void setup() {
 }
 
 void loop() {
-  if (Serial.available() > 0) {
+  /*if (Serial.available() > 0) {
     // Lire l'entier envoyé depuis le moniteur série
     int valeur = Serial.parseInt();
     performAction(valeur);
     // Afficher la valeur lue dans le moniteur série
     Serial.print("La valeur lue est : ");
     Serial.println(valeur);
+  }*/
+  Serial.println(operationToPerform);
+  if (operationToPerform != -1) {
+    performAction(operationToPerform);
+    operationToPerform = -1;
   }
+  delay(100);
 }
 
 //is right switch triggered
