@@ -4,6 +4,8 @@ import time
 from value_to_set import POSITION_PINCE_DU_CENTRE
 
 from communication import CommunicationService
+from detection import DetectionService
+from position import PositionService
 from utils import Line, Point
 from useful_class import StationArea, GardenArea, GardenPotArea, GameState, PotArea, Path, PlantArea, Area, Action, \
     MoveAction
@@ -54,7 +56,7 @@ yellow_specific_areas = [
 # ---------------------- THREAD GAME MANAGER ----------------------
 
 class GameManager(Thread):
-    def __init__(self, com_service: CommunicationService, position_service):
+    def __init__(self, com_service: CommunicationService, position_service: PositionService, detection_service: DetectionService):
         super().__init__()
         self.actions = []
         self.action_running = False
@@ -64,6 +66,9 @@ class GameManager(Thread):
         self.position_service = position_service
         self.state = 0
         self.global_point = 0
+        self.start_time = time.time()
+        self.current_action = None
+        self.detection_service = detection_service
     
     def run(self):
         print("game manager ... ", "ready to operate")
@@ -77,7 +82,7 @@ class GameManager(Thread):
 
     def define_areas(self):
         while self.color == "":
-            color = input()
+            color = "blue"
             if color == "blue":
                 self.game_state.init_areas(blue_specific_areas, yellow_specific_areas)
                 print("Color Blue Selected")
@@ -146,8 +151,16 @@ class GameManager(Thread):
     def wait_end_action(self):
         while not self.com_service.is_action_done():
             time.sleep(0.1)
+            if self.detection_service.emergency_stop:
+                self.com_service.emergencyStop()
+                while self.detection_service.emergency_stop:
+                    pass
+                self.com_service.send_action(self.current_action)
+
+    def set_time(self):
+        self.start_time = time.time()
 
     def send_next_action(self):
-        action = self.actions.pop(0)
-        print("sending action", action)
-        self.com_service.send_action(action)
+        self.current_action = self.actions.pop(0)
+        print("sending action", self.current_action)
+        self.com_service.send_action(self.current_action)

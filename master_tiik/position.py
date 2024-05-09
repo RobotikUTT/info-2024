@@ -5,7 +5,7 @@ from useful_class import Plier
 
 
 
-class PositionService(Thread):
+class PositionService:
     def __init__(self):
         super().__init__()
         self.x = 0

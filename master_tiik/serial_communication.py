@@ -3,6 +3,7 @@ from typing import Tuple
 import serial
 from threading import Thread
 import struct
+from math import pi
 
 PACKET_SIZE = 15
 
@@ -17,6 +18,7 @@ class SerialService(Thread):
         print("communication service ... ", "ready to operate")
         self.ser.close()
         self.ser.open()
+        self.send_action((0,1700,"nan"))
         while True:
             self.listen_state()
         
@@ -43,14 +45,14 @@ class SerialService(Thread):
         self.detected_position.append(struct.unpack('fff', bytes_received))
         print("received value : ", self.detected_position[-1])
         
-    def send_action(self, x, y, angle, speed = "nan"):
+    def send_action(self, x, y, angle):
 
         self.detected_position = [x, y, angle]
         self.ser.close()
         self.ser.open()
         self.ser.write(b'\x02')
         var = b''
-        for i in [x, y, angle, speed]:
+        for i in [x, y, angle]:
             if i != 'nan':
                 self.ser.write(struct.pack('f',i))
                 var += struct.pack('f',i)

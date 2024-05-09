@@ -3,6 +3,11 @@
 #include <Servo.h>
 #include <Wire.h>
 
+#define LEFT 0
+#define RIGHT 1
+#define ARM 2
+#define uint unsigned int
+
 Servo servo;
 
 XL320 robot;
@@ -17,29 +22,47 @@ SoftwareSerial mySerial(10,11); // (RX, TX)
 char rgb[] = "rgbypcwo";
 int ledColour = 0;
 
-// 3 servoID to talk to
-int servo_left = 1; // left
-int servo_right = 2; // right
-int servo_arm = 3; // arm
+int servos[2][3] = {
+  {1, 2, 3},
+  {4, 5, 6},
+  {7, 8, 9},
+};
 
-int switch_pin_left = 5;
-int switch_pin_right = 6;
+bool pliersFull[3][2] = {
+  {false, false},
+  {false, false},
+  {false, false},
+};
 
-int servo_9g_pin = 9;
+int switchPins[2][2] = {
+  {5, 6},
+  {7, 8},
+  {9, 10},
+};
 
-int operationToPerform = -1;
+// int servo_9g_pin = 9;
+
+struct Operation {
+  uint command;
+  uint arm;
+};
+
+Operation operationToPerform {-1, 0};
+
+const int startSwitch = ;
 
 void receive_event(int byteCount) {
-  while (Wire.available()) {
-    int receivedData = Wire.read();
-    Serial.println(receivedData);
-    operationToPerform = receivedData;
-    //erformAction(receivedData);
+  if (Wire.available() != 2) {
+    Serial.println("Error, found an anormal number of elements transmitted");
   }
+  uint command = Wire.read();
+  uint arm = Wire.read();
+  operationToPerform.command = command;
+  operationToPerform.arm = arm;
 }
 
 void requestEvent() {
-  Wire.write(operationToPerform != -1);
+  Wire.write(operationToPerform.command != -1);
 }
 
 void setup() {
@@ -56,68 +79,68 @@ void setup() {
   Wire.onRequest(requestEvent);
 
   //Servo 9g
-  servo.attach(servo_9g_pin);
+  // servo.attach(servo_9g_pin);
 
   //switch
-  pinMode(switch_pin_left, INPUT);
-  pinMode(switch_pin_right, INPUT);
+  pinMode(switchPins[0][0], INPUT);
+  pinMode(switchPins[0][0], INPUT);
+  pinMode(switchPins[1][0], INPUT);
+  pinMode(switchPins[1][0], INPUT);
 
-  //
-  robot.setJointSpeed(servo_right, 523);
-  robot.setJointSpeed(servo_left, 523);
-  robot.setJointSpeed(servo_arm, 300);
+  for (uint arm = 0; arm < 3 arm++) {
+    robot.setJointSpeed(servos[arm][RIGHT], 523);
+    robot.setJointSpeed(servos[arm][LEFT], 523);
+    robot.setJointSpeed(servos[arm][ARM], 300);
+  }
+
+  pinMode(startSwitch, INPUT);
 }
 
 void loop() {
-  /*if (Serial.available() > 0) {
+  if (Serial.available() > 0) {
     // Lire l'entier envoyé depuis le moniteur série
     int valeur = Serial.parseInt();
-    performAction(valeur);
     // Afficher la valeur lue dans le moniteur série
     Serial.print("La valeur lue est : ");
     Serial.println(valeur);
-  }*/
-  Serial.println(operationToPerform);
-  if (operationToPerform != -1) {
-    performAction(operationToPerform);
-    operationToPerform = -1;
+    performAction(valeur, 0);
+  }
+  //Serial.println(operationToPerform.command);
+  if (operationToPerform.command != -1) {
+    performAction(operationToPerform.command, operationToPerform.arm);
+    operationToPerform.command = -1;
   }
   delay(100);
 }
 
 //is right switch triggered
-bool switch_right(){
-  return digitalRead(switch_pin_right);
-}
-
-//is left switch trigered
-bool switch_left(){
-  return digitalRead(switch_pin_left);
+bool switch_pressed(uint arm, uint plier){
+  return digitalRead(switchPins[arm][plier]);
 }
 
 //ARM SECTION
 
 //pince Up
-void up(){
-  robot.moveJoint(servo_arm, 900);
+void up(uint arm) {
+  robot.moveJoint(servos[arm][ARM], 900);
   delay(2000);
 }
 
 //pince Down Small pot
-void downSmall(){
-  robot.moveJoint(servo_arm, 500);
+void downSmall(uint arm){
+  robot.moveJoint(servos[arm][ARM], 500);
   delay(2000);
 }
 
 //pince Down Big pot
-void downBig(){
-  robot.moveJoint(servo_arm, 540);
+void downBig(uint arm){
+  robot.moveJoint(servos[arm][ARM], 540);
   delay(2000);
 }
 
 //pince Down for potting
-void downPotting(){
-  robot.moveJoint(servo_arm, 700);
+void downPotting(uint arm){
+  robot.moveJoint(servos[arm][ARM], 700);
   delay(1000);
 }
 
@@ -126,135 +149,121 @@ void downPotting(){
 //OPEN PART
 
 // open the both pince
-void open(){
+void openBoth(uint arm){
   for(int i=0; i<10; i++){
-  robot.moveJoint(servo_right, 223);
-  delay(50);
-  robot.moveJoint(servo_left, 800);
-  delay(50);
+    robot.moveJoint(servos[arm][RIGHT], 223);
+    delay(50);
+    robot.moveJoint(servos[arm][LEFT], 800);
+    delay(50);
   }
 }
 
-// open just the left
-void openLeft(){
-  robot.moveJoint(servo_left, 800);
-  delay(1000);
-}
-
-
-// open just the right
-void openRight(){
-  robot.moveJoint(servo_right, 223);
+void openSingle(uint arm, uint servo) {
+  robot.moveJoint(servos[arm][servo], servo == LEFT ? 800 : 223);
   delay(1000);
 }
 
 //CLOSE PART
 
 // close the pince Small pot
-void closeSmall(){
+void closeSmallBoth(uint arm){
   for(int i=0; i<10; i++){
-  robot.moveJoint(servo_right, 553);
-  delay(50);
-  robot.moveJoint(servo_left, 470);
-  delay(50);
+    robot.moveJoint(servos[arm][RIGHT], 553);
+    delay(50);
+    robot.moveJoint(servos[arm][LEFT], 470);
+    delay(50);
   }
 }
 
-// close the pince Small pot left
-void closeSmallLeft(){
-  robot.moveJoint(servo_left, 470);
-  delay(1000);
-}
-
-// close the pince Small pot right
-void closeSmallRight(){
-  robot.moveJoint(servo_right, 553);
+void closeSmallSingle(uint arm, uint servo) {
+  robot.moveJoint(servos[arm][servo], servo == LEFT ? 470 : 553);
   delay(1000);
 }
 
 // close the pince Big pot
-void closeBig(){
+void closeBigBoth(uint arm) {
   for(int i=0; i<10; i++){
-  robot.moveJoint(servo_right, 473);
-  delay(50);
-  robot.moveJoint(servo_left, 550);
-  delay(50);
+    robot.moveJoint(servos[arm][RIGHT], 473);
+    delay(50);
+    robot.moveJoint(servos[arm][LEFT], 550);
+    delay(50);
   }
 }
 
-// close the pince Big pot left
-void closeBigLeft(){
-  robot.moveJoint(servo_left, 550);
-  delay(1000);
-}
-
-// close the pince Big pot left
-void closeBigRight(){
-  robot.moveJoint(servo_right, 473);
+void closeBigSingle(uint arm, uint servo) {
+  robot.moveJoint(servos[arm][servo], servo == LEFT ? 550 : 473);
   delay(1000);
 }
 
 //SECTION SERVO 9G
 
 //9g_servo position back
-void Servo_9g_back(){
-  servo.write(40);
-}
+// void Servo_9g_back(){
+  // servo.write(40);
+// }
 
 //9g_servo position Small pot
-void Servo_9g_Small(){
-  servo.write(160);
-}
+// void Servo_9g_Small(){
+  // servo.write(160);
+// }
 
 //9g_servo position Big pot
-void Servo_9g_Big(){
-  servo.write(100);
-}
+// void Servo_9g_Big(){
+//   servo.write(100);
+// }
 
 //SECTION BIG FUNCTIONS
 
-void grabSmall(){
-  Servo_9g_Small();
-  if(switch_left())
-    openRight();
-  if(switch_right())
-    openLeft();
-  else
-    open();
-  downSmall();
-  closeSmall();
-  up();
-  Servo_9g_Big();
+void Poting(uint arm){
+  downPotting(arm);
+  openBoth(arm);
+  up(arm);
 }
 
-void grabBig(){
-  Servo_9g_Big();
-  if(switch_left())
-    openRight();
-  if(switch_right())
-    openLeft();
-  else
-    open();
-  downBig();
-  closeBig();
-  up();
+void OpenUnfullPliers(uint arm) {
+  if (!pliersFull[arm][LEFT] && !pliersFull[arm][RIGHT]) {
+    openBoth(arm);
+  } else if (!pliersFull[arm][LEFT]) {
+    openSingle(arm, LEFT);
+  } else if (!pliersFull[arm][RIGHT]) {
+    openSingle(arm, RIGHT);
+  }
 }
 
-void Poting(){
-  downPotting();
-  open();
-  up();
-  grabBig();
+void ReleaseOnGround(uint arm){
+  Serial.println("Releasing on ground");
+  downBig(arm);
+  openBoth(arm);
+  up(arm);
+  pliersFull[arm][LEFT] = false;
+  pliersFull[arm][RIGHT] = false;
+  // Servo_9g_Small();
 }
 
-void Release(){
-  downBig();
-  open();
-  up();
-  Servo_9g_Small();
+void ReleaseOnGarden(uint arm) {
+  downSmall(arm);
+  openBoth(arm);
+  up(arm);
+  pliersFull[arm][LEFT] = false;
+  pliersFull[arm][RIGHT] = false;
 }
 
-void Search(){
+void ArmDown(uint arm) {
+  downBig(arm);
+}
+
+void GrabPot(uint arm) {
+  closeBigBoth(arm);
+  up(arm);
+  pliersFull[arm][LEFT] = switch_pressed(arm, LEFT);
+  pliersFull[arm][RIGHT] = switch_pressed(arm, RIGHT);
+}
+
+void GrabPlant(uint arm) {
+  closeSmallBoth(arm);
+}
+
+/*void Search(){
   while(!switch_left() && !switch_right()){
     if(!switch_left()){
       closeSmallLeft();
@@ -271,52 +280,33 @@ void Search(){
   Wire.beginTransmission(1);//change by master ID
   Wire.write(1);
   Wire.endTransmission();
-}
+}*/
 
-void performAction(int action) {
+void performAction(uint action, uint arm) {
   switch(action) {
     case 0:
-      grabSmall();
+      GrabPlant(arm);
       break;
     case 1:
-      grabBig();
+      GrabPot(arm);
       break;
     case 2:
-      Poting();
+      Poting(arm);
       break;
     case 3:
-      Release();
+      ReleaseOnGround(arm);
       break;
     case 4:
-      downSmall();
+      ReleaseOnGarden(arm);
       break;
     case 5:
-      downBig();
+      OpenUnfullPliers(arm);
       break;
     case 6:
-      downPotting();
+      ArmDown(arm);
       break;
-    case 7:
-      open();
-      break;
-    case 8:
-      closeSmall();
-      break;
-    case 9:
-      closeBig();
-      break;
-    case 10:
-      Servo_9g_Small();
-      break;
-    case 11:
-      Servo_9g_Big();
-      break;
-    case 12:
-      Servo_9g_back();
-      break;
-    case 13:
-      up();
-      break;
+    //case 7:
+    //  Search(arm);
     default:
       // Handle default case, if needed
       break;

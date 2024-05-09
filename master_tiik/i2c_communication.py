@@ -1,11 +1,13 @@
+import time
 from threading import Thread
 
 from smbus import SMBus
 
 from useful_class import Devices
+import time
 
 
-class I2CCommunication:
+class I2CCommunication(Thread):
     def __init__(self):
         super().__init__()
         self.bus = SMBus(1)
@@ -19,12 +21,13 @@ class I2CCommunication:
             raise ValueError(f"Device {device} is not registered")
         self.bus.write_i2c_block_data(address, 0, data)
             
-    def wait_start():
+    def wait_start(self):
         while True:
             time.sleep(1)
-            if self.bus.read_i2c_block_data(10, 0, 4)[0] == 1:
+            if self.bus.read_byte(10) == 1 :
                 return
-                
+            
+            
     def action_done(self):
         return self.bus.read_i2c_block_data(10, 0, 4)[1] == 1
     
@@ -33,4 +36,6 @@ class I2CCommunication:
 
 if __name__ == "__main__":
     i2c = I2CCommunication()
+    i2c.start()
+    i2c.join()
     i2c.send(Devices.ARDUINO, [0])
