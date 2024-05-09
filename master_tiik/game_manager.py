@@ -1,12 +1,13 @@
 import find_best_strategy as strat
 from threading import Thread
 import time
+from value_to_set import POSITION_PINCE_DU_CENTRE
 
 from communication import CommunicationService
 from utils import Line, Point
 from useful_class import StationArea, GardenArea, GardenPotArea, GameState, PotArea, Path, PlantArea, Area, Action, \
     MoveAction
-from math import pi, atan, sqrt, atan2
+from math import pi, atan, sqrt, atan2, cos, sin
 
 distance_tiik_pot = 14
 
@@ -62,19 +63,17 @@ class GameManager(Thread):
         self.game_state = GameState()
         self.position_service = position_service
         self.state = 0
+        self.global_point = 0
     
     def run(self):
         print("game manager ... ", "ready to operate")
         self.define_areas()
         self.com_service.wait_start()
+        best_strategy = strat.find_best_strategy(self.game_state)
         while True:
             print("finding best strategy")
-            #for area, path in strat.find_best_strategy(self.game_state):
-            #    self.create_actions_for_area(area, path)
-            print("found best strategy")
-            for action in self.actions:
-                self.send_next_action()
-                self.wait_end_action()
+            for area in best_strategy:
+                self.set_up
 
     def define_areas(self):
         while self.color == "":
@@ -83,12 +82,10 @@ class GameManager(Thread):
                 self.game_state.init_areas(blue_specific_areas, yellow_specific_areas)
                 print("Color Blue Selected")
                 self.color = "blue"
-                self.actions = [MoveAction(self.position_service, 1000, 700, force_angle=True), TakePotAction(), MoveAction(self.position_service, 3000-(450/2), 2000-(450/2)), DepositPlantAction()]
             elif color == "yellow":
                 self.game_state.init_areas(yellow_specific_areas, blue_specific_areas)
                 print("Color Yellow Selected")
                 self.color = "yellow"
-                self.actions = [MoveAction(self.position_service, 2000, 700, force_angle=True), TakePotAction(), MoveAction(self.position_service, 225, 2000-(450/2)), DepositPlantAction()]
             else :
                 print("Still no color")
 
@@ -106,6 +103,45 @@ class GameManager(Thread):
         action = element.get_action()
         if action is not None:
             self.actions.append(action)
+
+    def set_up_area_action(self,area):
+        if area.isinstance(PlantArea):
+            front_plier = None
+            for plier in self.position_service.pliers:
+                plier.get_pliers_value()
+                if plier.value == 0 :
+                    front_plier = plier
+            if front_plier != None :
+                dir_angle = atan2(area.y - self.position_service.y,area.x - self.position_service.x)
+                distance = sqrt((area.y - self.position_service.y)**2 + (area.x - self.position_service.x)**2) - area.radius - POSITION_PINCE_DU_CENTRE
+                x = self.distance * cos(dir_angle) + self.position_service.x
+                y = distance * sin(dir_angle) + self.position_service.y
+                angle = (dir_angle - self.position_service.angle - plier.x)
+                mvt_state = True 
+                while mvt_state:
+                    mvt_state = self.com_service.mvt_state()
+                    time.sleep(0.1)
+                self.com_service.move(x,y,angle)
+                is_action_done = False
+                while not is_action_done:
+                    is_action_done = self.com_service.is_action_done()
+                last_x = x
+                last_y = y
+                x += 50*cos(dir_angle)
+                y += 50*sin(dir_angle)
+                self.com_service.move(x,y,angle)
+                is_action_done = False
+                while not is_action_done:
+                    is_action_done = self.com_service.is_action_done()
+                is_action_done = False
+                while not is_action_done:
+                    is_action_done = self.com_service.is_action_done()
+                self.com_service.arm_down()
+
+        if isinstance(GardenPotArea):
+            
+        if isinstance(GardenArea):
+        if isinstance(PotArea):
 
     def wait_end_action(self):
         while not self.com_service.is_action_done():

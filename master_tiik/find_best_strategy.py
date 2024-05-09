@@ -2,14 +2,14 @@ import copy
 import sys
 import time
 from typing import List, Callable, Tuple
+from value_to_set import POINTS_FOR_UNPOTTED_PLANTS,POINTS_FOR_POTTED_PLANTS
 
 import a_star
 from utils import find_path, Circle
 from useful_class import Area, GameState
 
 MAX_ROBOT_PLANTS = 6
-POINTS_FOR_UNPOTTED_PLANTS = 1
-POINTS_FOR_POTTED_PLANTS = 2
+
 POINTS_FOR_POT = POINTS_FOR_POTTED_PLANTS - POINTS_FOR_UNPOTTED_PLANTS
 
 

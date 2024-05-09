@@ -43,24 +43,22 @@ class SerialService(Thread):
         self.detected_position.append(struct.unpack('fff', bytes_received))
         print("received value : ", self.detected_position[-1])
         
-    def send_action(self, data: Tuple[int, int, int]):
-        x = data[0]
-        y = data[1]
-        angle = data[2]
+    def send_action(self, x, y, angle, speed = "nan"):
+
         self.detected_position = [x, y, angle]
-        print("communication service ... ", "ready to operate")
+        self.ser.close()
+        self.ser.open()
         self.ser.write(b'\x02')
         var = b''
-        for i in [x, y, angle]:
+        for i in [x, y, angle, speed]:
             if i != 'nan':
                 self.ser.write(struct.pack('f',i))
                 var += struct.pack('f',i)
             else :
                 self.ser.write(b'\xff\xff\xff\xff')
-                var += b'\xff\xff\xff\xff'
-        print(var)
         self.is_moving = True
         self.ser.flush()
+        self.ser.close()
         
     def send_stop(self):
         self.ser.close()
@@ -75,6 +73,9 @@ class SerialService(Thread):
         self.ser.write(b'\x03\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff')
         self.ser.flush()
         self.ser.close()
+    
+    def get_mvt_state(self):
+        return self.is_moving
 
 
 

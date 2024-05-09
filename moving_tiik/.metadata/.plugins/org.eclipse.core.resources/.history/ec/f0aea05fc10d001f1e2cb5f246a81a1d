@@ -161,7 +161,7 @@ void dataTransmit(float position_X,float position_Y,float position_angle){
 	floatToBytes(position_angle,&dataTxBuffer[11]);
 
 	HAL_UART_Transmit(&huart2, dataTxBuffer, 15, HAL_MAX_DELAY);
-	HAL_UART_Receive_IT(&huart2, dataRxBuffer, 17);
+	HAL_UART_Receive_IT(&huart2, dataRxBuffer, 13);
 }
 
 
@@ -443,11 +443,7 @@ void treatData(){
     float position_X_float = regroupBytesToFloat(&dataRxBuffer[1]);
     float position_Y_float = regroupBytesToFloat(&dataRxBuffer[5]);
     float position_angle_float = regroupBytesToFloat(&dataRxBuffer[9]);
-    float speed_tiik_temp = regroupBytesToFloat(&dataRxBuffer[13]);
 
-    if (!isnan(speed_tiik_temp)){
-    	speedTiik = speed_tiik_temp;
-    }
 
 	if ((!isnan(position_angle_float)) && (stop == 0)){
 		turn3Wheel(M_PI,position_angle_float - TiikPosition.angle);
@@ -457,7 +453,7 @@ void treatData(){
 		float distance = sqrt(pow(position_X_float - TiikPosition.x ,2)+pow(position_Y_float - TiikPosition.y ,2));
 		float angle = atan2((position_Y_float - TiikPosition.y),(position_X_float - TiikPosition.x))- TiikPosition.angle;
 
- 		moveForward3Wheel(tiikSpeed,distance,angle);
+ 		moveForward3Wheel(300,distance,angle);
 	}
 
 	stop = 0;
@@ -466,7 +462,6 @@ void treatData(){
 	dataTxBuffer[2] = robotState;
 	dataArrived = 0;
 
-	tiikSpeed = 400;
 	dataTransmit(TiikPosition.x,TiikPosition.y,TiikPosition.angle);
 }
 
@@ -1150,6 +1145,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		    float position_X_float = regroupBytesToFloat(&dataRxBuffer[1]);
 		    float position_Y_float = regroupBytesToFloat(&dataRxBuffer[5]);
 		    float position_angle_float = regroupBytesToFloat(&dataRxBuffer[9]);
+		    tiikSpeed = regroupBytesToFloat(&dataRxBuffer[13]);
 
 		    initPosition(position_X_float,position_Y_float,position_angle_float);
 		    setPosition();

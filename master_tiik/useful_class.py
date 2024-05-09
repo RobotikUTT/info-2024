@@ -4,6 +4,7 @@ import uuid
 from enum import Enum
 from math import pi, sqrt, atan2, nan, isnan
 from typing import List
+from value_to_set import POINTS_FOR_POTTED_PLANTS,POINTS_FOR_UNPOTTED_PLANTS
 
 from position import PositionService
 from utils import Circle
@@ -13,6 +14,50 @@ class Devices(Enum):
     ARDUINO, \
     STM32, \
         = range(2)
+
+
+class Plier:
+    def __init__(self,id,angle):
+        self.id = id
+        self.angle = angle
+        self.plants = [Plant(),Plant()]
+        self.value = 0
+
+    def set_grab_plant(self,received_data):
+        if received_data == 1 :
+            self.plants[0].exist = True
+        elif received_data == 2 : 
+            self.plants[1].exist = True
+        elif received_data == 3 : 
+            self.plants[0].exist = True
+            self.plants[1].exist = True
+
+    def set_potted_plant(self,received_data):
+        if received_data == 1 :
+            self.plants[0].is_potted = True
+        elif received_data == 2 : 
+            self.plants[1].is_potted = True
+        elif received_data == 3 : 
+            self.plants[0].is_potted = True
+            self.plants[1].is_potted = True
+
+    def get_pliers_value(self):
+        for i in self.plants :
+            self.value += i.calcul_value
+
+class Plant : 
+    def __init__(self):
+        self.exist = False
+        self.is_potted = False
+        self.value = 0
+    
+    def calcul_value(self):
+        if self.exist:
+            if self.is_potted :
+                self.value = POINTS_FOR_POTTED_PLANTS
+            else:
+                self.value = POINTS_FOR_UNPOTTED_PLANTS
+        return self.value
 
 
 class Area:

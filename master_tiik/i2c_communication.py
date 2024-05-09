@@ -18,12 +18,6 @@ class I2CCommunication:
         else:
             raise ValueError(f"Device {device} is not registered")
         self.bus.write_i2c_block_data(address, 0, data)
-
-    def run(self):
-        while True:
-            data = self.bus.read_i2c_block_data(10, 0, 4)
-            self.action_done = data[0] == 0
-            self.emergency_stop = data[1] == 1
             
     def wait_start():
         while True:
@@ -33,6 +27,7 @@ class I2CCommunication:
                 
     def action_done(self):
         return self.bus.read_i2c_block_data(10, 0, 4)[1] == 1
+    
             
 
 
