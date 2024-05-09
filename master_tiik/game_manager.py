@@ -3,6 +3,8 @@ from threading import Thread
 import time
 
 from communication import CommunicationService
+from detection import DetectionService
+from position import PositionService
 from utils import Line, Point
 from useful_class import StationArea, GardenArea, GardenPotArea, GameState, PotArea, Path, PlantArea, Area, Action, \
     MoveAction
@@ -53,7 +55,7 @@ yellow_specific_areas = [
 # ---------------------- THREAD GAME MANAGER ----------------------
 
 class GameManager(Thread):
-    def __init__(self, com_service: CommunicationService, position_service):
+    def __init__(self, com_service: CommunicationService, position_service: PositionService, detection_service: DetectionService):
         super().__init__()
         self.actions = []
         self.action_running = False
@@ -62,16 +64,17 @@ class GameManager(Thread):
         self.game_state = GameState()
         self.position_service = position_service
         self.state = 0
+        self.start_time = time.time()
+        self.current_action = None
+        self.detection_service = detection_service
     
     def run(self):
         print("game manager ... ", "ready to operate")
         self.define_areas()
         self.com_service.wait_start()
-        while True:
-            print("finding best strategy")
-            #for area, path in strat.find_best_strategy(self.game_state):
-            #    self.create_actions_for_area(area, path)
-            print("found best strategy")
+        while time:
+            for area, path in strat.find_best_strategy(self.game_state):
+                self.create_actions_for_area(area, path)
             for action in self.actions:
                 self.send_next_action()
                 self.wait_end_action()
@@ -110,10 +113,16 @@ class GameManager(Thread):
     def wait_end_action(self):
         while not self.com_service.is_action_done():
             time.sleep(0.1)
+            if self.detection_service.emergency_stop:
+                self.com_service.emergencyStop()
+                while self.detection_service.emergency_stop:
+                    pass
+                self.com_service.send_action(self.current_action)
 
-    def
+    def set_time(self):
+        self.start_time = time.time()
 
     def send_next_action(self):
-        action = self.actions.pop(0)
-        print("sending action", action)
-        self.com_service.send_action(action)
+        self.current_action = self.actions.pop(0)
+        print("sending action", self.current_action)
+        self.com_service.send_action(self.current_action)

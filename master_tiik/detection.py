@@ -15,7 +15,7 @@ from communication import CommunicationService
 import pygame
 
 PACKET_SIZE = 47
-DELETE_POINTS_TIMEOUT = 0.2
+DELETE_POINTS_TIMEOUT = 2
 
 # ---------------------- DEFINE CYCLIC REDUNDANCY CHACK TABLE ----------------------
 
@@ -205,24 +205,19 @@ class DetectionService(Thread):
         super().__init__()
         self.objects = [ObjectData()]
         self.data_stocker = data_stocker
-        self.values : List[PointData] = []
-        self.treated_values : List[PointData] = []
-        self.communication_service = communication_service
+        self.values: List[PointData] = []
+        self.treated_values: List[PointData] = []
+        self.emergency_stop = False
 
     def run(self):
         print("detection ... ", "ready to operate")
         while True:
             self.values = self.data_stocker.get_values()
-            #print([(point.distance, point.absolute_angle) for point in self.values])
             if len(self.values) == 0:
                 continue
-            #print(self.values)
-            #treat_distances = [point for point in self.values if point.distance < 530 and point.distance > 200]
-            #print(len(treat_distances))
-            #print([(point.absolute_angle, point.distance, ) for point in treat_distances])
-            #print(len(treat_distances))
-            #self.communication_service.emergencyStop()
-            
+            treat_distances = [point for point in self.values if 530 > point.distance > 200 and 50 < point.absolute_x < 2950 and 50 < point.absolute_y < 1950]
+            if len(treat_distances) != 0:
+                self.emergency_stop = True
     
 if __name__ == "__main__":
     position_service = position.PositionService()
