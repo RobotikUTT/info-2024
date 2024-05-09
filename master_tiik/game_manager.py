@@ -81,17 +81,17 @@ class GameManager(Thread):
 
     def define_areas(self):
         while self.color == "":
-            color = input()
+            color = "blue"
             if color == "blue":
                 self.game_state.init_areas(blue_specific_areas, yellow_specific_areas)
                 print("Color Blue Selected")
                 self.color = "blue"
-                self.actions = [MoveAction(self.position_service, 1000, 700, force_angle=True), TakePotAction(), MoveAction(self.position_service, 3000-(450/2), 2000-(450/2)), DepositPlantAction()]
+                #self.actions = [MoveAction(self.position_service, 1000, 700, force_angle=True), TakePotAction(), MoveAction(self.position_service, 3000-(450/2), 2000-(450/2)), DepositPlantAction()]
             elif color == "yellow":
                 self.game_state.init_areas(yellow_specific_areas, blue_specific_areas)
                 print("Color Yellow Selected")
                 self.color = "yellow"
-                self.actions = [MoveAction(self.position_service, 2000, 700, force_angle=True), TakePotAction(), MoveAction(self.position_service, 225, 2000-(450/2)), DepositPlantAction()]
+                #self.actions = [MoveAction(self.position_service, 2000, 700, force_angle=True), TakePotAction(), MoveAction(self.position_service, 225, 2000-(450/2)), DepositPlantAction()]
             else :
                 print("Still no color")
 
