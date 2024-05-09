@@ -152,7 +152,7 @@ def find_best_strategy(game_state):
     path = a_star.a_star(StartNode(game_state, 0, 0), Cost(0.001, 0), stop_after=10, stop_on_path_ends=True)
     areas = []
     for node, cost in path[1:]:
-        areas.append((node.area, cost.path))
+        areas.append(node.area)
     return areas
 
 

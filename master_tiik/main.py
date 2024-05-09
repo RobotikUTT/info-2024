@@ -13,28 +13,24 @@ if __name__ == "__main__":
     data_stocker = eyes.DataStocker()
     lidar_service = eyes.LidarService(position_service, data_stocker, com_service)
     detection_service = eyes.DetectionService(data_stocker, com_service)
-    game_manager = game.GameManager(com_service,position_service)
-    
-    #positionThread = position_service
-    #positionThread.start()
-    
+    game_manager = game.GameManager(com_service,position_service, detection_service)
+        
     serial_communication.start()
     
     gameThread = game_manager
     gameThread.start()
 
-    #dataThread = data_stocker
-    #dataThread.start()
+    dataThread = data_stocker
+    dataThread.start()
 
     lidarThread = lidar_service
     lidarThread.start()
 
-    #detectionThread = detection_service
-    #detectionThread.start()
+    detectionThread = detection_service
+    detectionThread.start()
 
-    #positionThread.join()
     serial_communication.join()
     gameThread.join()
-    #dataThread.join()
+    dataThread.join()
     lidarThread.join()
-    #detectionThread.join()
+    detectionThread.join()

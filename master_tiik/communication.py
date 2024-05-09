@@ -9,6 +9,9 @@ class CommunicationService:
         self.serial = serial_service
         self.i2c = i2c_service
 
+    def is_action_done(self):
+        return not self.serial.is_moving and self.i2c.action_done()
+
     # FONCTION STM32 
     
     def move(self,x,y,angle):
@@ -16,22 +19,28 @@ class CommunicationService:
 
     def mvt_state(self):
         return self.serial.get_mvt_state()
+        
+    def get_position(self):
+        return self.serial.detected_position
+        
+    def emergencyStop(self):
+        self.serial.send_stop()
     
     # FONCTION ARDUINO
     
-    def grab_plan(self,plier_id):
+    def grab_plant(self,plier_id):
         self.i2c.send([0,plier_id])
 
     def grab_pot(self,plier_id):
         self.i2c.send([1,plier_id])
 
-    def poting(self,plier_id):
+    def potting(self,plier_id):
         self.i2c.send([2,plier_id])
 
-    def realise_on_ground(self,plier_id):
+    def release_on_ground(self,plier_id):
         self.i2c.send([3,plier_id])
 
-    def realise_on_garden(self,plier_id):
+    def release_on_garden(self,plier_id):
         self.i2c.send([4,plier_id])
 
     def open_unfull_pliers(self,plier_id):
@@ -40,12 +49,6 @@ class CommunicationService:
     def arm_down(self,plier_id):
         self.i2c.send([6,plier_id])
             
-    def emergencyStop(self):
-        self.serial.send_stop()
-
-    def is_action_done(self):
-        return not self.serial.is_moving() and self.i2c.action_done()
-
     def should_emergency_stop(self):
         return self.i2c.emergency_stop
         

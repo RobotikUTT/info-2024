@@ -130,32 +130,7 @@ class LidarService(Thread):
                     #print("found one !")
             except StopIteration:
                 pass
-            """for i in range(len(data)-1):
-                dataList.append(data[i])
-                if data[i] == 0x54 and data[i+1] == 0x2c:
-                    dataList.append(data[i+1])
-                    if (len(dataList) == PACKET_SIZE):
-                        expectedCrc = dataList[-3]
-                        crc = 0
-                        for b in dataList[-2:]+dataList[0:-3] : 
-                            crc = CRC_TABLE[(crc^b) & 0xff]
-                        if expectedCrc == crc :
-                            #print("all good")
-                            robot_position = self.position_service.get_position()
-                            robot_angle = self.position_service.get_angle()
-                            now = time.time()
-                            formatted = self.sortData(dataList)
-                            values = []
-                            for distance, angle, confidence in zip(*formatted):
-                                values.append(PointData(radians(angle%360), distance, robot_position, robot_angle, now))
-                                if distance < 700 and distance > 200:
-                                    self.communication_service.emergencyStop()
-                            self.data_stocker.add_values(values)
-                            #print("ok c'est good")
-                    dataList = []
-                    break"""
-            
-    
+
     def sortData(self,dataList):
         speed = (dataList[3]<<8 | dataList[2])/100
         startAngle = float(dataList[5]<<8 | dataList[4])/100
@@ -215,9 +190,8 @@ class DetectionService(Thread):
             self.values = self.data_stocker.get_values()
             if len(self.values) == 0:
                 continue
-            treat_distances = [point for point in self.values if 530 > point.distance > 200 and 50 < point.absolute_x < 2950 and 50 < point.absolute_y < 1950]
-            if len(treat_distances) != 0:
-                self.emergency_stop = True
+            treat_distances = [point for point in self.values if 530 > point.distance > 200 and 50 < point.x < 2950 and 50 < point.y < 1950]
+            self.emergency_stop = len(treat_distances) != 0
     
 if __name__ == "__main__":
     position_service = position.PositionService()

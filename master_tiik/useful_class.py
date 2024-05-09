@@ -6,7 +6,6 @@ from math import pi, sqrt, atan2, nan, isnan
 from typing import List
 from value_to_set import POINTS_FOR_POTTED_PLANTS,POINTS_FOR_UNPOTTED_PLANTS
 
-from position import PositionService
 from utils import Circle
 
 
@@ -125,7 +124,7 @@ class Action:
 
 
 class MoveAction(Action):
-    def __init__(self, position_service: PositionService, x=nan, y=nan, force_angle: "bool | int"=False):
+    def __init__(self, position_service, x=nan, y=nan, force_angle: "bool | int"=False):
         super().__init__(Devices.STM32)
         self.x = x
         self.y = y
