@@ -4,16 +4,13 @@ from math import pi
 
 
 
-class PositionService(Thread):
+class PositionService:
     def __init__(self):
         super().__init__()
         self.x = 0
         self.y = 0
         self.angle = 0
         self.radius = 500
-
-    def run(self):
-        print("position service ... ", "ready to operate")
         
     def set_position(self,x,y,angle):
         self.x = x
