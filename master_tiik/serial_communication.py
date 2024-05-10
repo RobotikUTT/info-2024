@@ -38,7 +38,7 @@ class SerialService(Thread):
     def read_coord(self, bytes_received):
         self.detected_position = struct.unpack('fff', bytes_received)
         
-    def send_action(self, x, y, angle):
+    def send_action(self, x, y, angle, speed="nan"):
         self.detected_position = [x, y, angle]
         self.ser.write(b'\x02')
         var = b''
@@ -62,6 +62,18 @@ class SerialService(Thread):
     def get_mvt_state(self):
         return self.is_moving
 
+    
+    def init_position(self, x, y, angle):
+        self.detected_position = [x, y, angle]
+        self.ser.write(b'\x03')
+        for i in [x, y, angle]:
+            if i != 'nan':
+                print(i, end=" ")
+                self.ser.write(struct.pack('f',i))
+            else:
+                print('nan', end=" ")
+                self.ser.write(b'\xff\xff\xff\xff')
+        self.ser.flush()
 
 
 if __name__ == "__main__":

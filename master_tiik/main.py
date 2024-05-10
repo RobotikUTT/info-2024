@@ -6,10 +6,10 @@ from serial_communication import SerialService
 from i2c_communication import I2CCommunication
 
 if __name__ == "__main__":
+    position_service = position.PositionService()
     serial_communication = SerialService()
     i2c_communication = I2CCommunication()
     com_service = com.CommunicationService(serial_communication, i2c_communication)
-    position_service = position.PositionService()
     data_stocker = eyes.DataStocker()
     lidar_service = eyes.LidarService(position_service, data_stocker, com_service)
     detection_service = eyes.DetectionService(data_stocker, com_service)

@@ -41,8 +41,9 @@ class Plier:
             self.plants[1].is_potted = True
 
     def get_pliers_value(self):
+        self.value = 0
         for i in self.plants :
-            self.value += i.calcul_value
+            self.value += i.calcul_value()
 
 class Plant : 
     def __init__(self):
@@ -101,6 +102,7 @@ class GardenPotArea(Area):
         super().__init__(x, y, 0, 7)
         self.pots = 5
         self.plants = 0
+        self.angle = angle
 
 
 class PotArea(Area):

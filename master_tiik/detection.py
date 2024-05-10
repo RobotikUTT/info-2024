@@ -15,7 +15,7 @@ from communication import CommunicationService
 import pygame
 
 PACKET_SIZE = 47
-DELETE_POINTS_TIMEOUT = 2
+DELETE_POINTS_TIMEOUT = 0.5
 
 # ---------------------- DEFINE CYCLIC REDUNDANCY CHACK TABLE ----------------------
 
@@ -101,8 +101,9 @@ class LidarService(Thread):
         dataList = []
         print("lidar ... ", "ready to operate")
         while True:
+            #print(self.position_service.x, self.position_service.y)
+            data = self.serial.read(250)
             self.serial.reset_input_buffer()
-            data = self.serial.read(3000)
             it = iter(data)
             try:
                 while True:
@@ -125,7 +126,7 @@ class LidarService(Thread):
                     formatted = self.sortData(dataList)
                     values = []
                     for distance, angle, confidence in zip(*formatted):
-                        values.append(PointData(radians(angle%360), distance, robot_position, robot_angle, now))
+                        values.append(PointData(radians(-angle%360), distance, robot_position, robot_angle, now))
                     self.data_stocker.add_values(values)
                     #print("found one !")
             except StopIteration:
@@ -191,10 +192,13 @@ class DetectionService(Thread):
             if len(self.values) == 0:
                 continue
             treat_distances = [point for point in self.values if 530 > point.distance > 200 and 50 < point.x < 2950 and 50 < point.y < 1950]
-            self.emergency_stop = len(treat_distances) != 0
+            self.emergency_stop = len(treat_distances) > 5
     
 if __name__ == "__main__":
     position_service = position.PositionService()
+    position_service.x = 300
+    position_service.y = 0
+    position_service.angle = pi
     data_stocker = DataStocker()
     lidar_service = LidarService(position_service, data_stocker)
     detection_service = DetectionService(data_stocker, None)

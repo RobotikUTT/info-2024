@@ -13,16 +13,15 @@ class I2CCommunication(Thread):
         self.bus = SMBus(1)
         self.emergency_stop = False
 
-    def send(self, data):
-        for i, d in enumerate(data):
-            pass #self.bus.write_byte_data(10, i, d)
+    def send(self, command, plier):
+        self.bus.write_byte(10, (command << 1) | (plier & 1))
             
     def wait_start(self):
         while True:
             time.sleep(1)
-            #if self.request()[1] == 1:
-            #    return
-            return
+            print("waiiiit")
+            if self.bus.read_byte(10) & 1 != 0:
+                return
 
     def action_done(self):
         #return self.request()[0] == 1

@@ -12,11 +12,8 @@ class PositionService:
         self.y = 0
         self.angle = 0
         self.radius = 500
-        self.pliers = [Plier(1,0),Plier(2,2*pi/3),Plier(3,4*pi/3)]
+        self.pliers = [Plier(1,0),Plier(2,2*pi/3)]
 
-    def run(self):
-        print("position service ... ", "ready to operate")
-        
     def set_position(self,x,y,angle):
         self.x = x
         self.y = y
