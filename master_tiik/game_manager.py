@@ -89,14 +89,16 @@ class GameManager(Thread):
                 self.com_service.init_position(0, 0, 0)
                 self.position_service.x = 0
                 self.position_service.y = 0
+                self.position_service.angle = pi/2
                 print("Color Blue Selected")
                 self.color = "blue"
             elif color == "yellow":
                 self.game_state.init_areas(yellow_specific_areas, blue_specific_areas)
                 print("Color Yellow Selected")
-                self.com_service.init_position(0, 0, 0)
+                self.com_service.init_position(0, 0, pi/2)
                 self.position_service.x = 0
                 self.position_service.y = 0
+                self.position_service.angle = pi/2
                 self.color = "yellow"
             else :
                 print("Still no color")
@@ -141,11 +143,11 @@ class GameManager(Thread):
             #self.com_service.serial.need_data_to_send = True
             #self.position_service.x = 1775
             #self.position_service.y = 225
-            self.com_service.move(0, 1500, 0)
-            #while True:
-            #    if self.detection_service.emergency_stop:
-            #        self.com_service.emergencyStop()
-            #        exit(0)
+            self.com_service.move(0, 1500, pi/2)
+            while True:
+                if self.detection_service.emergency_stop:
+                    self.com_service.emergencyStop()
+                    exit(0)
 
     def move(self, x, y, angle):
         circles_to_avoid = []

@@ -191,8 +191,8 @@ class DetectionService(Thread):
             self.values = self.data_stocker.get_values()
             if len(self.values) == 0:
                 continue
-            treat_distances = [point for point in self.values if 530 > point.distance > 200 and 50 < point.x < 2950 and 50 < point.y < 1950]
-            self.emergency_stop = len(treat_distances) > 5
+            treat_distances = [point for point in self.values if 700 > point.distance > 200 and 50 < point.x < 2950 and 50 < point.y < 1950]
+            self.emergency_stop = len(treat_distances) > 2
     
 if __name__ == "__main__":
     position_service = position.PositionService()
