@@ -6,7 +6,6 @@ from math import pi, sqrt, atan2, nan, isnan
 from typing import List
 from value_to_set import POINTS_FOR_POTTED_PLANTS,POINTS_FOR_UNPOTTED_PLANTS
 
-from position import PositionService
 from utils import Circle
 
 
@@ -42,8 +41,9 @@ class Plier:
             self.plants[1].is_potted = True
 
     def get_pliers_value(self):
+        self.value = 0
         for i in self.plants :
-            self.value += i.calcul_value
+            self.value += i.calcul_value()
 
 class Plant : 
     def __init__(self):
@@ -102,6 +102,7 @@ class GardenPotArea(Area):
         super().__init__(x, y, 0, 7)
         self.pots = 5
         self.plants = 0
+        self.angle = angle
 
 
 class PotArea(Area):
@@ -125,7 +126,7 @@ class Action:
 
 
 class MoveAction(Action):
-    def __init__(self, position_service: PositionService, x=nan, y=nan, force_angle: "bool | int"=False):
+    def __init__(self, position_service, x=nan, y=nan, force_angle: "bool | int"=False):
         super().__init__(Devices.STM32)
         self.x = x
         self.y = y
