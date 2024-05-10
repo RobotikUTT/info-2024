@@ -56,7 +56,7 @@ DMA_HandleTypeDef hdma_memtomem_dma2_stream0;
 /* USER CODE BEGIN PV */
 uint8_t dataTxBuffer[15] = {0};
 uint8_t debugTxBuffer[2] = {0};
-uint8_t dataRxBuffer[17] = {0};
+uint8_t dataRxBuffer[13] = {0};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -107,7 +107,7 @@ uint8_t robotState;
 uint8_t stop;
 uint8_t dataArrived;
 
-float tiikSpeed = 400;
+float tiikSpeed = 250;
 
 
 
@@ -161,7 +161,7 @@ void dataTransmit(float position_X,float position_Y,float position_angle){
 	floatToBytes(position_angle,&dataTxBuffer[11]);
 
 	HAL_UART_Transmit(&huart2, dataTxBuffer, 15, HAL_MAX_DELAY);
-	HAL_UART_Receive_IT(&huart2, dataRxBuffer, 17);
+	HAL_UART_Receive_IT(&huart2, dataRxBuffer, 13);
 }
 
 
@@ -274,9 +274,8 @@ void turn3Wheel(float speed,float angle){
 	float urgencyRadian  = 0;
 
 	maxSpeed = speed;
-
+	int i = 0;
 	while(task){
-
 		if (stop){
 			speedTiik = maxSpeed  - ((maxSpeed - minSpeed)*urgencyRadian/urgencyRamp);
 		} else if (radianAchieve < rampRadian) {
@@ -308,6 +307,10 @@ void turn3Wheel(float speed,float angle){
 
 
 		if (task) HAL_Delay(deltaT);
+		if (i == 50){
+			dataTransmit(TiikTemporaryPosition.x,TiikTemporaryPosition.y,TiikTemporaryPosition.angle);
+			i = 0;
+		}
 	}
 
 	updateTimerPeriod(motorN,0);
@@ -316,8 +319,12 @@ void turn3Wheel(float speed,float angle){
 
 	TiikPosition.x = TiikTemporaryPosition.x;
 	TiikPosition.y = TiikTemporaryPosition.y;
+	if (TiikTemporaryPosition.angle < 2*M_PI){
+		TiikTemporaryPosition.angle = TiikTemporaryPosition.angle + 2*M_PI;
+	} else if (TiikTemporaryPosition.angle > 2*M_PI){
+		TiikTemporaryPosition.angle = TiikTemporaryPosition.angle - 2*M_PI;
+	}
 	TiikPosition.angle = TiikTemporaryPosition.angle;
-
 
 	HAL_Delay(deltaT);
 
@@ -329,14 +336,16 @@ void moveForward3Wheel(float speed, float distance, float angle){
 	float wheelDiameter = 58;
 	float stepToDistance = stepByTurn/(M_PI*wheelDiameter);
 
-	float speedTiik = 10;
+	float speedTiik = 7;
+	float minSpeedTiik = 7;
+	float maxSpeed = speed;
 
 	float distanceAchieve = 0.0;
 	float distanceToAchieve = distance;
 
 	int task = 1;
 
-	float rampDistance = 300;
+	float rampDistance = 150;
 
 	if (distanceToAchieve < 2*rampDistance){
 		rampDistance = distanceToAchieve/2;
@@ -352,21 +361,20 @@ void moveForward3Wheel(float speed, float distance, float angle){
 	float urgencyRamp = 150;
 	float urgencyDistance  = 0;
 
-	float maxSpeed = speed;
-
 	float cosTheta = cos(angle + M_PI/2);
 	float sinTheta = sin(angle + M_PI/2);
 
 	float sqrt3 = sqrt(3);
+	int i = 0;
 	while(task){
-
+		i++;
 		if (stop){
-			speedTiik = maxSpeed  - ((maxSpeed -10)*urgencyDistance/urgencyRamp);
-		} else if (distanceAchieve < rampDistance) {
-		    speedTiik = ((maxSpeed - 10)*distanceAchieve/rampDistance) + 10;
+			speedTiik = maxSpeed  - ((maxSpeed - minSpeedTiik)*urgencyDistance/urgencyRamp);
+		} else if (distanceAchieve <= rampDistance) {
+		    speedTiik = ((maxSpeed - minSpeedTiik)*distanceAchieve/rampDistance) + minSpeedTiik;
 		} else if (distanceToAchieve - distanceAchieve < rampDistance){
-			speedTiik = maxSpeed - ((speed-10)*(distanceAchieve-distanceToAchieve + rampDistance)/rampDistance);
-		} else {
+			speedTiik = maxSpeed - ((speed-minSpeedTiik)*(distanceAchieve-distanceToAchieve + rampDistance)/rampDistance);
+		} else  {
 			speedTiik = maxSpeed;
 		}
 		float speedN = speedTiik*cosTheta;
@@ -394,6 +402,10 @@ void moveForward3Wheel(float speed, float distance, float angle){
 
 
 		if (task) HAL_Delay(deltaT);
+		if (i==50){
+			dataTransmit(TiikTemporaryPosition.x,TiikTemporaryPosition.y,TiikTemporaryPosition.angle);
+			i = 0;
+		}
 	}
 
 	updateTimerPeriod(motorN,0);
@@ -402,6 +414,11 @@ void moveForward3Wheel(float speed, float distance, float angle){
 
 	TiikPosition.x = TiikTemporaryPosition.x;
 	TiikPosition.y = TiikTemporaryPosition.y;
+	if (TiikTemporaryPosition.angle < 2*M_PI){
+		TiikTemporaryPosition.angle = TiikTemporaryPosition.angle + 2*M_PI;
+	} else if (TiikTemporaryPosition.angle > 2*M_PI){
+		TiikTemporaryPosition.angle = TiikTemporaryPosition.angle - 2*M_PI;
+	}
 	TiikPosition.angle = TiikTemporaryPosition.angle;
 
 	HAL_Delay(deltaT);
@@ -410,10 +427,15 @@ void moveForward3Wheel(float speed, float distance, float angle){
 
 
 void initPosition(float x,float y,float angle){
-  TiikPosition.x = x;
-  TiikPosition.y = y;
-  TiikPosition.angle = angle;
-
+  if (!isnan(x)){
+	  TiikPosition.x = x;
+  }
+  if (!isnan(y)){
+	  TiikPosition.y = y;
+  }
+  if (!isnan(y)){
+	  TiikPosition.angle = angle;
+  }
   TiikTemporaryPosition.x = x;
   TiikTemporaryPosition.y = y;
   TiikTemporaryPosition.angle = angle;
@@ -443,11 +465,7 @@ void treatData(){
     float position_X_float = regroupBytesToFloat(&dataRxBuffer[1]);
     float position_Y_float = regroupBytesToFloat(&dataRxBuffer[5]);
     float position_angle_float = regroupBytesToFloat(&dataRxBuffer[9]);
-    float speed_tiik_temp = regroupBytesToFloat(&dataRxBuffer[13]);
 
-    if (!isnan(speed_tiik_temp)){
-    	speedTiik = speed_tiik_temp;
-    }
 
 	if ((!isnan(position_angle_float)) && (stop == 0)){
 		turn3Wheel(M_PI,position_angle_float - TiikPosition.angle);
@@ -465,8 +483,6 @@ void treatData(){
 	robotState = 0x00;
 	dataTxBuffer[2] = robotState;
 	dataArrived = 0;
-
-	tiikSpeed = 400;
 	dataTransmit(TiikPosition.x,TiikPosition.y,TiikPosition.angle);
 }
 
@@ -602,6 +618,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+
 	  if (dataArrived){
 		  dataArrived = 0;
 		  setMotorState(1);
@@ -1132,8 +1149,6 @@ static void MX_GPIO_Init(void)
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-	//debugTransmit(0x01);
-
 	if (dataRxBuffer[0] == 0x01){
 		dataRxBuffer[0] = 0x00;
 		stop = 1;
@@ -1143,16 +1158,30 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 			robotState = 0x01;
 			dataTxBuffer[2] = robotState;
 			dataArrived = 1;
+			tiikSpeed = 300;
 		}
 	} else if (dataRxBuffer[0] == 0x03){
 		dataRxBuffer[0] = 0x00;
 		if (dataTxBuffer[2] == 0x00){
+
 		    float position_X_float = regroupBytesToFloat(&dataRxBuffer[1]);
 		    float position_Y_float = regroupBytesToFloat(&dataRxBuffer[5]);
 		    float position_angle_float = regroupBytesToFloat(&dataRxBuffer[9]);
 
 		    initPosition(position_X_float,position_Y_float,position_angle_float);
 		    setPosition();
+
+		    TiikTemporaryPosition.x = TiikPosition.x;
+		    TiikTemporaryPosition.y = TiikPosition.y;
+		    TiikTemporaryPosition.angle = TiikPosition.angle;
+		}
+	} else if (dataRxBuffer[0] == 0x04){
+		dataRxBuffer[0] = 0x00;
+		if (dataTxBuffer[2] == 0x00){
+			robotState = 0x01;
+			dataTxBuffer[2] = robotState;
+			dataArrived = 1;
+			tiikSpeed = 100;
 		}
 	}
 
