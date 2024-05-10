@@ -73,10 +73,7 @@ class GameManager(Thread):
     def run(self):
         print("game manager ... ", "ready to operate")
         self.define_areas()
-        #self.com_service.init_position(2775, 1775, 0)
-        print("avant")
         self.com_service.wait_start()
-        print("après")
         best_strategy = strat.find_best_strategy(self.game_state, self.position_service)
         for area in best_strategy:
             self.set_up_area_action(area)
@@ -104,7 +101,6 @@ class GameManager(Thread):
                 print("Still no color")
 
     def set_up_area_action(self,area):
-        area = 1
         if isinstance(area, PlantArea):
             front_plier = None
             for plier in self.position_service.pliers:
